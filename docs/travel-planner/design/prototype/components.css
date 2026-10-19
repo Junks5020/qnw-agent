@@ -600,6 +600,17 @@ button {
   line-height: var(--font-headline-line);
 }
 
+a.itinerary-title {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: 100%;
+}
+
+a.itinerary-title .icon {
+  color: var(--text-tertiary);
+}
+
 .itinerary-meta {
   color: var(--text-tertiary);
   font-size: var(--font-caption-size);

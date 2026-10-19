@@ -112,29 +112,29 @@ npm run shots
 | 2 | 对话 · 摘要卡 | `pages/P03-c-chat-summary.html` | `screenshots/P03-c-chat-summary.png` | 已修订：每行右侧箭头，可点进修改 |
 | 2 | 对话 · 生成中 | `pages/P03-d-chat-generating.html` | `screenshots/P03-d-chat-generating.png` | 已交付 |
 | 2 | 对话 · 失败 / 断网 | `pages/P03-e-chat-error.html` | `screenshots/P03-e-chat-error.png` | 已交付 |
-| 2 | 行程预览 | `pages/P04-a-preview.html` | `screenshots/P04-a-preview.png`、`P04-a-preview-full.png` | 已修订：导航打开地图选择，小地图仍进地图 |
+| 2 | 行程预览 | `pages/P04-a-preview.html` | `screenshots/P04-a-preview.png`、`P04-a-preview-full.png` | 已修订：能打开地点页的站点，标题右侧有箭头 |
 | 2 | 行程预览 · 导航 | `pages/P04-d-nav-sheet.html` | 同名 png | 已交付：不先打开地图 |
 | 2 | 登录半屏 | `pages/P13-a-login.html` | `screenshots/P13-a-login.png` | 已交付 |
 | 2 | 保存成功 | `pages/P13-b-save-success.html` | `screenshots/P13-b-save-success.png` | 已修订：查看行程、回到首页、开启提醒 |
-| 3 | 详情 · 出行中 | `pages/P05-a-detail-ongoing.html` | 同名 png | 已修订：09:55 才出发；第 1、3 天收起并写出地点 |
+| 3 | 详情 · 出行中 | `pages/P05-a-detail-ongoing.html` | 同名 png | 已修订：厦门站点没有地点页，所以标题不带箭头 |
 | 3 | 出行中 · 导航 | `pages/P05-f-xiamen-nav.html` | 同名 png | 已交付 |
-| 3 | 详情 · 杭州行前 | `pages/P05-e-detail-hangzhou.html` | 同名 png | 已修订：10/24 的杭州计划，不标今天 |
+| 3 | 详情 · 杭州行前 | `pages/P05-e-detail-hangzhou.html` | 同名 png | 已修订：能打开地点页的站点带右箭头，出发没有 |
 | 3 | 杭州 · 导航 | `pages/P05-g-hangzhou-nav.html` | 同名 png | 已交付 |
 | 3 | 详情 · 某天无条目 | `pages/P05-b-detail-empty.html` | 同名 png | 已交付 |
-| 3 | 详情 · 离线只读 | `pages/P05-c-detail-offline.html` | 同名 png | 已交付 |
-| 3 | 详情 · 冲突 | `pages/P05-d-detail-conflict.html` | 同名 png | 已修订：冲突时间仍重叠，但先后顺序不倒 |
+| 3 | 详情 · 离线只读 | `pages/P05-c-detail-offline.html` | 同名 png | 已修订：能打开地点页的站点带右箭头 |
+| 3 | 详情 · 冲突 | `pages/P05-d-detail-conflict.html` | 同名 png | 已修订：冲突时间仍重叠；能打开的站点带右箭头 |
 | 3 | 详情 · 已完成 | `pages/P05-h-detail-done.html` | 同名 png | 已交付：杭州周末只读，不能编辑 |
-| 3 | 编辑 · 拖拽 | `pages/P06-a-edit-drag.html` | 同名 png | 已修订：删除是灰色图标 |
-| 3 | 编辑 · 厦门第 2 天 | `pages/P06-g-edit-xiamen.html` | 同名 png | 已交付：同一套编辑结构，数据是厦门当天 |
+| 3 | 编辑 · 拖拽 | `pages/P06-a-edit-drag.html` | 同名 png | 已修订：能打开地点页的站点带右箭头，其余没有 |
+| 3 | 编辑 · 厦门第 2 天 | `pages/P06-g-edit-xiamen.html` | 同名 png | 已修订：出发地不能删除。开发时必须和 P06 共用同一编辑组件 |
 | 3 | 编辑 · 待安排池 | `pages/P06-b-edit-pool.html` | 同名 png | 已交付 |
-| 3 | 编辑 · 撤销 Toast | `pages/P06-c-edit-undo.html` | 同名 png | 已交付 |
-| 3 | 编辑 · 重算中 | `pages/P06-d-edit-recalc.html` | 同名 png | 已交付 |
-| 3 | 编辑 · 重算完成 | `pages/P06-e-edit-recalc-done.html` | 同名 png | 已修订：这一天约 16 公里、¥890–1,170 |
-| 3 | 编辑 · 重算失败 | `pages/P06-f-edit-recalc-fail.html` | 同名 png | 已交付 |
+| 3 | 编辑 · 撤销 Toast | `pages/P06-c-edit-undo.html` | 同名 png | 已修订：能打开地点页的站点带右箭头 |
+| 3 | 编辑 · 重算中 | `pages/P06-d-edit-recalc.html` | 同名 png | 已修订：能打开地点页的站点带右箭头 |
+| 3 | 编辑 · 重算完成 | `pages/P06-e-edit-recalc-done.html` | 同名 png | 已修订：这一天约 16 公里、¥890–1,170；能打开的站点带右箭头 |
+| 3 | 编辑 · 重算失败 | `pages/P06-f-edit-recalc-fail.html` | 同名 png | 已修订：能打开地点页的站点带右箭头 |
 | 3 | 差异预览 | `pages/P04-b-diff.html` | 同名 png | 已修订：说明放在手机框外 |
 | 3 | 应用确认半屏 | `pages/P04-c-apply-confirm.html` | 同名 png | 已修订：删除的是原行程里的楼外楼 |
 | 4 | 地图 | `pages/P07-a-map.html` | 同名 png | 已修订：酒店图标、定位与图层、横滑卡片 |
-| 4 | 地图降级 | `pages/P07-b-map-fallback.html` | 同名 png | 已修订：第 2 天逐条列出 |
+| 4 | 地图降级 | `pages/P07-b-map-fallback.html` | 同名 png | 已修订：能打开地点页的站点带右箭头 |
 | 4 | 选择地图 | `pages/P07-c-nav-sheet.html` | 同名 png | 已交付：高德 / 百度 / Apple / 取消 |
 | 4 | 景点 | `pages/P08-a-poi-sight.html` | 同名 png | 已修订：地址、电话、小地图；「已在第 1 天」单行 |
 | 4 | 餐饮 | `pages/P08-b-poi-food.html` | 同名 png | 已修订：排队提示 |
@@ -167,10 +167,11 @@ npm run shots
 | 5 | 消息 · 空 | `pages/P11-e-notifications-empty.html` | 同名 png | 已交付 |
 | 5 | 消息 · 加载 | `pages/P11-f-notifications-loading.html` | 同名 png | 已交付 |
 | 5 | 个人中心 | `pages/P12-a-profile.html` | 同名 png | 已修订：账号与安全、灰色清除缓存 |
-| 5 | 个人中心未登录 | `pages/P12-b-profile-guest.html` | 同名 png | 已修订：清除缓存带 ?from=guest，取消回到本页 |
+| 5 | 个人中心未登录 | `pages/P12-b-profile-guest.html` | 同名 png | 已修订：清除缓存进入未登录确认页 |
 | 5 | 账号与安全 | `pages/P12-c-account-security.html` | 同名 png | 已交付：导出我的数据、注销账号 |
 | 5 | 注销账号 | `pages/P12-d-delete-account.html` | 同名 png | 已交付：验证码或密码，15 天内可撤销 |
-| 5 | 清除缓存确认 | `pages/P12-e-clear-cache-confirm.html` | 同名 png | 已交付：确认不用红色 |
+| 5 | 清除缓存确认 | `pages/P12-e-clear-cache-confirm.html` | 同名 png | 已登录仍是灰色。带 ?from=guest 时与未登录页相同 |
+| 5 | 清除缓存 · 未登录 | `pages/P12-f-clear-cache-guest.html` | 同名 png | 已交付：写明清除后无法恢复，确认清除为危险红 |
 | 5 | 只读分享链接 | `pages/P14-a-share-link.html` | 同名 png | 已修订：总额带参考 |
 | 5 | 分享长图 | `pages/P14-b-share-image.html` | 同名 png | 已修订：二维码标示意 |
 | 5 | 分享面板 | `pages/P14-c-share-sheet.html` | 同名 png | 已交付：复制链接、微信、生成长图 |
@@ -179,7 +180,7 @@ npm run shots
 
 可离线的已保存行程是厦门、杭州两日游、杭州周末，所以个人中心写已缓存 3 趟。成都草稿未保存。未登录只缓存本地那一趟杭州。
 
-行前首页不是今日驾驶舱：倒计时、行程摘要、「查看行程」「继续问 AI」。出行中才进入今日视图。现在是 9:41，厦门 09:55 出发，所以首页写 15 分钟后出发，详情里这一步还没完成。第 1 天和第 3 天收在日期条里。当天地点没有单独的地点页。编辑进 P06-g，用的是同一套编辑结构，地点来自示例数据。导航在当前页打开高德 / 百度 / Apple / 取消，小地图仍进入地图页。未登录清除缓存的取消回到未登录页。
+行前首页不是今日驾驶舱：倒计时、行程摘要、「查看行程」「继续问 AI」。出行中才进入今日视图。现在是 9:41，厦门 09:55 出发，所以首页写 15 分钟后出发，详情里这一步还没完成。第 1 天和第 3 天收在日期条里。当天地点没有单独的地点页，所以标题不带箭头。杭州行程里，能打开地点页的站点在标题右侧放箭头，出发和没有地点页的站点不放。编辑进 P06-g。开发时 P06-g 和 P06 必须共用同一个编辑组件；原型分成两页，只为分别截出杭州和厦门。出发地不能删除。导航在当前页打开高德 / 百度 / Apple / 取消，小地图仍进入地图页。未登录清除缓存进入 P12-f，文案是「清除后无法恢复」，确认按钮为危险红，取消回到未登录页。已登录的确认仍是灰色。P12-e 带 `?from=guest` 时与 P12-f 相同。
 
 ## 6. 关键设计决策
 
@@ -188,7 +189,7 @@ npm run shots
 3. **按天用灰度阶。** 日标是 1–4 的灰圆，数字区分。
 4. **可信度。** AI 内容旁放「AI 生成 · 仅供参考」。价格写区间并标「参考」。
 5. **不接预订。** 地点卡没有「去预订」。后续详情页底部只有收藏、替换、加入行程。
-6. **人工确认。** 删除一天用半屏：次按钮 + 危险红按钮，不用蓝。差异预览里，删除用危险红并标「删除」，新增用成功绿并标「新增」，调整只用灰底和「调整」文字，不用品牌蓝铺底。红色只留给已停业、超预算、差异里的删除，以及注销确认。清除缓存是灰色次按钮，确认半屏也不用红。
+6. **人工确认。** 删除一天用半屏：次按钮 + 危险红按钮，不用蓝。差异预览里，删除用危险红并标「删除」，新增用成功绿并标「新增」，调整只用灰底和「调整」文字，不用品牌蓝铺底。红色只留给已停业、超预算、差异里的删除、消息未读、注销确认，以及未登录时清除唯一一份本地草稿。已登录的清除缓存仍是灰色次按钮，云端数据还在。未登录确认写明「清除后无法恢复」，按钮用危险红。
 7. **图片是灰色占位。** 地图页（批次 4）用静态灰阶占位，不引入彩色地图。
 
 ## 7. 待确认

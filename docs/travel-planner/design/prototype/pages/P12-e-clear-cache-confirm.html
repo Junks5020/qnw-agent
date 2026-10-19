@@ -20,7 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
   var list = document.querySelector("[data-cache-list]");
   if (list) list.textContent = "本地的杭州两日游。";
   var note = document.querySelector("[data-cache-note]");
-  if (note) note.textContent = "只删除这台手机上的本地草稿。";
+  if (note) note.textContent = "清除后无法恢复。";
+  var confirmBtn = document.querySelector("[data-confirm]");
+  if (confirmBtn) {
+    confirmBtn.classList.remove("btn-secondary");
+    confirmBtn.classList.add("btn-danger");
+  }
 });
 </script>
 <main class="screen">
@@ -39,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <p class="t-caption" data-cache-note>只删除已下载的行程。云端账号里的数据还在。</p>
     <div class="sheet-actions">
       <a class="btn btn-text" data-cancel href="P12-a-profile.html">取消</a>
-      <span class="btn btn-secondary">确认清除</span>
+      <span class="btn btn-secondary" data-confirm>确认清除</span>
     </div>
     <div class="home-indicator" aria-hidden="true"></div>
   </div>
