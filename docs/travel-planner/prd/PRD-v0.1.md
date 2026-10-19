@@ -220,17 +220,17 @@ flowchart TD
 
 ## 5. 移动端信息架构
 
-### 5.1 底部 Tab（4 个 + 中间悬浮主操作）
+### 5.1 底部 Tab（5 个，中间为 AI）
 
-| Tab | 名称 | 作用 |
+| 位置 | 名称 | 作用 |
 |---|---|---|
 | 1 | 首页 | 规划入口、灵感模板、出行中显示今日视图 |
 | 2 | 行程 | 我的行程列表（即将出发/草稿/已完成） |
-| 中间 | ＋ 规划（悬浮按钮） | 直接进入 AI 对话规划页 |
-| 3 | 消息 | 提醒与通知 |
-| 4 | 我的 | 个人中心、偏好、设置 |
+| 3（中间） | AI | 直接进入 AI 对话规划页；普通 Tab 样式，不做悬浮＋按钮 |
+| 4 | 消息 | 提醒与通知，有未读时显示角标 |
+| 5 | 我的 | 个人中心、偏好、设置 |
 
-【假设】中间悬浮按钮是否保留由 UI 评估；如果去掉，首页输入框承担主入口。
+【决定 2026-10-19】中间悬浮＋按钮取消，改为普通「AI」Tab；保留「消息」Tab，因为出行中的天气、闭馆、交通提醒（P11）需要固定入口。
 
 ### 5.2 页面层级
 
@@ -246,7 +246,7 @@ flowchart TD
 │   ├─ 模板详情 → AI 对话规划页（预填）
 │   └─ 今日视图卡片（出行中）→ 行程详情（定位到今天）
 │
-├─ ＋ 规划 → AI 对话规划页
+├─ Tab3 AI → AI 对话规划页
 │
 ├─ Tab2 行程
 │   └─ 我的行程列表
@@ -260,10 +260,10 @@ flowchart TD
 │           ├─ 行程设置（名称、日期、人数、删除）
 │           └─ 分享面板（链接 / 长图）
 │
-├─ Tab3 消息
+├─ Tab4 消息
 │   └─ 提醒/通知列表 → 对应行程条目 / 调整方案
 │
-└─ Tab4 我的
+└─ Tab5 我的
     ├─ 账号信息 / 登录
     ├─ 旅行偏好设置
     ├─ 通知设置
@@ -581,9 +581,9 @@ flowchart TD
 - **位置**：`docs/travel-planner/design/`
   - `prototype/tokens.css`：颜色、字体、间距、圆角等 Tokens，所有页面只引用变量，不写死色值
   - `prototype/components.html`：核心组件一览
-  - `prototype/<页面状态编号>.html`：每个页面状态一个文件，文件名与页面编号一致，如 `P02-d-home-pretrip.html`
+  - `prototype/pages/<页面编号>.html`：每页一个文件，文件名与页面编号一致
   - `prototype/index.html`：所有页面和状态的入口目录
-  - `screenshots/`：自动截图 PNG（390×844 @2x），与原型同名，如 `P02-d-home-pretrip.png`
+  - `screenshots/`：自动截图 PNG（390×844 @2x），以页面编号或状态编号命名，如 `P02-d-home-pretrip.png`；基础规范与组件为 `foundations.png`、`components.png`
   - `README.md`：设计说明和本地打开方式
 - **视觉基准**：黑白灰为主，约 6:3:1；点缀蓝 `#2563EB` / 按压 `#1D4ED8` / 浅底 `#EFF6FF`；多天行程用灰度阶 + 数字区分，不用彩色。
 - **评审方式**：产品以 `screenshots/` 为主做验收，有交互疑问时打开对应 HTML 看；每批提交后在下表回填路径和状态。
@@ -593,7 +593,7 @@ flowchart TD
 
 | 批次 | 页面 | 必须包含的状态 / 验收要点 | 原型页面路径 | 截图 | 状态 |
 |---|---|---|---|---|---|
-| 1 | Foundations | 颜色、间距、圆角、字体 Tokens；Button、Chip、NavBar、TabBar、ItineraryItem、TransportSeg、POICard、Banner、AIBadge | 待填 | 待填 | 待交付 |
+| 1 | Foundations | 颜色、间距、圆角、字体 Tokens；Button、Chip、NavBar、TabBar、ItineraryItem、TransportSeg、POICard、Banner、AIBadge | `prototype/tokens.css`、`prototype/components.html` | `screenshots/foundations.png`、`screenshots/components.png` | 有条件通过（2ce6450，待修 TabBar 下划线、删除按钮用红色、TabBar 加「消息」） |
 | 2 | P01 启动 / 引导 / 偏好 | 启动、引导、偏好快速设置 | 待填 | 待填 | 待交付 |
 | 2 | P02 首页 | 空状态、行前（倒计时 + 行程摘要 +「查看行程」「继续问 AI」，不做成驾驶舱）、出行中今日视图、加载/离线 | 待填 | 待填 | 待交付 |
 | 2 | P03 AI 对话 | 首次进入、追问（标 1/3 轮）、需求摘要卡、生成中、失败/断网 | 待填 | 待填 | 待交付 |
