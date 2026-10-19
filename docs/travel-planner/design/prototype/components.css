@@ -1597,6 +1597,16 @@ button {
   box-shadow: inset 0 0 0 var(--stroke-2) var(--brand-primary);
 }
 
+.daytabs.is-three .daytab {
+  gap: var(--space-4);
+  align-items: flex-start;
+  padding: var(--space-8) var(--space-4);
+}
+
+.daytabs.is-three .daytab > span:last-child {
+  min-width: 0;
+}
+
 .daytab small {
   display: block;
   color: var(--text-tertiary);

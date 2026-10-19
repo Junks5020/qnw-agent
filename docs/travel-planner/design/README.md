@@ -116,14 +116,16 @@ npm run shots
 | 2 | 行程预览 · 导航 | `pages/P04-d-nav-sheet.html` | 同名 png | 已交付：不先打开地图 |
 | 2 | 登录半屏 | `pages/P13-a-login.html` | `screenshots/P13-a-login.png` | 已交付 |
 | 2 | 保存成功 | `pages/P13-b-save-success.html` | `screenshots/P13-b-save-success.png` | 已修订：查看行程、回到首页、开启提醒 |
-| 3 | 详情 · 出行中 | `pages/P05-a-detail-ongoing.html` | 同名 png | 已修订：10/21 厦门第 2 天，下一站南普陀 |
+| 3 | 详情 · 出行中 | `pages/P05-a-detail-ongoing.html` | 同名 png | 已修订：09:55 才出发；第 1、3 天收起并写出地点 |
 | 3 | 出行中 · 导航 | `pages/P05-f-xiamen-nav.html` | 同名 png | 已交付 |
 | 3 | 详情 · 杭州行前 | `pages/P05-e-detail-hangzhou.html` | 同名 png | 已修订：10/24 的杭州计划，不标今天 |
 | 3 | 杭州 · 导航 | `pages/P05-g-hangzhou-nav.html` | 同名 png | 已交付 |
 | 3 | 详情 · 某天无条目 | `pages/P05-b-detail-empty.html` | 同名 png | 已交付 |
 | 3 | 详情 · 离线只读 | `pages/P05-c-detail-offline.html` | 同名 png | 已交付 |
 | 3 | 详情 · 冲突 | `pages/P05-d-detail-conflict.html` | 同名 png | 已修订：冲突时间仍重叠，但先后顺序不倒 |
+| 3 | 详情 · 已完成 | `pages/P05-h-detail-done.html` | 同名 png | 已交付：杭州周末只读，不能编辑 |
 | 3 | 编辑 · 拖拽 | `pages/P06-a-edit-drag.html` | 同名 png | 已修订：删除是灰色图标 |
+| 3 | 编辑 · 厦门第 2 天 | `pages/P06-g-edit-xiamen.html` | 同名 png | 已交付：同一套编辑结构，数据是厦门当天 |
 | 3 | 编辑 · 待安排池 | `pages/P06-b-edit-pool.html` | 同名 png | 已交付 |
 | 3 | 编辑 · 撤销 Toast | `pages/P06-c-edit-undo.html` | 同名 png | 已交付 |
 | 3 | 编辑 · 重算中 | `pages/P06-d-edit-recalc.html` | 同名 png | 已交付 |
@@ -152,19 +154,20 @@ npm run shots
 | 5 | 出行中 | `pages/P10-f-trips-ongoing.html` | 同名 png | 已修订：卡片打开厦门当天详情 |
 | 5 | 即将出发 | `pages/P10-a-trips-upcoming.html` | 同名 png | 已修订：只保留还没出发的杭州两日游 |
 | 5 | 草稿 | `pages/P10-b-trips-draft.html` | 同名 png | 已修订：成都美食，避免和杭州重复 |
-| 5 | 已完成 | `pages/P10-c-trips-done.html` | 同名 png | 已修订：标可离线看 |
+| 5 | 已完成 | `pages/P10-c-trips-done.html` | 同名 png | 已修订：卡片打开只读详情 |
 | 5 | 行程空状态 | `pages/P10-d-trips-empty.html` | 同名 png | 已修订：分段含出行中 |
 | 5 | 未登录本地草稿 | `pages/P10-e-trips-local.html` | 同名 png | 已修订：这一趟标可离线看 |
 | 5 | 行程 · 加载 | `pages/P10-g-trips-loading.html` | 同名 png | 已交付：卡片骨架 |
-| 5 | 行程 · 同步失败 | `pages/P10-h-trips-sync-fail.html` | 同名 png | 已修订：同一组分段，出行中和即将出发分开 |
-| 5 | 通知列表 | `pages/P11-a-notifications.html` | 同名 png | 已交付：天气、闭馆、交通 |
+| 5 | 行程 · 同步失败 | `pages/P10-h-trips-sync-fail.html` | 同名 png | 已修订：说明放在手机框外 |
+| 5 | 通知列表 | `pages/P11-a-notifications.html` | 同名 png | 已修订：导航打开消息上的地图选择 |
+| 5 | 消息 · 导航 | `pages/P11-g-nav-sheet.html` | 同名 png | 已交付：取消回到消息 |
 | 5 | 调整方案 | `pages/P11-b-adjust-sheet.html` | 同名 png | 已交付 |
 | 5 | 定位权限半屏 | `pages/P11-c-location-permission.html` | 同名 png | 已修订：说明和按钮之间留出间距；仅使用期间 |
 | 5 | 通知未开启 | `pages/P11-d-notify-off.html` | 同名 png | 已交付 |
 | 5 | 消息 · 空 | `pages/P11-e-notifications-empty.html` | 同名 png | 已交付 |
 | 5 | 消息 · 加载 | `pages/P11-f-notifications-loading.html` | 同名 png | 已交付 |
 | 5 | 个人中心 | `pages/P12-a-profile.html` | 同名 png | 已修订：账号与安全、灰色清除缓存 |
-| 5 | 个人中心未登录 | `pages/P12-b-profile-guest.html` | 同名 png | 已修订：清除缓存走同一确认 |
+| 5 | 个人中心未登录 | `pages/P12-b-profile-guest.html` | 同名 png | 已修订：清除缓存带 ?from=guest，取消回到本页 |
 | 5 | 账号与安全 | `pages/P12-c-account-security.html` | 同名 png | 已交付：导出我的数据、注销账号 |
 | 5 | 注销账号 | `pages/P12-d-delete-account.html` | 同名 png | 已交付：验证码或密码，15 天内可撤销 |
 | 5 | 清除缓存确认 | `pages/P12-e-clear-cache-confirm.html` | 同名 png | 已交付：确认不用红色 |
@@ -176,7 +179,7 @@ npm run shots
 
 可离线的已保存行程是厦门、杭州两日游、杭州周末，所以个人中心写已缓存 3 趟。成都草稿未保存。未登录只缓存本地那一趟杭州。
 
-行前首页不是今日驾驶舱：倒计时、行程摘要、「查看行程」「继续问 AI」。出行中才进入今日视图。厦门详情只展开第 2 天，当天地点没有单独的地点页。导航在当前页打开高德 / 百度 / Apple / 取消，小地图仍进入地图页。
+行前首页不是今日驾驶舱：倒计时、行程摘要、「查看行程」「继续问 AI」。出行中才进入今日视图。现在是 9:41，厦门 09:55 出发，所以首页写 15 分钟后出发，详情里这一步还没完成。第 1 天和第 3 天收在日期条里。当天地点没有单独的地点页。编辑进 P06-g，用的是同一套编辑结构，地点来自示例数据。导航在当前页打开高德 / 百度 / Apple / 取消，小地图仍进入地图页。未登录清除缓存的取消回到未登录页。
 
 ## 6. 关键设计决策
 

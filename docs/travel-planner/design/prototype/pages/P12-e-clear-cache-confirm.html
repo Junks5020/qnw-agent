@@ -10,6 +10,19 @@
 <body>
 <script src="../icons.js"></script>
 <script src="../sample-data.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (new URLSearchParams(location.search).get("from") !== "guest") return;
+  var cancel = document.querySelector("[data-cancel]");
+  if (cancel) cancel.setAttribute("href", "P12-b-profile-guest.html");
+  var head = document.querySelector("[data-qnw='profile.offline']");
+  if (head && window.QNW) head.textContent = window.QNW["profile.offlineGuest"];
+  var list = document.querySelector("[data-cache-list]");
+  if (list) list.textContent = "本地的杭州两日游。";
+  var note = document.querySelector("[data-cache-note]");
+  if (note) note.textContent = "只删除这台手机上的本地草稿。";
+});
+</script>
 <main class="screen">
 
 <div class="sysbar"><span>9:41</span><span>去哪玩</span></div>
@@ -17,15 +30,15 @@
   <div class="screen-body">
     <p class="dim">离线数据</p>
     <h1 class="t-headline" data-qnw="profile.offline">已缓存 3 趟行程</h1>
-    <p class="t-caption">厦门三日游、杭州两日游、杭州周末。</p>
+    <p class="t-caption" data-cache-list>厦门三日游、杭州两日游、杭州周末。</p>
   </div>
   <div class="stage-dim"></div>
   <div class="login-sheet" role="dialog" aria-label="清除缓存">
     <div class="sheet-handle" aria-hidden="true"></div>
     <h2 class="t-headline">清除这台手机上的缓存？</h2>
-    <p class="t-caption">只删除已下载的行程。云端账号里的数据还在。</p>
+    <p class="t-caption" data-cache-note>只删除已下载的行程。云端账号里的数据还在。</p>
     <div class="sheet-actions">
-      <a class="btn btn-text" href="P12-a-profile.html">取消</a>
+      <a class="btn btn-text" data-cancel href="P12-a-profile.html">取消</a>
       <span class="btn btn-secondary">确认清除</span>
     </div>
     <div class="home-indicator" aria-hidden="true"></div>
