@@ -1,0 +1,160 @@
+# 去哪玩 · 移动端设计说明 v0.1
+
+> 依据：[PRD v0.1](../prd/PRD-v0.1.md) 第 5 章（信息架构）和第 6 章（页面清单）
+> 日期：2026-10-19 ｜ 设计：ui ｜ 状态：初稿，待评审
+
+## 1. Figma 文件
+
+- **文件**：[去哪玩 - 移动端设计 v0.1](https://www.figma.com/design/uajCEb4MuRKA8rXWZf2QSM)
+- **页面结构**
+  - `00 封面 Cover`：占位，暂时为空
+  - `01 基础规范 Foundations`：颜色/间距/圆角变量、文字样式、阴影样式、55 个图标组件，以及基础组件和业务组件两块组件板
+  - `02 页面 Screens`：按 PRD 页面编号分组，每组包含主状态和空/加载/异常状态，共 38 个画板
+- **画板尺寸**：iPhone 393×852（iOS 和 Android 共用一套，Android 按 Material 习惯微调返回和系统栏）。长滚动页面另做了加高画板，这些页面是 P04-a、P08-a、P09-a 和 P12-a。
+- **快捷链接**
+  - [首页 · 出行中](https://www.figma.com/design/uajCEb4MuRKA8rXWZf2QSM?node-id=5-163)
+  - [AI 对话 · 追问](https://www.figma.com/design/uajCEb4MuRKA8rXWZf2QSM?node-id=5-735)
+  - [AI 对话 · 生成中](https://www.figma.com/design/uajCEb4MuRKA8rXWZf2QSM?node-id=5-947)
+  - [行程预览](https://www.figma.com/design/uajCEb4MuRKA8rXWZf2QSM?node-id=6-585)
+  - [行程详情 · 出行中](https://www.figma.com/design/uajCEb4MuRKA8rXWZf2QSM?node-id=6-893)
+
+## 2. 设计系统摘要
+
+### 2.1 视觉调性
+年轻、轻松、可信赖。
+- **主色青绿** `#0D9488`：清爽可信，也和出行、自然相关。
+- **强调色暖橙** `#FF7A45`：用于今天、倒计时和需要用户行动的地方。
+- **配色比例**：大面积用浅灰背景加白色卡片，品牌色只用在关键操作和信息上，避免页面花哨。
+
+### 2.2 颜色变量（集合「去哪玩 Tokens」，模式 Light）
+| 分组 | 变量 |
+|---|---|
+| brand | primary `#0D9488` · primary-pressed `#0B7A70` · primary-soft `#E6F6F4` · accent `#FF7A45` · accent-soft `#FFF1E8` |
+| text | primary `#1F2933` · secondary `#5B6672` · tertiary `#97A1AC` · inverse `#FFFFFF` |
+| bg | page `#F5F7F8` · surface `#FFFFFF` · muted `#EEF1F3` · skeleton `#E4E8EB` |
+| border | default `#E3E7EA` |
+| status | success `#1F9D63` / warning `#B7791F` / danger `#D9363E` / info `#2F6FEB`，各带一个 -soft 浅色底 |
+| day | 1 `#0D9488` · 2 `#F27A2E` · 3 `#6366F1` · 4 `#E0458B`（用于地图路线和时间轴的按天配色） |
+| map | land / water / green / road（地图示意底图用色） |
+
+- **作用域**：每个变量都设置了 scopes（填充、文字、描边分开），属性面板里不会出现无关变量。
+- **深色模式**：变量命名已为深色模式预留，PRD Q16 说明 MVP 可以不做。
+
+### 2.3 间距与圆角
+- **间距**：`space/4 · 8 · 12 · 16 · 20 · 24 · 32`。页面左右边距 24；卡片内边距 12–16；卡片之间 12–16。
+- **圆角**：`radius/8 · 12 · 16 · 20 · full`。标签 8；输入框 12；卡片 16；底部抽屉 20；按钮和胶囊用全圆角。
+- **绑定方式**：auto layout 的 padding、gap 和圆角尽量都绑定到变量。
+
+### 2.4 文字样式（Noto Sans SC）
+开发时 iOS 映射为苹方 PingFang SC，Android 映射为思源黑体。
+
+| 样式 | 字号/行高 | 用途 |
+|---|---|---|
+| Display/28 粗 | 28/36 Bold | 品牌、启动页 |
+| Heading/22 粗 | 22/30 Bold | 页面标题、问候语 |
+| Heading/18 中粗 | 18/26 Bold | 区块标题 |
+| Title/16 中 | 16/24 Medium | 条目名称、导航标题 |
+| Body/15 常规 · Body/15 中 | 15/22 | 正文、对话气泡 |
+| Body/14 常规 · Label/14 中 | 14/20 | 次级正文、按钮 |
+| Caption/12 常规 · Caption/12 中 | 12/16 | 辅助信息、元数据 |
+| Micro/10 中 | 10/14 | Tab 文案、角标 |
+| Number/24 粗 | 24/30 Bold | 金额、统计数字 |
+
+**阴影**：`Shadow/卡片`（y2 blur12，8%）、`Shadow/浮层`（y8 blur24，16%）。
+
+### 2.5 组件清单
+所有组件都用 auto layout 搭建，文本通过组件属性（TEXT / BOOLEAN）暴露，状态用 Variant 区分。
+
+| 组件 | 变体 / 属性 | 用途 |
+|---|---|---|
+| StatusBar 状态栏 | Theme=Dark/Light | 所有页面；放在头图上时用 Light |
+| HomeIndicator | — | 全面屏底部横条 |
+| NavBar/返回 · NavBar/文字操作 · NavBar/编辑 | Title、Show Actions、Action | 导航栏，高 44 |
+| TabBar 底部标签栏 | Active=首页/行程/消息/我的 | 4 个 Tab，中间是悬浮「＋ 规划」 |
+| Button 按钮 | Type=Primary/Secondary/Tertiary × Size=L48/M40/S32；Label | 全局按钮 |
+| Chip 胶囊 | State=Default/Selected；Label | 快捷标签、推荐回复、偏好多选 |
+| DayTab 日期切换 | State=Default/Selected/Today；Day、Date | 详情、编辑页的日期条 |
+| Banner 横幅 | Type=Offline/Warning/Error/Info；Text、Action | 离线、权限、停业、登录提示 |
+| AIBadge | — | 「AI 生成·仅供参考」 |
+| Switch · Toast | State=On/Off；Text、Action | 设置项；删除后撤销 |
+| AgentAvatar · ChatBubble | Role=User/Agent；Text | 对话 |
+| Composer 对话输入区 | State=Default/Disabled；Placeholder | 对话页、对话微调抽屉 |
+| HomeInput 首页主输入框 | Placeholder | 首页第一入口 |
+| ItineraryItem 行程条目 | State=Default/Done/Conflict/Edit；Start、End、Kind、Title、Meta | 时间轴 |
+| TransportSeg 交通段 | Mode=Walk/Transit/Drive/Loading；Detail | 相邻条目之间的交通 |
+| POICard · TemplateCard | Title、Meta、Desc / Days、Title、Sub | 推荐、搜索、地图卡片；灵感模板 |
+| TripCard 行程卡片 | Status=Ongoing/Upcoming/Draft/Done；Title、Sub、Status Text、Offline | 行程列表 |
+| BudgetChip 预算标签 | Category=交通/住宿/餐饮/门票/其他；Label、Amount | 预算分项（固定配色） |
+| SectionHeader · SkeletonCard · EmptyState | Title、Action / — / Title、Desc、Show Button | 区块标题、骨架屏、空状态 |
+| ListRow · NotificationItem · MapPin | Type=Arrow/Switch · Type=出发/天气/闭馆/系统 · Day=1/2/Hotel | 设置项、通知、地图点位 |
+
+## 3. 页面清单与 PRD 对应
+| PRD | 页面 | Figma 画板 |
+|---|---|---|
+| 6.1 P01 | 启动页 / 引导页 / 偏好快速设置 | P01-a 启动页 · P01-b 引导页（1/3）· P01-c 偏好快速设置 |
+| 6.2 P02 | 首页 | P02-a 出行中（今日视图）· P02-b 新用户空状态 · P02-c 加载/异常（骨架屏、天气「--」、离线横幅） |
+| 6.3 P03 | AI 对话规划页 | P03-a 首次进入空状态 · P03-b 追问澄清（快捷选项卡）· P03-c 需求摘要卡 · P03-d 生成中（分步进度 + 流式）· P03-e 失败/超出能力/断网 |
+| 6.4 P04 | 行程生成结果 / 预览页 | P04-a 完整预览（长图）· P04-b 对话微调差异预览 |
+| 6.5 P05 | 行程详情页 | P05-a 出行中（今天、已完成、下一站）· P05-b 某天无条目 · P05-c 离线只读 + 冲突提示 |
+| 6.6 P06 | 行程编辑页 | P06-a 拖拽排序中（待安排池、占位线、重算 loading、撤销 Toast）· P06-b 添加地点 · P06-c 删除一天二次确认 |
+| 6.7 P07 | 地图视图 | P07-a 第 1 天路线 · P07-b 地图失败/离线降级 |
+| 6.8 P08 | 地点详情页 | P08-a 景点（灵隐寺，完整长图）· P08-b 可能已停业 / 无图 / 营业时间未知 |
+| 6.9 P09 | 预算页 | P09-a 分项估算（环形图 + 明细展开）· P09-b 未知项 + 超上限 · P09-c 空状态 |
+| 6.10 P10 | 我的行程列表 | P10-a 即将出发 · P10-b 空状态 · P10-c 未登录本地草稿 · P10-d 骨架屏 |
+| 6.11 P11 | 提醒 / 通知页 | P11-a 通知列表 · P11-b 调整方案抽屉 · P11-c 空状态 + 通知权限未开 |
+| 6.12 P12 | 个人中心 / 偏好设置 | P12-a 已登录（完整）· P12-b 未登录 |
+| 6.13 附 | 登录页（P13） | P13 登录底部半屏 |
+| 6.13 附 | 分享面板（P14） | P14-a 分享抽屉 · P14-b 长图预览 |
+
+**示例数据**：上海出发、杭州两日游（10/24–10/25，2 人，舒适档）。景点、价格和交通都按真实情况估计，并标注「参考」。
+
+## 4. 关键设计决策
+1. **保留中间悬浮「＋ 规划」（对应 PRD 5.1 的假设）**
+   - **入口**：首页主输入框是第一入口，悬浮按钮是全局第二入口，在行程、消息、我的页面也能一步开始规划。
+   - **样式**：按钮 56px，比 Tab 栏高出 18px，用品牌色。
+2. **首页出行中切换为「今日驾驶舱」**
+   - **今日卡片**：用品牌渐变色，置顶，放在输入框之前。
+   - **卡片内容**：只放一个下一站、一个倒计时（暖橙）和两个按钮（导航 / 帮我调整今天），目标是一眼看清。
+3. **对话页用结构化卡片减少打字**
+   - **卡片类型**：快捷选项卡、需求摘要卡、进度卡、失败卡都在对话流里。
+   - **追问轮次**：卡片右上角标出「1/3」轮次，让用户知道最多问 3 轮。
+   - **默认值**：摘要卡里的默认值用灰色「默认」标签标出，每一项都能点击修改。
+4. **人工确认点有统一样式（PRD 7.5）**
+   - **范围**：开始生成、对话微调、行中调整方案、删除一天。
+   - **样式**：都用「次要按钮 + 主按钮」的组合，Agent 不会自动执行。
+   - **差异预览**：新增标绿、删除标红（加删除线）、移动标蓝，每条都带文字标签，不只靠颜色区分（照顾色弱用户）。
+5. **时间轴分三层**
+   - **结构**：时间列、条目卡片、交通段。交通段和卡片左对齐留出缩进，像一条连续的路线。
+   - **状态**：已完成置灰并打勾，冲突用黄色描边加内嵌「一键修复」，编辑态显示拖拽手柄和删除。
+   - **组件化**：这些都是同一个组件的不同变体，开发容易对应。
+6. **按天配色贯穿全流程**
+   - **颜色**：第 1 天青绿，第 2 天橙，第 3、4 天靛蓝、玫红。
+   - **一致性**：地图路线、点位、日期胶囊、预览页的天标签都用同一套颜色。
+7. **可信度表达**
+   - **AI 标识**：所有 AI 内容旁边放「AI 生成·仅供参考」。
+   - **数据标注**：价格一律写区间并标「参考」，营业时间和 POI 标数据来源和更新时间。
+   - **图片来源**：图片标注来源。
+8. **离线和异常不打断用户**
+   - **横幅**：离线统一用灰色横幅（PRD 6 通用约定）。
+   - **只读态**：离线时「编辑」「问 AI」置灰，并说明原因。
+   - **降级**：地图失败时降级为编号列表，仍然可以唤起导航。
+9. **不接预订（PRD Q3 默认）**：地点详情页的底部按钮只有收藏、替换、加入行程，没有「去预订」。
+10. **图片与地图都是示意**
+    - **头图和缩略图**：用渐变色占位，接入 POI 图片后替换。
+    - **地图**：底图是矢量示意（西湖轮廓 + 路线），开发时替换为高德 SDK。
+
+## 5. 待确认问题
+1. **品牌 Logo / Slogan**：现在用图标占位，Slogan 暂写「一句话，说走就走」（PRD Q10 还没定）。
+2. **悬浮「＋ 规划」去留**：需要和产品经理确认（PRD 5.1）。
+3. **地图服务商（PRD Q4）**：会影响地图样式、点位和导航面板的细节。
+4. **登录方式（PRD Q5）**：现在按「本机号码一键登录 + 其他手机号 + 微信 + Apple」设计。
+5. **深色模式（PRD Q16）**：变量已预留，是否在 MVP 里出深色稿？
+6. **语音输入（PRD Q14）**：输入框保留了麦克风入口；如果砍掉，需要去掉对应图标。
+7. **离线编辑（PRD Q13）**：现在按离线只读设计。
+8. **H5 分享查看页**：PRD 说明不在 App 范围内，需要单独排期设计。
+9. **字体授权**：设计稿用 Noto Sans SC，App 实现用系统字体（苹方 / 思源黑体），是否需要品牌字体？
+10. **图片素材**：真实目的地和 POI 图片的来源与授权（PRD Q4）。
+
+## 6. 截图与未完成项（v0.1）
+- **截图未导出**：Figma 连接达到了 Starter 计划的 MCP 调用上限，关键页面截图（首页、对话生成、行程详情）还没导出，`screenshots/` 目录暂时没有。额度恢复，或者在 Figma 里手动导出后再补交。
+- **Foundations 页说明板缺失**：颜色色板、字体样阶、间距的可视化说明板还没画出来（同样受调用上限影响）。变量、文字样式、阴影样式和全部组件都已经在文件里，第 2 节就是对应的规范摘要。
