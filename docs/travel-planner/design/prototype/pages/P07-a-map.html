@@ -29,31 +29,58 @@
   <span class="pin is-selected" style="left:18%;top:14%">1</span>
   <span class="pin" style="left:46%;top:42%">2</span>
   <span class="pin" style="left:38%;top:62%">3</span>
-  <span class="pin" style="left:36%;top:78%">4</span>
+  <span class="pin pin-hotel" style="left:36%;top:78%" aria-label="酒店"><svg class="icon" aria-hidden="true"><use href="#i-stay"/></svg></span>
   <span class="pin" style="left:62%;top:80%">5</span>
   <span class="pin" style="left:66%;top:54%">6</span>
   <span class="pin" style="left:78%;top:22%">7</span>
+  <div class="map-tools">
+    <button class="map-tool" type="button"><svg class="icon" aria-hidden="true"><use href="#i-locate"/></svg>定位</button>
+    <button class="map-tool" type="button"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>图层</button>
+  </div>
 </div>
-<div class="map-sheet">
-  <p class="t-caption">第 1 天 · 深灰 · 第 2 天 · 浅灰</p>
-  <article class="itinerary is-flat">
-    <span class="stop-num is-selected">1</span>
-    <time class="itinerary-time" data-qnw="d1.lingyin">09:00</time>
-    <div>
-      <a class="itinerary-title" href="P08-a-poi-sight.html">灵隐寺</a>
-      <div class="itinerary-meta">当前选中</div>
-    </div>
+<div class="stop-scroll">
+  <article class="stop-card is-selected">
+    <time data-qnw="d1.lingyin">09:00</time>
+    <a class="t-headline" href="P08-a-poi-sight.html">1 · 灵隐寺</a>
+    <p class="t-caption" data-qnw="d1.toLou">打车 20 分钟 · 5 公里</p>
+    <a class="btn btn-secondary" href="P07-c-nav-sheet.html">导航</a>
   </article>
-  <div class="transport"><svg class="icon" aria-hidden="true"><use href="#i-car"/></svg><span data-qnw="d1.toLou">打车 20 分钟 · 5 公里</span></div>
-  <article class="itinerary is-flat">
-    <span class="stop-num">2</span>
-    <time class="itinerary-time" data-qnw="d1.lou">11:30</time>
-    <div>
-      <a class="itinerary-title" href="P08-b-poi-food.html">楼外楼</a>
-      <div class="itinerary-meta" data-qnw="food.price">人均 ¥120–180 参考</div>
-    </div>
+  <article class="stop-card">
+    <time data-qnw="d1.lou">11:30</time>
+    <a class="t-headline" href="P08-b-poi-food.html">2 · 楼外楼</a>
+    <p class="t-caption" data-qnw="d1.toLake">步行 12 分钟 · 800 米</p>
+    <a class="btn btn-secondary" href="P07-c-nav-sheet.html">导航</a>
   </article>
-  <span class="btn btn-secondary">导航</span>
+  <article class="stop-card">
+    <time data-qnw="d1.lake">13:15</time>
+    <strong class="t-headline">3 · 西湖</strong>
+    <p class="t-caption" data-qnw="d1.toHotel">打车 12 分钟 · 3 公里</p>
+    <a class="btn btn-secondary" href="P07-c-nav-sheet.html">导航</a>
+  </article>
+  <article class="stop-card">
+    <time data-qnw="d1.hotel">15:30</time>
+    <a class="t-headline" href="P08-c-poi-hotel.html">酒店 · 西湖边</a>
+    <p class="t-caption" data-qnw="d2.morning">第二天从酒店步行 22 分钟 · 1.6 公里</p>
+    <a class="btn btn-secondary" href="P07-c-nav-sheet.html">导航</a>
+  </article>
+  <article class="stop-card">
+    <time data-qnw="d2.hefang">10:00</time>
+    <strong class="t-headline">5 · 河坊街</strong>
+    <p class="t-caption" data-qnw="d2.toMeiyuan">步行 20 分钟 · 1.5 公里</p>
+    <a class="btn btn-secondary" href="P07-c-nav-sheet.html">导航</a>
+  </article>
+  <article class="stop-card">
+    <time data-qnw="d2.meiyuan">13:00</time>
+    <strong class="t-headline">6 · 中国美术学院</strong>
+    <p class="t-caption" data-qnw="d2.toBoat">打车 12 分钟 · 2.5 公里</p>
+    <a class="btn btn-secondary" href="P07-c-nav-sheet.html">导航</a>
+  </article>
+  <article class="stop-card">
+    <time data-qnw="d2.boat">16:00</time>
+    <strong class="t-headline">7 · 西湖游船</strong>
+    <p class="t-caption">当天最后一站</p>
+    <a class="btn btn-secondary" href="P07-c-nav-sheet.html">导航</a>
+  </article>
 </div>
 
 </main>

@@ -65,13 +65,20 @@ for (const target of targets) {
     await page.close();
     continue;
   }
-  const height = await page.evaluate(() =>
-    Math.max(document.documentElement.scrollHeight, document.body.scrollHeight, 844),
-  );
-  await page.setViewportSize({ width: 390, height });
+  const screen = page.locator("main.screen");
   const png = path.join(outDir, `${target.id}.png`);
-  await page.screenshot({ path: png });
-  console.log(`${target.id}.png  ${390}×${height} @2x`);
+  if (await screen.count()) {
+    const box = await screen.boundingBox();
+    await screen.screenshot({ path: png });
+    console.log(`${target.id}.png  ${Math.round(box.width)}×${Math.round(box.height)} @2x`);
+  } else {
+    const height = await page.evaluate(() =>
+      Math.max(document.documentElement.scrollHeight, document.body.scrollHeight, 844),
+    );
+    await page.setViewportSize({ width: 390, height });
+    await page.screenshot({ path: png });
+    console.log(`${target.id}.png  ${390}×${height} @2x`);
+  }
   await page.close();
 }
 

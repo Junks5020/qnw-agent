@@ -102,9 +102,9 @@ npm run shots
 | 2 | 启动 | `pages/P01-a-splash.html` | `screenshots/P01-a-splash.png` | 已修订：1.5 秒自动进入只写在说明里 |
 | 2 | 引导 | `pages/P01-b-onboarding.html` | `screenshots/P01-b-onboarding.png` | 已交付 |
 | 2 | 偏好 | `pages/P01-c-preferences.html` | `screenshots/P01-c-preferences.png` | 已修订：首行与导航留出间距 |
-| 2 | 首页 · 空 | `pages/P02-a-home-empty.html` | `screenshots/P02-a-home-empty.png` | 已交付 |
-| 2 | 首页 · 行前 | `pages/P02-d-home-pretrip.html` | `screenshots/P02-d-home-pretrip.png` | 已修订：四个快捷标签横滑，末项被裁切 |
-| 2 | 首页 · 出行中 | `pages/P02-b-home-ongoing.html` | `screenshots/P02-b-home-ongoing.png` | 已修订：四个快捷标签横滑；导航进入地图 |
+| 2 | 首页 · 空 | `pages/P02-a-home-empty.html` | `screenshots/P02-a-home-empty.png` | 已修订：四个快捷标签都完整可见 |
+| 2 | 首页 · 行前 | `pages/P02-d-home-pretrip.html` | `screenshots/P02-d-home-pretrip.png` | 已修订：四个快捷标签都完整可见 |
+| 2 | 首页 · 出行中 | `pages/P02-b-home-ongoing.html` | `screenshots/P02-b-home-ongoing.png` | 已修订：四个快捷标签都完整可见；导航进入地图 |
 | 2 | 首页 · 加载 / 离线 | `pages/P02-c-home-offline.html` | `screenshots/P02-c-home-offline.png` | 已交付 |
 | 2 | 对话 · 首次 | `pages/P03-a-chat-welcome.html` | `screenshots/P03-a-chat-welcome.png` | 已交付 |
 | 2 | 对话 · 追问（标 1/3） | `pages/P03-b-chat-clarify.html` | `screenshots/P03-b-chat-clarify.png` | 已交付 |
@@ -122,19 +122,23 @@ npm run shots
 | 3 | 编辑 · 待安排池 | `pages/P06-b-edit-pool.html` | 同名 png | 已交付 |
 | 3 | 编辑 · 撤销 Toast | `pages/P06-c-edit-undo.html` | 同名 png | 已交付 |
 | 3 | 编辑 · 重算中 | `pages/P06-d-edit-recalc.html` | 同名 png | 已交付 |
-| 3 | 编辑 · 重算完成 | `pages/P06-e-edit-recalc-done.html` | 同名 png | 已修订：只保留导航栏上的「完成」 |
+| 3 | 编辑 · 重算完成 | `pages/P06-e-edit-recalc-done.html` | 同名 png | 已修订：去掉楼外楼后当天约 16 公里、¥890–1,170 |
 | 3 | 编辑 · 重算失败 | `pages/P06-f-edit-recalc-fail.html` | 同名 png | 已交付 |
-| 3 | 差异预览 | `pages/P04-b-diff.html` | 同名 png | 已交付 |
-| 3 | 应用确认半屏 | `pages/P04-c-apply-confirm.html` | 同名 png | 已交付 |
-| 4 | 地图 | `pages/P07-a-map.html` | 同名 png | 已交付 |
-| 4 | 地图降级 | `pages/P07-b-map-fallback.html` | 同名 png | 已交付 |
-| 4 | 景点 | `pages/P08-a-poi-sight.html` | 同名 png | 已交付 |
-| 4 | 餐饮 | `pages/P08-b-poi-food.html` | 同名 png | 已交付 |
-| 4 | 酒店（参考价，无预订） | `pages/P08-c-poi-hotel.html` | 同名 png | 已交付 |
-| 4 | 地点异常 | `pages/P08-d-poi-closed.html` | 同名 png | 已交付 |
-| 4 | 预算 | `pages/P09-a-budget.html` | 同名 png | 已交付 |
-| 4 | 预算未知项 | `pages/P09-b-budget-unknown.html` | 同名 png | 已交付 |
-| 4 | 预算空状态 | `pages/P09-c-budget-empty.html` | 同名 png | 已交付 |
+| 3 | 差异预览 | `pages/P04-b-diff.html` | 同名 png | 已修订：说明放在手机框外 |
+| 3 | 应用确认半屏 | `pages/P04-c-apply-confirm.html` | 同名 png | 已修订：删除的是原行程里的楼外楼 |
+| 4 | 地图 | `pages/P07-a-map.html` | 同名 png | 已修订：酒店图标、定位与图层、横滑卡片 |
+| 4 | 地图降级 | `pages/P07-b-map-fallback.html` | 同名 png | 已修订：第 2 天逐条列出 |
+| 4 | 选择地图 | `pages/P07-c-nav-sheet.html` | 同名 png | 已交付：高德 / 百度 / Apple / 取消 |
+| 4 | 景点 | `pages/P08-a-poi-sight.html` | 同名 png | 已修订：地址、电话、小地图、已在第 1 天 |
+| 4 | 餐饮 | `pages/P08-b-poi-food.html` | 同名 png | 已修订：排队提示 |
+| 4 | 酒店（参考价，无预订） | `pages/P08-c-poi-hotel.html` | 同名 png | 已修订：平均距离、优缺点、已在第 1 天 |
+| 4 | 地点异常 | `pages/P08-d-poi-closed.html` | 同名 png | 已通过，未改 |
+| 4 | 地点 · 未加入 | `pages/P08-e-poi-add.html` | 同名 png | 已交付：西溪湿地，加入行程 |
+| 4 | 加入行程 | `pages/P08-e2-add-to-trip-sheet.html` | 同名 png | 已交付：选天和插入位置 |
+| 4 | 地点 · 刚加入 | `pages/P08-e3-added.html` | 同名 png | 已交付：已在第 1 天 |
+| 4 | 预算 | `pages/P09-a-budget.html` | 同名 png | 已修订：其他 ¥50–100，合计 ¥1,780–2,450 |
+| 4 | 预算未知项 | `pages/P09-b-budget-unknown.html` | 同名 png | 已修订：未知项是当地向导 |
+| 4 | 预算空状态 | `pages/P09-c-budget-empty.html` | 同名 png | 已修订：行程级文案，占位是方块 |
 | 5 | 即将出发 | `pages/P10-a-trips-upcoming.html` | 同名 png | 待交付 |
 | 5 | 草稿 | `pages/P10-b-trips-draft.html` | 同名 png | 待交付 |
 | 5 | 已完成 | `pages/P10-c-trips-done.html` | 同名 png | 待交付 |
@@ -166,8 +170,8 @@ npm run shots
 ## 7. 待确认
 
 1. **Logo / Slogan。** 仍无正式 Logo。启动页暂留「一句话，说走就走」，并注明 1.5 秒内自动进入引导。
-2. **示例数据。** 杭州两日游的时间、距离和价格写在 `prototype/sample-data.js`。灵隐寺到楼外楼按约 5 公里打车，楼外楼到白堤才用步行。
-3. **地图上的「导航」。** 详情页和首页的「导航」、预览里的迷你地图进入地图页。地图底栏的「导航」表示唤起外部地图，原型里不离开当前页。
+2. **示例数据。** 杭州两日游的时间、距离和价格写在 `prototype/sample-data.js`。灵隐寺到楼外楼按约 5 公里打车，楼外楼到白堤才用步行。预算合计 ¥1,780–2,450，分项和按天（含往返交通、其他）都等于这个数。
+3. **导航。** 地图和地点详情里的「导航」打开选择面板（高德 / 百度 / Apple 地图 / 取消），原型不跳走。首页和预览里的「导航」、迷你地图仍进入地图页。差异预览的说明在手机框外，应用确认页从目录进入。
 4. **地图服务商**（PRD Q4）。
 5. **登录方式**（PRD Q5）：本机号码、验证码、微信、Apple。
 6. **深色模式**（PRD Q16）：token 按浅色一套，MVP 可以不做。
