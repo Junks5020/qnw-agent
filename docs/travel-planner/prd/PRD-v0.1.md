@@ -581,9 +581,9 @@ flowchart TD
 - **位置**：`docs/travel-planner/design/`
   - `prototype/tokens.css`：颜色、字体、间距、圆角等 Tokens，所有页面只引用变量，不写死色值
   - `prototype/components.html`：核心组件一览
-  - `prototype/pages/<页面编号>.html`：每页一个文件，同一页的多个状态并排放在一个文件里，或用 `?state=` 切换
+  - `prototype/<页面状态编号>.html`：每个页面状态一个文件，文件名与页面编号一致，如 `P02-d-home-pretrip.html`
   - `prototype/index.html`：所有页面和状态的入口目录
-  - `screenshots/`：自动截图 PNG（390×844 @2x），文件名与页面状态编号一致，如 `P02-d-home-pretrip.png`
+  - `screenshots/`：自动截图 PNG（390×844 @2x），与原型同名，如 `P02-d-home-pretrip.png`
   - `README.md`：设计说明和本地打开方式
 - **视觉基准**：黑白灰为主，约 6:3:1；点缀蓝 `#2563EB` / 按压 `#1D4ED8` / 浅底 `#EFF6FF`；多天行程用灰度阶 + 数字区分，不用彩色。
 - **评审方式**：产品以 `screenshots/` 为主做验收，有交互疑问时打开对应 HTML 看；每批提交后在下表回填路径和状态。
@@ -591,7 +591,7 @@ flowchart TD
 
 ### 11.2 页面验收对照（路径待 ui 交付后填写）
 
-| 批次 | 页面 | 必须包含的状态 / 验收要点 | 原型文件 | 截图 | 状态 |
+| 批次 | 页面 | 必须包含的状态 / 验收要点 | 原型页面路径 | 截图 | 状态 |
 |---|---|---|---|---|---|
 | 1 | Foundations | 颜色、间距、圆角、字体 Tokens；Button、Chip、NavBar、TabBar、ItineraryItem、TransportSeg、POICard、Banner、AIBadge | 待填 | 待填 | 待交付 |
 | 2 | P01 启动 / 引导 / 偏好 | 启动、引导、偏好快速设置 | 待填 | 待填 | 待交付 |
