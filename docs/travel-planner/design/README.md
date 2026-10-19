@@ -1,7 +1,7 @@
 # 去哪玩 · 移动端设计说明 v0.1
 
 > 依据：[PRD v0.1](../prd/PRD-v0.1.md) 第 5–6 章，以及主分支 §11 设计交付约定（`3e9fd0d`）
-> 日期：2026-10-19 ｜ 设计：ui ｜ 状态：批次 1–2 已按验收修订，批次 3 已交付。评审以 HTML 原型和 `screenshots/` 为准。
+> 日期：2026-10-19 ｜ 设计：ui ｜ 状态：批次 1–3 已按验收修订，批次 4 已交付。评审以 HTML 原型和 `screenshots/` 为准。启动页在 1.5 秒内自动进入引导，这句话只写在说明里，不放进手机画面。
 
 ## 1. 怎么打开
 
@@ -99,12 +99,12 @@ npm run shots
 |---|---|---|---|---|
 | 1 | Foundations | `prototype/foundations.html` | `screenshots/foundations.png` | 已交付 |
 | 1 | Components | `prototype/components.html` | `screenshots/components.png` | 已交付 |
-| 2 | 启动 | `pages/P01-a-splash.html` | `screenshots/P01-a-splash.png` | 已修订：无继续按钮，1.5 秒内自动进入 |
+| 2 | 启动 | `pages/P01-a-splash.html` | `screenshots/P01-a-splash.png` | 已修订：1.5 秒自动进入只写在说明里 |
 | 2 | 引导 | `pages/P01-b-onboarding.html` | `screenshots/P01-b-onboarding.png` | 已交付 |
 | 2 | 偏好 | `pages/P01-c-preferences.html` | `screenshots/P01-c-preferences.png` | 已修订：首行与导航留出间距 |
 | 2 | 首页 · 空 | `pages/P02-a-home-empty.html` | `screenshots/P02-a-home-empty.png` | 已交付 |
-| 2 | 首页 · 行前 | `pages/P02-d-home-pretrip.html` | `screenshots/P02-d-home-pretrip.png` | 已修订：底部输入框、语音、「预算友好」；查看行程进入详情 |
-| 2 | 首页 · 出行中 | `pages/P02-b-home-ongoing.html` | `screenshots/P02-b-home-ongoing.png` | 已修订：底部输入框、语音、「预算友好」 |
+| 2 | 首页 · 行前 | `pages/P02-d-home-pretrip.html` | `screenshots/P02-d-home-pretrip.png` | 已修订：四个快捷标签横滑，末项被裁切 |
+| 2 | 首页 · 出行中 | `pages/P02-b-home-ongoing.html` | `screenshots/P02-b-home-ongoing.png` | 已修订：四个快捷标签横滑；导航进入地图 |
 | 2 | 首页 · 加载 / 离线 | `pages/P02-c-home-offline.html` | `screenshots/P02-c-home-offline.png` | 已交付 |
 | 2 | 对话 · 首次 | `pages/P03-a-chat-welcome.html` | `screenshots/P03-a-chat-welcome.png` | 已交付 |
 | 2 | 对话 · 追问（标 1/3） | `pages/P03-b-chat-clarify.html` | `screenshots/P03-b-chat-clarify.png` | 已交付 |
@@ -117,24 +117,24 @@ npm run shots
 | 3 | 详情 · 出行中 | `pages/P05-a-detail-ongoing.html` | 同名 png | 已交付 |
 | 3 | 详情 · 某天无条目 | `pages/P05-b-detail-empty.html` | 同名 png | 已交付 |
 | 3 | 详情 · 离线只读 | `pages/P05-c-detail-offline.html` | 同名 png | 已交付 |
-| 3 | 详情 · 冲突 | `pages/P05-d-detail-conflict.html` | 同名 png | 已交付 |
-| 3 | 编辑 · 拖拽 | `pages/P06-a-edit-drag.html` | 同名 png | 已交付 |
+| 3 | 详情 · 冲突 | `pages/P05-d-detail-conflict.html` | 同名 png | 已修订：冲突时间仍重叠，但先后顺序不倒 |
+| 3 | 编辑 · 拖拽 | `pages/P06-a-edit-drag.html` | 同名 png | 已修订：删除是灰色图标 |
 | 3 | 编辑 · 待安排池 | `pages/P06-b-edit-pool.html` | 同名 png | 已交付 |
 | 3 | 编辑 · 撤销 Toast | `pages/P06-c-edit-undo.html` | 同名 png | 已交付 |
 | 3 | 编辑 · 重算中 | `pages/P06-d-edit-recalc.html` | 同名 png | 已交付 |
-| 3 | 编辑 · 重算完成 | `pages/P06-e-edit-recalc-done.html` | 同名 png | 已交付 |
+| 3 | 编辑 · 重算完成 | `pages/P06-e-edit-recalc-done.html` | 同名 png | 已修订：只保留导航栏上的「完成」 |
 | 3 | 编辑 · 重算失败 | `pages/P06-f-edit-recalc-fail.html` | 同名 png | 已交付 |
 | 3 | 差异预览 | `pages/P04-b-diff.html` | 同名 png | 已交付 |
 | 3 | 应用确认半屏 | `pages/P04-c-apply-confirm.html` | 同名 png | 已交付 |
-| 4 | 地图 | `pages/P07-a-map.html` | 同名 png | 待交付 |
-| 4 | 地图降级 | `pages/P07-b-map-fallback.html` | 同名 png | 待交付 |
-| 4 | 景点 | `pages/P08-a-poi-sight.html` | 同名 png | 待交付 |
-| 4 | 餐饮 | `pages/P08-b-poi-food.html` | 同名 png | 待交付 |
-| 4 | 酒店（参考价，无预订） | `pages/P08-c-poi-hotel.html` | 同名 png | 待交付 |
-| 4 | 地点异常 | `pages/P08-d-poi-closed.html` | 同名 png | 待交付 |
-| 4 | 预算 | `pages/P09-a-budget.html` | 同名 png | 待交付 |
-| 4 | 预算未知项 | `pages/P09-b-budget-unknown.html` | 同名 png | 待交付 |
-| 4 | 预算空状态 | `pages/P09-c-budget-empty.html` | 同名 png | 待交付 |
+| 4 | 地图 | `pages/P07-a-map.html` | 同名 png | 已交付 |
+| 4 | 地图降级 | `pages/P07-b-map-fallback.html` | 同名 png | 已交付 |
+| 4 | 景点 | `pages/P08-a-poi-sight.html` | 同名 png | 已交付 |
+| 4 | 餐饮 | `pages/P08-b-poi-food.html` | 同名 png | 已交付 |
+| 4 | 酒店（参考价，无预订） | `pages/P08-c-poi-hotel.html` | 同名 png | 已交付 |
+| 4 | 地点异常 | `pages/P08-d-poi-closed.html` | 同名 png | 已交付 |
+| 4 | 预算 | `pages/P09-a-budget.html` | 同名 png | 已交付 |
+| 4 | 预算未知项 | `pages/P09-b-budget-unknown.html` | 同名 png | 已交付 |
+| 4 | 预算空状态 | `pages/P09-c-budget-empty.html` | 同名 png | 已交付 |
 | 5 | 即将出发 | `pages/P10-a-trips-upcoming.html` | 同名 png | 待交付 |
 | 5 | 草稿 | `pages/P10-b-trips-draft.html` | 同名 png | 待交付 |
 | 5 | 已完成 | `pages/P10-c-trips-done.html` | 同名 png | 待交付 |
@@ -166,13 +166,14 @@ npm run shots
 ## 7. 待确认
 
 1. **Logo / Slogan。** 仍无正式 Logo。启动页暂留「一句话，说走就走」，并注明 1.5 秒内自动进入引导。
-2. **导航尚未交付。** 出行中的「导航」、预览里的迷你地图要等批次 4 的地图页，当前不是链接。「查看行程」已进入行程详情。
-3. **地图服务商**（PRD Q4）。
-4. **登录方式**（PRD Q5）：本机号码、验证码、微信、Apple。
-5. **深色模式**（PRD Q16）：token 按浅色一套，MVP 可以不做。
-6. **语音输入**（PRD Q14）。
-7. **离线编辑**（PRD Q13）：按离线只读。
-8. **字体。** 设计指定苹方；截图用 Noto Sans CJK SC。是否再引入品牌字体未定。
+2. **示例数据。** 杭州两日游的时间、距离和价格写在 `prototype/sample-data.js`。灵隐寺到楼外楼按约 5 公里打车，楼外楼到白堤才用步行。
+3. **地图上的「导航」。** 详情页和首页的「导航」、预览里的迷你地图进入地图页。地图底栏的「导航」表示唤起外部地图，原型里不离开当前页。
+4. **地图服务商**（PRD Q4）。
+5. **登录方式**（PRD Q5）：本机号码、验证码、微信、Apple。
+6. **深色模式**（PRD Q16）：token 按浅色一套，MVP 可以不做。
+7. **语音输入**（PRD Q14）。
+8. **离线编辑**（PRD Q13）：按离线只读。
+9. **字体。** 设计指定苹方；截图用 Noto Sans CJK SC。是否再引入品牌字体未定。
 
 ## 8. Figma 归档
 

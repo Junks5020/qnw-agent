@@ -18,4 +18,5 @@ document.write(`<svg hidden width="0" height="0">
   <symbol id="i-stay" viewBox="0 0 24 24"><path d="M4 18V10.5A2.5 2.5 0 0 1 6.5 8H14v10M4 18h16M14 18v-6h3.2a2.8 2.8 0 0 1 2.8 2.8V18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><circle cx="8.2" cy="12" r="0.9" fill="currentColor"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 7.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 15h16l-1.4-4.2a2 2 0 0 0-1.9-1.3H7.3a2 2 0 0 0-1.9 1.3L4 15Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M6 15v2.2M18 15v2.2" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><circle cx="7.5" cy="15" r="0.9" fill="currentColor"/><circle cx="16.5" cy="15" r="0.9" fill="currentColor"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M5 7h14M9.5 7V5h5v2M8 7l.7 12h6.6L16 7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>`);

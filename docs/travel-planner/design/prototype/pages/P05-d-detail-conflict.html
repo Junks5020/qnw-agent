@@ -9,6 +9,8 @@
 </head>
 <body>
 <script src="../icons.js"></script>
+<script src="../sample-data.js"></script>
+
 <main class="screen">
 
 <div class="sysbar"><span>9:41</span><span>去哪玩</span></div>
@@ -20,30 +22,29 @@
     <a class="daytab" href="P05-b-detail-empty.html"><span class="day-mark" data-day="2">2</span><span>10/25 周日</span></a>
   </div>
   <article class="itinerary is-flat">
-    <span class="type-ico"><svg class="icon" aria-hidden="true"><use href="#i-sight"/></svg></span>
-    <time class="itinerary-time">11:30</time>
+    <span class="type-ico"><svg class="icon" aria-hidden="true"><use href="#i-food"/></svg></span>
+    <time class="itinerary-time" data-qnw="d1.lou">11:30</time>
     <div>
-      <div class="itinerary-title">西湖</div>
-      <div class="itinerary-meta">建议停留 2 小时</div>
+      <a class="itinerary-title" href="P08-b-poi-food.html">楼外楼</a>
+      <div class="itinerary-meta" data-qnw="d1.louStay">餐饮 · 建议停留 1.5 小时 · 人均 ¥120–180 参考</div>
     </div>
   </article>
   <div class="banner banner-warning">
     <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
     <div>
       <strong>时间冲突</strong>
-      <p>西湖和楼外楼都从 11:30 开始，午餐会迟到。</p>
+      <p>午餐要到 13:00 才结束，西湖 12:30 已经开始。</p>
     </div>
   </div>
   <article class="itinerary is-flat">
-    <span class="type-ico"><svg class="icon" aria-hidden="true"><use href="#i-food"/></svg></span>
-    <time class="itinerary-time">11:30</time>
+    <span class="type-ico"><svg class="icon" aria-hidden="true"><use href="#i-sight"/></svg></span>
+    <time class="itinerary-time">12:30</time>
     <div>
-      <div class="itinerary-title">楼外楼</div>
-      <div class="itinerary-meta">餐饮 · 人均 ¥120–180 参考</div>
+      <a class="itinerary-title" href="P07-a-map.html">西湖</a>
+      <div class="itinerary-meta">建议停留 2 小时 · <a href="P07-a-map.html">导航</a></div>
     </div>
   </article>
   <a class="btn btn-secondary" href="P04-b-diff.html">一键修复</a>
-  <p class="dim">修复会先给出差异，确认后才改行程。</p>
 </div>
 <div class="dock">
   <a class="btn btn-secondary" href="P04-b-diff.html">问 AI</a>

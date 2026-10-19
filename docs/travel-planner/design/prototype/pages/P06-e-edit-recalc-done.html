@@ -9,6 +9,8 @@
 </head>
 <body>
 <script src="../icons.js"></script>
+<script src="../sample-data.js"></script>
+
 <main class="screen">
 
 <div class="sysbar"><span>9:41</span><span>去哪玩</span></div>
@@ -21,27 +23,26 @@
       <div class="itinerary-title">灵隐寺</div>
       <div class="itinerary-meta">建议 2 小时</div>
     </div>
-    <span class="danger-text">删除</span>
+    <button class="icon-btn" type="button" aria-label="删除"><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg></button>
   </article>
-  <div class="transport"><svg class="icon" aria-hidden="true"><use href="#i-walk"/></svg><span>步行 18 分钟 · 1.2 公里</span></div>
+  <div class="transport"><svg class="icon" aria-hidden="true"><use href="#i-car"/></svg><span data-qnw="d1.lingyinToLake">打车 22 分钟 · 6 公里</span></div>
   <article class="itinerary is-edit">
     <span class="handle" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></span>
-    <time class="itinerary-time">11:20</time>
+    <time class="itinerary-time" data-qnw="d1.movedLake">11:22</time>
     <div>
       <div class="itinerary-title">西湖</div>
       <div class="itinerary-meta">建议 2 小时 · 时间已更新</div>
     </div>
-    <span class="danger-text">删除</span>
+    <button class="icon-btn" type="button" aria-label="删除"><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg></button>
   </article>
   <div class="toast" role="status">
     <span>时间与预算已更新</span>
   </div>
-  <p class="t-caption">当天参考 ¥200–360，仍是区间，不是报价。</p>
+  <p class="t-caption" data-qnw="d1.dayCost">今天市内约 15 公里 · 花费 ¥980–1,400 参考</p>
 </div>
 <div class="dock">
   <a class="btn btn-text" href="P06-a-edit-drag.html">撤销</a>
   <span class="btn btn-text is-off">重做</span>
-  <a class="btn btn-primary" href="P05-a-detail-ongoing.html">完成</a>
 </div>
 
 </main>

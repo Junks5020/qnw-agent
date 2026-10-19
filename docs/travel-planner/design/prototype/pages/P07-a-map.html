@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=390">
+  <title>地图 · 去哪玩</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../components.css">
+</head>
+<body>
+<script src="../icons.js"></script>
+<script src="../sample-data.js"></script>
+<main class="screen">
+
+<div class="sysbar"><span>9:41</span><span>去哪玩</span></div>
+<header class="navbar"><a class="navbar-back" href="P05-a-detail-ongoing.html" aria-label="返回"><svg class="icon" aria-hidden="true"><use href="#i-back"/></svg></a><div class="navbar-title">杭州两日游</div><span class="navbar-action"></span></header>
+<div class="chip-bar">
+  <div class="demo-row">
+    <span class="chip is-selected">全部</span>
+    <span class="chip">第 1 天</span>
+    <span class="chip">第 2 天</span>
+  </div>
+</div>
+<div class="map-canvas" role="img" aria-label="路线占位，灰阶连线">
+  <svg class="map-routes" viewBox="0 0 320 360" aria-hidden="true">
+    <path class="route-d1" d="M78 70 C 110 120, 150 150, 168 190 S 150 250, 140 290"/>
+    <path class="route-d2" d="M210 300 C 240 270, 250 240, 230 210"/>
+  </svg>
+  <span class="pin is-selected" style="left:18%;top:14%">1</span>
+  <span class="pin" style="left:46%;top:42%">2</span>
+  <span class="pin" style="left:38%;top:62%">3</span>
+  <span class="pin" style="left:36%;top:78%">4</span>
+  <span class="pin" style="left:62%;top:80%">5</span>
+  <span class="pin" style="left:66%;top:54%">6</span>
+</div>
+<div class="map-sheet">
+  <p class="t-caption">第 1 天 · 深灰 · 第 2 天 · 浅灰</p>
+  <article class="itinerary is-flat">
+    <span class="stop-num is-selected">1</span>
+    <time class="itinerary-time" data-qnw="d1.lingyin">09:00</time>
+    <div>
+      <a class="itinerary-title" href="P08-a-poi-sight.html">灵隐寺</a>
+      <div class="itinerary-meta">当前选中</div>
+    </div>
+  </article>
+  <div class="transport"><svg class="icon" aria-hidden="true"><use href="#i-car"/></svg><span data-qnw="d1.toLou">打车 20 分钟 · 5 公里</span></div>
+  <article class="itinerary is-flat">
+    <span class="stop-num">2</span>
+    <time class="itinerary-time" data-qnw="d1.lou">11:30</time>
+    <div>
+      <a class="itinerary-title" href="P08-b-poi-food.html">楼外楼</a>
+      <div class="itinerary-meta" data-qnw="food.price">人均 ¥120–180 参考</div>
+    </div>
+  </article>
+  <span class="btn btn-secondary">导航</span>
+</div>
+
+</main>
+</body>
+</html>

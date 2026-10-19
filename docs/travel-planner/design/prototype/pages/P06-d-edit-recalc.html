@@ -9,6 +9,8 @@
 </head>
 <body>
 <script src="../icons.js"></script>
+<script src="../sample-data.js"></script>
+
 <main class="screen">
 
 <div class="sysbar"><span>9:41</span><span>去哪玩</span></div>
@@ -22,9 +24,9 @@
       <div class="itinerary-title">灵隐寺</div>
       <div class="itinerary-meta">建议 2 小时</div>
     </div>
-    <span class="danger-text">删除</span>
+    <button class="icon-btn" type="button" aria-label="删除"><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg></button>
   </article>
-  <div class="transport"><svg class="icon" aria-hidden="true"><use href="#i-walk"/></svg><span>正在重算时间…</span></div>
+  <div class="transport"><svg class="icon" aria-hidden="true"><use href="#i-car"/></svg><span>正在重算时间…</span></div>
   <div class="skel"></div>
   <article class="itinerary is-edit">
     <span class="handle" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></span>
@@ -33,9 +35,8 @@
       <div class="itinerary-title">西湖</div>
       <div class="itinerary-meta">时间待更新</div>
     </div>
-    <span class="danger-text">删除</span>
+    <button class="icon-btn" type="button" aria-label="删除"><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg></button>
   </article>
-  <p class="dim">重算只挡住交通段，可以继续拖别的地点。</p>
 </div>
 <div class="dock">
   <span class="btn btn-text is-off">撤销</span>
