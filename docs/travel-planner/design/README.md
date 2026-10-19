@@ -143,8 +143,8 @@ npm run shots
 | 4 | 地点 · 加载失败 | `pages/P08-g-poi-error.html` | 同名 png | 已交付 |
 | 4 | 预算 · 加载 | `pages/P09-d-budget-loading.html` | 同名 png | 已交付 |
 | 4 | 预算 · 加载失败 | `pages/P09-e-budget-error.html` | 同名 png | 已交付 |
-| 5 | 即将出发 | `pages/P10-a-trips-upcoming.html` | 同名 png | 已交付：3 天后出发，以及出行中 |
-| 5 | 草稿 | `pages/P10-b-trips-draft.html` | 同名 png | 已交付 |
+| 5 | 即将出发 | `pages/P10-a-trips-upcoming.html` | 同名 png | 已修订：杭州两日游与厦门三日游 |
+| 5 | 草稿 | `pages/P10-b-trips-draft.html` | 同名 png | 已修订：成都美食，避免和杭州重复 |
 | 5 | 已完成 | `pages/P10-c-trips-done.html` | 同名 png | 已交付：更早的杭州周末 |
 | 5 | 行程空状态 | `pages/P10-d-trips-empty.html` | 同名 png | 已交付 |
 | 5 | 未登录本地草稿 | `pages/P10-e-trips-local.html` | 同名 png | 已交付 |

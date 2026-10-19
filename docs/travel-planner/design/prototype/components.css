@@ -1110,6 +1110,25 @@ button {
   color: var(--text-tertiary);
 }
 
+.trip-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.trip-head {
+  display: flex;
+  gap: var(--space-8);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trip-head .tag {
+  flex: none;
+}
+
 .count-num {
   margin: var(--space-4) 0;
   font-size: var(--font-display-size);
