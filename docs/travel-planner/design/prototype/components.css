@@ -1083,6 +1083,10 @@ button {
   margin: var(--space-4) 0 0;
 }
 
+.card.has-action > .btn {
+  margin-top: var(--space-12);
+}
+
 .home-input {
   display: block;
   padding: var(--space-16);

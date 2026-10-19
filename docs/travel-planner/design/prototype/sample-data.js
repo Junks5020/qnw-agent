@@ -14,8 +14,13 @@
    酒店在湖滨。到各点：灵隐 7、楼外楼 3.8、白堤 3、河坊街 1.6、美院 3.1、
    游船码头 1（同在湖滨），平均 3.3 公里。
    P06-e 去掉楼外楼后：7+6+3 = 16 公里，花费去掉午餐 240–360。
-   行程列表以 10/21 为今天（距 10/24 杭州还有 3 天）。
-   厦门 10/20–10/22 正在进行，今天是第 2 天，下一站南普陀。
+   原型里的今天是 10/21。出行中是厦门三日游第 2 天，下一站南普陀。
+   杭州两日游在 10/24–10/25，还有 3 天，不算今天。
+   第 2 天：09:20 从中山路出发，+15 分、4 公里到 10:10 南普陀（停 1.5 小时），
+   步行 10 分、700 米到 11:50 厦门大学（停 1.5 小时），
+   打车 18 分、6 公里到 13:40 曾厝垵，打车 25 分、8 公里到 15:40 回酒店。
+   当天约 19 公里。可离线的是厦门、杭州两日游、杭州周末这三趟已保存行程；
+   成都草稿未保存。未登录只缓存本地那一趟杭州。
    成都草稿排在 11/6–11/9，避免和这两趟重叠。 */
 (function () {
   var data = {
@@ -53,7 +58,8 @@
     "d1.hotel": "15:30",
     "d1.hotelStay": "住宿 · 每晚 ¥680–860 参考",
     "d1.dayCost": "今天约 15 公里 · 花费 ¥1,130–1,530 参考",
-    "d1.movedCost": "今天约 16 公里 · 花费 ¥890–1,170 参考",
+    "d1.planCost": "这一天约 15 公里 · 花费 ¥1,130–1,530 参考",
+    "d1.movedCost": "这一天约 16 公里 · 花费 ¥890–1,170 参考",
     "home.nextLeg": "打车 25 分钟 · 7 公里 · 下一站灵隐寺",
     "pretrip.d1": "灵隐寺 · 楼外楼 · 西湖",
     "pretrip.d2": "河坊街 · 中国美术学院 · 西湖游船",
@@ -89,22 +95,37 @@
     "hz.meta": "杭州 · 10/24–10/25 · 2 天 · 可离线看",
     "xm.title": "厦门三日游",
     "xm.status": "出行中",
-    "xm.when": "厦门 · 10/20–10/22 · 3 天",
+    "xm.when": "厦门 · 10/20–10/22 · 3 天 · 可离线看",
     "xm.next": "今天第 2 天 · 下一站南普陀",
+    "xm.budgetLine": "10/20–10/22 · 2 人 · 今天第 2 天 · 多云 26°",
+    "xm.homeDate": "10月21日 · 厦门 · 多云 26°",
+    "xm.homeTitle": "厦门三日游 · 第 2 天",
+    "xm.departIn": "15 分钟",
+    "xm.nextWhen": "下一站 · 10:10",
+    "xm.nextName": "南普陀寺",
+    "xm.nextStay": "建议 1.5 小时",
+    "xm.homeLeg": "打车 15 分钟 · 4 公里 · 下一站南普陀寺",
+    "xm.toTemple": "打车 15 分钟 · 4 公里",
+    "xm.toUni": "步行 10 分钟 · 700 米",
+    "xm.toZeng": "打车 18 分钟 · 6 公里",
+    "xm.toHotel": "打车 25 分钟 · 8 公里",
+    "xm.dayCost": "今天约 19 公里 · 花费 ¥200–320 参考",
+    "xm.lunch": "餐饮 · 人均 ¥60–90 参考",
+    "xm.addr": "厦门市思明区思明南路 515 号",
     "done.title": "杭州周末",
     "done.status": "已完成",
-    "done.meta": "杭州 · 9/20–9/21 · 2 天",
+    "done.meta": "杭州 · 9/20–9/21 · 2 天 · 可离线看",
     "draft.title": "成都美食",
     "draft.status": "草稿",
     "draft.meta": "成都 · 11/6–11/9 · 4 天 · 还没保存",
     "local.title": "杭州两日游",
     "local.status": "本地草稿",
-    "local.meta": "未登录 · 10/24–10/25 · 2 天",
+    "local.meta": "未登录 · 10/24–10/25 · 2 天 · 可离线看",
     "profile.trips": "已规划 3 趟 · 去过 1 座城市",
     "profile.name": "旅行者",
     "profile.companion": "同行人 · 和朋友",
-    "profile.offline": "已缓存 3 趟行程",
-    "profile.offlineGuest": "已缓存 1 趟 · 只在这台手机",
+    "profile.offline": "",
+    "profile.offlineGuest": "",
     "budget.share": "预估 ¥1,780–2,450 参考",
     "lake.addr": "杭州市西湖区白堤",
     "lake.phone": "0571-87179617",
@@ -112,6 +133,15 @@
     "lake.hours": "全天开放 · 白堤",
     "lake.reason": "从楼外楼沿白堤步行约 12 分钟、800 米。"
   };
+  function offlineCount(keys) {
+    var n = 0;
+    keys.forEach(function (key) {
+      if (String(data[key] || "").indexOf("可离线看") !== -1) n += 1;
+    });
+    return n;
+  }
+  data["profile.offline"] = "已缓存 " + offlineCount(["hz.meta", "xm.when", "done.meta"]) + " 趟行程";
+  data["profile.offlineGuest"] = "已缓存 " + offlineCount(["local.meta"]) + " 趟 · 只在这台手机";
   window.QNW = data;
   function fill() {
     document.querySelectorAll("[data-qnw]").forEach(function (el) {

@@ -104,17 +104,22 @@ npm run shots
 | 2 | 偏好 | `pages/P01-c-preferences.html` | `screenshots/P01-c-preferences.png` | 已修订：首行与导航留出间距 |
 | 2 | 首页 · 空 | `pages/P02-a-home-empty.html` | `screenshots/P02-a-home-empty.png` | 已修订：四个快捷标签都完整可见 |
 | 2 | 首页 · 行前 | `pages/P02-d-home-pretrip.html` | `screenshots/P02-d-home-pretrip.png` | 已修订：四个快捷标签都完整可见 |
-| 2 | 首页 · 出行中 | `pages/P02-b-home-ongoing.html` | `screenshots/P02-b-home-ongoing.png` | 已修订：四个快捷标签都完整可见；导航进入地图 |
+| 2 | 首页 · 出行中 | `pages/P02-b-home-ongoing.html` | `screenshots/P02-b-home-ongoing.png` | 已修订：今天是 10/21 的厦门第 2 天；导航打开地图选择 |
+| 2 | 首页 · 导航 | `pages/P02-e-nav-sheet.html` | 同名 png | 已交付：高德 / 百度 / Apple / 取消 |
 | 2 | 首页 · 加载 / 离线 | `pages/P02-c-home-offline.html` | `screenshots/P02-c-home-offline.png` | 已交付 |
 | 2 | 对话 · 首次 | `pages/P03-a-chat-welcome.html` | `screenshots/P03-a-chat-welcome.png` | 已交付 |
 | 2 | 对话 · 追问（标 1/3） | `pages/P03-b-chat-clarify.html` | `screenshots/P03-b-chat-clarify.png` | 已交付 |
 | 2 | 对话 · 摘要卡 | `pages/P03-c-chat-summary.html` | `screenshots/P03-c-chat-summary.png` | 已修订：每行右侧箭头，可点进修改 |
 | 2 | 对话 · 生成中 | `pages/P03-d-chat-generating.html` | `screenshots/P03-d-chat-generating.png` | 已交付 |
 | 2 | 对话 · 失败 / 断网 | `pages/P03-e-chat-error.html` | `screenshots/P03-e-chat-error.png` | 已交付 |
-| 2 | 行程预览 | `pages/P04-a-preview.html` | `screenshots/P04-a-preview.png`、`P04-a-preview-full.png` | 已修订：按天卡、地图占位、预算分项、说明、反馈 |
+| 2 | 行程预览 | `pages/P04-a-preview.html` | `screenshots/P04-a-preview.png`、`P04-a-preview-full.png` | 已修订：导航打开地图选择，小地图仍进地图 |
+| 2 | 行程预览 · 导航 | `pages/P04-d-nav-sheet.html` | 同名 png | 已交付：不先打开地图 |
 | 2 | 登录半屏 | `pages/P13-a-login.html` | `screenshots/P13-a-login.png` | 已交付 |
 | 2 | 保存成功 | `pages/P13-b-save-success.html` | `screenshots/P13-b-save-success.png` | 已修订：查看行程、回到首页、开启提醒 |
-| 3 | 详情 · 出行中 | `pages/P05-a-detail-ongoing.html` | 同名 png | 已交付 |
+| 3 | 详情 · 出行中 | `pages/P05-a-detail-ongoing.html` | 同名 png | 已修订：10/21 厦门第 2 天，下一站南普陀 |
+| 3 | 出行中 · 导航 | `pages/P05-f-xiamen-nav.html` | 同名 png | 已交付 |
+| 3 | 详情 · 杭州行前 | `pages/P05-e-detail-hangzhou.html` | 同名 png | 已修订：10/24 的杭州计划，不标今天 |
+| 3 | 杭州 · 导航 | `pages/P05-g-hangzhou-nav.html` | 同名 png | 已交付 |
 | 3 | 详情 · 某天无条目 | `pages/P05-b-detail-empty.html` | 同名 png | 已交付 |
 | 3 | 详情 · 离线只读 | `pages/P05-c-detail-offline.html` | 同名 png | 已交付 |
 | 3 | 详情 · 冲突 | `pages/P05-d-detail-conflict.html` | 同名 png | 已修订：冲突时间仍重叠，但先后顺序不倒 |
@@ -122,7 +127,7 @@ npm run shots
 | 3 | 编辑 · 待安排池 | `pages/P06-b-edit-pool.html` | 同名 png | 已交付 |
 | 3 | 编辑 · 撤销 Toast | `pages/P06-c-edit-undo.html` | 同名 png | 已交付 |
 | 3 | 编辑 · 重算中 | `pages/P06-d-edit-recalc.html` | 同名 png | 已交付 |
-| 3 | 编辑 · 重算完成 | `pages/P06-e-edit-recalc-done.html` | 同名 png | 已修订：去掉楼外楼后当天约 16 公里、¥890–1,170 |
+| 3 | 编辑 · 重算完成 | `pages/P06-e-edit-recalc-done.html` | 同名 png | 已修订：这一天约 16 公里、¥890–1,170 |
 | 3 | 编辑 · 重算失败 | `pages/P06-f-edit-recalc-fail.html` | 同名 png | 已交付 |
 | 3 | 差异预览 | `pages/P04-b-diff.html` | 同名 png | 已修订：说明放在手机框外 |
 | 3 | 应用确认半屏 | `pages/P04-c-apply-confirm.html` | 同名 png | 已修订：删除的是原行程里的楼外楼 |
@@ -144,29 +149,34 @@ npm run shots
 | 4 | 地点 · 加载失败 | `pages/P08-g-poi-error.html` | 同名 png | 已交付 |
 | 4 | 预算 · 加载 | `pages/P09-d-budget-loading.html` | 同名 png | 已交付 |
 | 4 | 预算 · 加载失败 | `pages/P09-e-budget-error.html` | 同名 png | 已交付 |
-| 5 | 出行中 | `pages/P10-f-trips-ongoing.html` | 同名 png | 已交付：厦门三日游单独一栏 |
+| 5 | 出行中 | `pages/P10-f-trips-ongoing.html` | 同名 png | 已修订：卡片打开厦门当天详情 |
 | 5 | 即将出发 | `pages/P10-a-trips-upcoming.html` | 同名 png | 已修订：只保留还没出发的杭州两日游 |
 | 5 | 草稿 | `pages/P10-b-trips-draft.html` | 同名 png | 已修订：成都美食，避免和杭州重复 |
-| 5 | 已完成 | `pages/P10-c-trips-done.html` | 同名 png | 已交付：更早的杭州周末 |
+| 5 | 已完成 | `pages/P10-c-trips-done.html` | 同名 png | 已修订：标可离线看 |
 | 5 | 行程空状态 | `pages/P10-d-trips-empty.html` | 同名 png | 已修订：分段含出行中 |
-| 5 | 未登录本地草稿 | `pages/P10-e-trips-local.html` | 同名 png | 已交付 |
+| 5 | 未登录本地草稿 | `pages/P10-e-trips-local.html` | 同名 png | 已修订：这一趟标可离线看 |
 | 5 | 行程 · 加载 | `pages/P10-g-trips-loading.html` | 同名 png | 已交付：卡片骨架 |
-| 5 | 行程 · 同步失败 | `pages/P10-h-trips-sync-fail.html` | 同名 png | 已交付：未同步 |
+| 5 | 行程 · 同步失败 | `pages/P10-h-trips-sync-fail.html` | 同名 png | 已修订：同一组分段，出行中和即将出发分开 |
 | 5 | 通知列表 | `pages/P11-a-notifications.html` | 同名 png | 已交付：天气、闭馆、交通 |
 | 5 | 调整方案 | `pages/P11-b-adjust-sheet.html` | 同名 png | 已交付 |
 | 5 | 定位权限半屏 | `pages/P11-c-location-permission.html` | 同名 png | 已修订：说明和按钮之间留出间距；仅使用期间 |
 | 5 | 通知未开启 | `pages/P11-d-notify-off.html` | 同名 png | 已交付 |
 | 5 | 消息 · 空 | `pages/P11-e-notifications-empty.html` | 同名 png | 已交付 |
 | 5 | 消息 · 加载 | `pages/P11-f-notifications-loading.html` | 同名 png | 已交付 |
-| 5 | 个人中心 | `pages/P12-a-profile.html` | 同名 png | 已修订：头像、离线数据、同行人、意见反馈 |
-| 5 | 个人中心未登录 | `pages/P12-b-profile-guest.html` | 同名 png | 已修订：与已登录页同一组入口 |
+| 5 | 个人中心 | `pages/P12-a-profile.html` | 同名 png | 已修订：账号与安全、灰色清除缓存 |
+| 5 | 个人中心未登录 | `pages/P12-b-profile-guest.html` | 同名 png | 已修订：清除缓存走同一确认 |
+| 5 | 账号与安全 | `pages/P12-c-account-security.html` | 同名 png | 已交付：导出我的数据、注销账号 |
+| 5 | 注销账号 | `pages/P12-d-delete-account.html` | 同名 png | 已交付：验证码或密码，15 天内可撤销 |
+| 5 | 清除缓存确认 | `pages/P12-e-clear-cache-confirm.html` | 同名 png | 已交付：确认不用红色 |
 | 5 | 只读分享链接 | `pages/P14-a-share-link.html` | 同名 png | 已修订：总额带参考 |
 | 5 | 分享长图 | `pages/P14-b-share-image.html` | 同名 png | 已修订：二维码标示意 |
 | 5 | 分享面板 | `pages/P14-c-share-sheet.html` | 同名 png | 已交付：复制链接、微信、生成长图 |
 
-路径相对 `prototype/`。示例数据仍是上海出发、杭州两日游（10/24–10/25，2 人，舒适档）。
+路径相对 `prototype/`。示例数据从上海出发。原型里的今天是 10/21：出行中是厦门三日游第 2 天，杭州两日游在 10/24–10/25，还有 3 天。消息列表里的「今天」是提醒到达的那天，内容仍是 3 天后的杭州。编辑页说「这一天」，指正在改的那一天，不是日历上的今天。
 
-行前首页不是今日驾驶舱：倒计时、行程摘要、「查看行程」「继续问 AI」。出行中才进入今日视图。
+可离线的已保存行程是厦门、杭州两日游、杭州周末，所以个人中心写已缓存 3 趟。成都草稿未保存。未登录只缓存本地那一趟杭州。
+
+行前首页不是今日驾驶舱：倒计时、行程摘要、「查看行程」「继续问 AI」。出行中才进入今日视图。厦门详情只展开第 2 天，当天地点没有单独的地点页。导航在当前页打开高德 / 百度 / Apple / 取消，小地图仍进入地图页。
 
 ## 6. 关键设计决策
 
@@ -175,7 +185,7 @@ npm run shots
 3. **按天用灰度阶。** 日标是 1–4 的灰圆，数字区分。
 4. **可信度。** AI 内容旁放「AI 生成 · 仅供参考」。价格写区间并标「参考」。
 5. **不接预订。** 地点卡没有「去预订」。后续详情页底部只有收藏、替换、加入行程。
-6. **人工确认。** 删除一天用半屏：次按钮 + 危险红按钮，不用蓝。差异预览里，删除用危险红并标「删除」，新增用成功绿并标「新增」，调整只用灰底和「调整」文字，不用品牌蓝铺底。
+6. **人工确认。** 删除一天用半屏：次按钮 + 危险红按钮，不用蓝。差异预览里，删除用危险红并标「删除」，新增用成功绿并标「新增」，调整只用灰底和「调整」文字，不用品牌蓝铺底。红色只留给已停业、超预算、差异里的删除，以及注销确认。清除缓存是灰色次按钮，确认半屏也不用红。
 7. **图片是灰色占位。** 地图页（批次 4）用静态灰阶占位，不引入彩色地图。
 
 ## 7. 待确认
