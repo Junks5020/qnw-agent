@@ -593,12 +593,12 @@ flowchart TD
 
 | 批次 | 页面 | 必须包含的状态 / 验收要点 | 原型页面路径 | 截图 | 状态 |
 |---|---|---|---|---|---|
-| 1 | Foundations | 颜色、间距、圆角、字体 Tokens；Button、Chip、NavBar、TabBar、ItineraryItem、TransportSeg、POICard、Banner、AIBadge | `prototype/tokens.css`、`prototype/components.html` | `screenshots/foundations.png`、`screenshots/components.png` | 有条件通过（2ce6450，待修 TabBar 下划线、删除按钮用红色、TabBar 加「消息」） |
-| 2 | P01 启动 / 引导 / 偏好 | 启动、引导、偏好快速设置 | 待填 | 待填 | 待交付 |
-| 2 | P02 首页 | 空状态、行前（倒计时 + 行程摘要 +「查看行程」「继续问 AI」，不做成驾驶舱）、出行中今日视图、加载/离线 | 待填 | 待填 | 待交付 |
-| 2 | P03 AI 对话 | 首次进入、追问（标 1/3 轮）、需求摘要卡、生成中、失败/断网 | 待填 | 待填 | 待交付 |
-| 2 | P04 行程预览 | 完整预览；顶部或摘要旁固定「AI 生成·仅供参考」 | 待填 | 待填 | 待交付 |
-| 2 | P13 登录 | 保存前登录半屏；保存成功页再次出现「AI 生成·仅供参考」 | 待填 | 待填 | 待交付 |
+| 1 | Foundations | 颜色、间距、圆角、字体 Tokens；Button、Chip、NavBar、TabBar、ItineraryItem、TransportSeg、POICard、Banner、AIBadge | `prototype/foundations.html`、`prototype/components.html`、`prototype/tokens.css` | `screenshots/foundations.png`、`screenshots/components.png` | 已修订（五 Tab、无下划线、删除用危险红） |
+| 2 | P01 启动 / 引导 / 偏好 | 启动、引导、偏好快速设置 | `prototype/pages/P01-a-splash.html`、`P01-b-onboarding.html`、`P01-c-preferences.html` | `screenshots/P01-a-splash.png`、`P01-b-onboarding.png`、`P01-c-preferences.png` | 已交付 |
+| 2 | P02 首页 | 空状态、行前（倒计时 + 行程摘要 +「查看行程」「继续问 AI」，不做成驾驶舱）、出行中今日视图、加载/离线 | `prototype/pages/P02-a-home-empty.html`、`P02-d-home-pretrip.html`、`P02-b-home-ongoing.html`、`P02-c-home-offline.html` | 同名 png | 已交付 |
+| 2 | P03 AI 对话 | 首次进入、追问（标 1/3 轮）、需求摘要卡、生成中、失败/断网 | `prototype/pages/P03-a-chat-welcome.html`、`P03-b-chat-clarify.html`、`P03-c-chat-summary.html`、`P03-d-chat-generating.html`、`P03-e-chat-error.html` | 同名 png | 已交付 |
+| 2 | P04 行程预览 | 完整预览；顶部或摘要旁固定「AI 生成·仅供参考」 | `prototype/pages/P04-a-preview.html` | `screenshots/P04-a-preview.png` | 已交付 |
+| 2 | P13 登录 | 保存前登录半屏；保存成功页再次出现「AI 生成·仅供参考」 | `prototype/pages/P13-a-login.html`、`P13-b-save-success.html` | `screenshots/P13-a-login.png`、`P13-b-save-success.png` | 已交付 |
 | 3 | P05 行程详情 | 按天时间轴、出行中、某天无条目、离线只读、冲突提示 | 待填 | 待填 | 待交付 |
 | 3 | P06 行程编辑 | 拖拽、待安排池、撤销 Toast、重算中、重算完成 Toast「时间与预算已更新」、失败可重试 | 待填 | 待填 | 待交付 |
 | 3 | P04-b 对话修改 | 差异预览（增绿 / 删红 / 移蓝 + 文字标签）；变更多时用半屏「应用确认」 | 待填 | 待填 | 待交付 |

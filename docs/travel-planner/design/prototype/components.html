@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="components.css">
 </head>
 <body>
-  <svg hidden>
+  <svg hidden width="0" height="0">
     <symbol id="i-back" viewBox="0 0 24 24">
       <path d="M15 18 9 12l6-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
@@ -26,6 +26,10 @@
     <symbol id="i-user" viewBox="0 0 24 24">
       <circle cx="12" cy="8" r="3.25" fill="none" stroke="currentColor" stroke-width="1.75"/>
       <path d="M5.5 19.5a6.5 6.5 0 0 1 13 0" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24">
+      <path d="M6 9a6 6 0 0 1 12 0c0 7 2.5 7 2.5 9h-17C3.5 16 6 16 6 9Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+      <path d="M10 20.5h4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
     </symbol>
     <symbol id="i-grip" viewBox="0 0 24 24">
       <circle cx="9" cy="7" r="1.15" fill="currentColor"/>
@@ -83,6 +87,10 @@
         <span class="spinner" aria-hidden="true"></span>
         生成中
       </button>
+      <p class="state-label">Danger · filled</p>
+      <button class="btn btn-danger" type="button">删除</button>
+      <p class="state-label">Danger · line</p>
+      <button class="btn btn-danger-line" type="button">删除</button>
     </section>
 
     <section class="spec" id="chip">
@@ -112,46 +120,60 @@
 
     <section class="spec" id="tabbar">
       <h2>TabBar</h2>
-      <p class="spec-note">四个标签：首页、行程、AI、我的。选中项为蓝色。</p>
-      <p class="state-label">首页 selected</p>
+      <p class="spec-note">五个普通标签：首页、行程、AI、消息、我的。AI 居中，不是悬浮按钮。选中为蓝。消息未读角标为危险红。</p>
+      <p class="state-label">首页 selected · 消息未读</p>
       <div class="chrome">
         <nav class="tabbar" aria-label="首页选中">
           <a class="tab is-selected" href="#tabbar">
-            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-home"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>
             首页
           </a>
           <a class="tab" href="#tabbar">
-            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-trip"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-trip"/></svg>
             行程
           </a>
           <a class="tab" href="#tabbar">
-            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-ai"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-ai"/></svg>
             AI
           </a>
           <a class="tab" href="#tabbar">
-            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-user"/></svg>
+            <span class="tab-ico">
+              <svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg>
+              <span class="tab-badge">2</span>
+            </span>
+            消息
+          </a>
+          <a class="tab" href="#tabbar">
+            <svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>
             我的
           </a>
         </nav>
         <div class="home-indicator" aria-hidden="true"></div>
       </div>
-      <p class="state-label">AI selected</p>
+      <p class="state-label">AI selected · 消息未读</p>
       <div class="chrome">
         <nav class="tabbar" aria-label="AI 选中">
           <a class="tab" href="#tabbar">
-            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-home"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>
             首页
           </a>
           <a class="tab" href="#tabbar">
-            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-trip"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-trip"/></svg>
             行程
           </a>
           <a class="tab is-selected" href="#tabbar">
-            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-ai"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-ai"/></svg>
             AI
           </a>
           <a class="tab" href="#tabbar">
-            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-user"/></svg>
+            <span class="tab-ico">
+              <svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg>
+              <span class="tab-badge">2</span>
+            </span>
+            消息
+          </a>
+          <a class="tab" href="#tabbar">
+            <svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>
             我的
           </a>
         </nav>
@@ -293,7 +315,7 @@
 
     <section class="spec" id="sheet">
       <h2>BottomSheet</h2>
-      <p class="spec-note">半屏。蒙层为黑 40%。主操作一枚蓝按钮。</p>
+      <p class="spec-note">半屏。蒙层为黑 40%。删除用危险红，不用蓝。</p>
       <div class="stage">
         <div class="stage-page">
           <div class="statusbar">
@@ -309,7 +331,7 @@
           <p>这一天的地点会回到待安排池，可以再拖回去。</p>
           <div class="sheet-actions">
             <button class="btn btn-secondary" type="button">取消</button>
-            <button class="btn btn-primary" type="button">删除</button>
+            <button class="btn btn-danger" type="button">删除</button>
           </div>
           <div class="home-indicator" aria-hidden="true"></div>
         </div>

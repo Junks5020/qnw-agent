@@ -36,11 +36,12 @@
   --status-success: #1F9D63;
   --status-warning: #B7791F;
   --status-danger: #D9363E;
-  --status-info: #2F6FEB;
   --status-success-soft: #E6F6EE;
   --status-warning-soft: #FBF3E6;
   --status-danger-soft: #FDECEC;
-  --status-info-soft: #EAF0FE;
+  /* Info reuses the accent. No separate blue. */
+  --status-info: var(--brand-accent);
+  --status-info-soft: var(--brand-accent-soft);
 
   /* Days are a gray scale. "Today" is a selected state, not a fifth hue. */
   --day-1: #111111;

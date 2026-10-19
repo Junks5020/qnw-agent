@@ -1,7 +1,7 @@
 # 去哪玩 · 移动端设计说明 v0.1
 
 > 依据：[PRD v0.1](../prd/PRD-v0.1.md) 第 5–6 章，以及主分支 §11 设计交付约定（`3e9fd0d`）
-> 日期：2026-10-19 ｜ 设计：ui ｜ 状态：批次 1 已交付。评审以 HTML 原型和 `screenshots/` 为准。
+> 日期：2026-10-19 ｜ 设计：ui ｜ 状态：批次 1 已按验收修订，批次 2 已交付。评审以 HTML 原型和 `screenshots/` 为准。
 
 ## 1. 怎么打开
 
@@ -49,7 +49,7 @@ npm run shots
 | bg | page `#F5F5F5` · surface `#FFFFFF` · muted `#F0F0F0` · muted-pressed `#E8E8E8` · skeleton `#EEEEEE` |
 | border | default `#E5E5E5` · strong `#BDBDBD` |
 | overlay | 黑 40% |
-| status | success `#1F9D63` / warning `#B7791F` / danger `#D9363E` / info `#2F6FEB`。浅底 success-soft `#E6F6EE`、warning-soft `#FBF3E6`、danger-soft `#FDECEC`、info-soft `#EAF0FE`。语义色不计入 6:3:1 |
+| status | success `#1F9D63` / warning `#B7791F` / danger `#D9363E`。浅底 success-soft `#E6F6EE`、warning-soft `#FBF3E6`、danger-soft `#FDECEC`。info 与 info-soft 复用 accent `#2563EB` / accent-soft `#EFF6FF`，不再单独用另一支蓝。语义色不计入 6:3:1 |
 | day | 1 `#111111` · 2 `#666666` · 3 `#999999` · 4 `#BDBDBD` |
 
 ### 3.2 字体
@@ -77,10 +77,10 @@ npm run shots
 
 | 组件 | 状态 |
 |---|---|
-| Button | 主按钮（蓝）、次按钮、文字、禁用、加载 |
+| Button | 主按钮（蓝）、次按钮、文字、禁用、加载、危险（实心红 / 白底红字） |
 | Chip | 默认 / 选中 |
 | NavBar | 返回、标题、右侧操作 |
-| TabBar | 首页 / 行程 / AI / 我的，含选中态 |
+| TabBar | 首页 / 行程 / AI / 消息 / 我的。AI 居中，普通标签，不是悬浮按钮。选中为蓝。消息未读角标为危险红 |
 | ItineraryItem | 时间、地点、时长、灰度日标、拖拽手柄；另有拖拽态 |
 | TransportSeg | 方式图标、耗时、距离，夹在条目之间 |
 | POICard | 灰色图片占位、名称、评分、标签、参考价。无预订按钮 |
@@ -98,20 +98,21 @@ npm run shots
 |---|---|---|---|---|
 | 1 | Foundations | `prototype/foundations.html` | `screenshots/foundations.png` | 已交付 |
 | 1 | Components | `prototype/components.html` | `screenshots/components.png` | 已交付 |
-| 2 | 启动 | `pages/P01-a-splash.html` | 同名 png | 待交付 |
-| 2 | 引导 | `pages/P01-b-onboarding.html` | 同名 png | 待交付 |
-| 2 | 偏好 | `pages/P01-c-preferences.html` | 同名 png | 待交付 |
-| 2 | 首页 · 空 | `pages/P02-a-home-empty.html` | 同名 png | 待交付 |
-| 2 | 首页 · 出行中 | `pages/P02-b-home-ongoing.html` | 同名 png | 待交付 |
-| 2 | 首页 · 加载 / 离线 | `pages/P02-c-home-offline.html` | 同名 png | 待交付 |
-| 2 | 首页 · 行前 | `pages/P02-d-home-pretrip.html` | 同名 png | 待交付 |
-| 2 | 对话 · 首次 | `pages/P03-a-chat-welcome.html` | 同名 png | 待交付 |
-| 2 | 对话 · 追问（标 1/3） | `pages/P03-b-chat-clarify.html` | 同名 png | 待交付 |
-| 2 | 对话 · 摘要卡 | `pages/P03-c-chat-summary.html` | 同名 png | 待交付 |
-| 2 | 对话 · 生成中 | `pages/P03-d-chat-generating.html` | 同名 png | 待交付 |
-| 2 | 对话 · 失败 / 断网 | `pages/P03-e-chat-error.html` | 同名 png | 待交付 |
-| 2 | 行程预览 | `pages/P04-a-preview.html` | 同名 png | 待交付 |
-| 2 | 登录半屏 | `pages/P13-a-login.html` | 同名 png | 待交付 |
+| 2 | 启动 | `pages/P01-a-splash.html` | `screenshots/P01-a-splash.png` | 已交付 |
+| 2 | 引导 | `pages/P01-b-onboarding.html` | `screenshots/P01-b-onboarding.png` | 已交付 |
+| 2 | 偏好 | `pages/P01-c-preferences.html` | `screenshots/P01-c-preferences.png` | 已交付 |
+| 2 | 首页 · 空 | `pages/P02-a-home-empty.html` | `screenshots/P02-a-home-empty.png` | 已交付 |
+| 2 | 首页 · 行前 | `pages/P02-d-home-pretrip.html` | `screenshots/P02-d-home-pretrip.png` | 已交付 |
+| 2 | 首页 · 出行中 | `pages/P02-b-home-ongoing.html` | `screenshots/P02-b-home-ongoing.png` | 已交付 |
+| 2 | 首页 · 加载 / 离线 | `pages/P02-c-home-offline.html` | `screenshots/P02-c-home-offline.png` | 已交付 |
+| 2 | 对话 · 首次 | `pages/P03-a-chat-welcome.html` | `screenshots/P03-a-chat-welcome.png` | 已交付 |
+| 2 | 对话 · 追问（标 1/3） | `pages/P03-b-chat-clarify.html` | `screenshots/P03-b-chat-clarify.png` | 已交付 |
+| 2 | 对话 · 摘要卡 | `pages/P03-c-chat-summary.html` | `screenshots/P03-c-chat-summary.png` | 已交付 |
+| 2 | 对话 · 生成中 | `pages/P03-d-chat-generating.html` | `screenshots/P03-d-chat-generating.png` | 已交付 |
+| 2 | 对话 · 失败 / 断网 | `pages/P03-e-chat-error.html` | `screenshots/P03-e-chat-error.png` | 已交付 |
+| 2 | 行程预览 | `pages/P04-a-preview.html` | `screenshots/P04-a-preview.png` | 已交付 |
+| 2 | 登录半屏 | `pages/P13-a-login.html` | `screenshots/P13-a-login.png` | 已交付 |
+| 2 | 保存成功 | `pages/P13-b-save-success.html` | `screenshots/P13-b-save-success.png` | 已交付 |
 | 3 | 详情 · 出行中 | `pages/P05-a-detail-ongoing.html` | 同名 png | 待交付 |
 | 3 | 详情 · 某天无条目 | `pages/P05-b-detail-empty.html` | 同名 png | 待交付 |
 | 3 | 详情 · 离线只读 | `pages/P05-c-detail-offline.html` | 同名 png | 待交付 |
@@ -153,18 +154,18 @@ npm run shots
 
 ## 6. 关键设计决策
 
-1. **Tab 为首页 / 行程 / AI / 我的。** 选中项用点缀蓝。PRD 5.1 的「消息」Tab 和中间悬浮「＋ 规划」这次没有做进组件；悬浮按钮是否保留仍待产品确认。
+1. **Tab 为首页 / 行程 / AI / 消息 / 我的。** AI 在正中，是普通标签，不是悬浮「＋」。选中项用点缀蓝。消息有未读时用危险红角标。悬浮按钮已取消（PRD 5.1，2026-10-19）。
 2. **蓝色的用量。** 主按钮、选中芯片、选中 Tab、关键标签（如「建议上午」）。倒计时和日标不用蓝。
 3. **按天用灰度阶。** 日标是 1–4 的灰圆，数字区分。
 4. **可信度。** AI 内容旁放「AI 生成 · 仅供参考」。价格写区间并标「参考」。
 5. **不接预订。** 地点卡没有「去预订」。后续详情页底部只有收藏、替换、加入行程。
-6. **人工确认。** 删除一天用半屏：次按钮 + 主按钮。差异预览（批次 3）用语义色加文字标签，不用品牌蓝铺底。
+6. **人工确认。** 删除一天用半屏：次按钮 + 危险红按钮，不用蓝。差异预览（批次 3）用语义色加文字标签，不用品牌蓝铺底。
 7. **图片是灰色占位。** 地图页（批次 4）用静态灰阶占位，不引入彩色地图。
 
 ## 7. 待确认
 
 1. **Logo / Slogan。** 仍无正式 Logo。Slogan 暂不写进组件。
-2. **悬浮「＋ 规划」是否还要**（PRD 5.1）。当前 Tab 已有 AI。
+2. **行程详情尚未交付。** 行前页的「查看行程」、出行中的「导航」要等批次 3、4，当前不是链接。
 3. **地图服务商**（PRD Q4）。
 4. **登录方式**（PRD Q5）：本机号码、验证码、微信、Apple。
 5. **深色模式**（PRD Q16）：token 按浅色一套，MVP 可以不做。
