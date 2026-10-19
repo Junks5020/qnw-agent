@@ -997,6 +997,10 @@ button {
   padding: 0 var(--space-16);
 }
 
+.screen-body.is-dense {
+  gap: var(--space-4);
+}
+
 .screen-body.center {
   align-items: center;
   justify-content: center;
