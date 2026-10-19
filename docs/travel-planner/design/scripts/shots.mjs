@@ -34,6 +34,9 @@ const context = await browser.newContext({
   locale: "zh-CN",
   colorScheme: "light",
 });
+await context.addInitScript(() => {
+  window.__SHOT = true;
+});
 
 for (const target of targets) {
   const page = await context.newPage();
@@ -44,6 +47,24 @@ for (const target of targets) {
   await page.addStyleTag({
     content: "*,*::before,*::after{animation:none !important;transition:none !important;}",
   });
+  if (target.id === "P04-a-preview") {
+    await page.setViewportSize({ width: 390, height: 844 });
+    const first = path.join(outDir, "P04-a-preview.png");
+    await page.screenshot({ path: first });
+    console.log("P04-a-preview.png  390×844 @2x");
+    await page.evaluate(() => {
+      document.querySelector(".screen-long")?.classList.add("is-expanded");
+    });
+    const fullHeight = await page.evaluate(() =>
+      Math.max(document.documentElement.scrollHeight, document.body.scrollHeight, 844),
+    );
+    await page.setViewportSize({ width: 390, height: fullHeight });
+    const full = path.join(outDir, "P04-a-preview-full.png");
+    await page.screenshot({ path: full });
+    console.log(`P04-a-preview-full.png  390×${fullHeight} @2x`);
+    await page.close();
+    continue;
+  }
   const height = await page.evaluate(() =>
     Math.max(document.documentElement.scrollHeight, document.body.scrollHeight, 844),
   );

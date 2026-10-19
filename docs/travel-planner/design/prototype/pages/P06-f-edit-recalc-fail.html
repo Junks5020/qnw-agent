@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=390">
+  <title>编辑 · 重算失败 · 去哪玩</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../components.css">
+</head>
+<body>
+<script src="../icons.js"></script>
+<main class="screen">
+
+<div class="sysbar"><span>9:41</span><span>去哪玩</span></div>
+<header class="navbar"><a class="navbar-back" href="P06-d-edit-recalc.html">取消</a><div class="navbar-title">编辑行程</div><a class="navbar-action" href="P05-a-detail-ongoing.html">完成</a></header>
+<div class="screen-body">
+  <div class="banner banner-warning">
+    <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+    <div>
+      <strong>重算没有完成</strong>
+      <p>地点还在，只是这段耗时暂时未知。</p>
+    </div>
+  </div>
+  <article class="itinerary is-edit">
+    <span class="handle" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></span>
+    <time class="itinerary-time">09:00</time>
+    <div>
+      <div class="itinerary-title">灵隐寺</div>
+      <div class="itinerary-meta">建议 2 小时</div>
+    </div>
+    <span class="danger-text">删除</span>
+  </article>
+  <div class="transport"><svg class="icon" aria-hidden="true"><use href="#i-walk"/></svg><span>耗时未知</span></div>
+  <article class="itinerary is-edit">
+    <span class="handle" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></span>
+    <time class="itinerary-time">--</time>
+    <div>
+      <div class="itinerary-title">西湖</div>
+      <div class="itinerary-meta">时间待更新</div>
+    </div>
+    <span class="danger-text">删除</span>
+  </article>
+  <a class="btn btn-primary" href="P06-d-edit-recalc.html">重试</a>
+</div>
+<div class="dock">
+  <span class="btn btn-text is-off">撤销</span>
+  <span class="btn btn-text is-off">重做</span>
+  <a class="btn btn-secondary" href="P06-e-edit-recalc-done.html">跳过</a>
+</div>
+
+</main>
+</body>
+</html>

@@ -320,7 +320,7 @@ flowchart TD
 | 项 | 内容 |
 |---|---|
 | 页面目的 | 让用户快速判断"行不行"，然后保存或微调 |
-| 模块（上→下） | ①头图区：目的地图片 + 行程名（AI 生成，可改）+ 日期·天数·人数②概要条：总预算区间 / 人均、景点数、每日节奏标签③**按天概览卡**（可折叠）：第 N 天主题（如"西湖慢游"）+ 地点缩略列表（名称、时段、类型图标）④迷你地图（点击进入地图视图）⑤预算分项条形图（点击进入预算页）⑥AI 说明："为什么这样安排"（2–3 条要点）+ 数据来源与免责提示⑦反馈：有用 / 没用（没用时可选原因）⑧底部固定操作栏：「对话微调」「保存行程」（主按钮） |
+| 模块（上→下） | ①头图区：目的地图片 + 行程名（AI 生成，可改）+ 日期·天数·人数②概要条：总预算区间 / 人均、景点数、每日节奏标签③**按天概览卡**（可折叠，第 1 天默认展开，其余收起）：第 N 天主题（如"西湖慢游"）+ 当天总时长 + 地点列表（每条：时段、名称、类型图标、建议停留时长；相邻地点之间一行交通方式与耗时）；收起时只显示主题 + 地点名串④迷你地图（点击进入地图视图）⑤预算分项条形图（点击进入预算页）⑥AI 说明："为什么这样安排"（2–3 条要点）+ 数据来源与免责提示⑦反馈：有用 / 没用（没用时可选原因）⑧底部固定操作栏：「对话微调」「保存行程」（主按钮） |
 | 关键交互 | 点击地点进入地点详情；「对话微调」从底部弹出对话抽屉，修改结果以**差异预览**展示（新增标绿、删除标红、移动标蓝），按钮「应用」「撤销」；保存时未登录则弹出登录；保存后进入行程详情 |
 | 空状态 | 无（必有内容） |
 | 加载 | 流式填充：先出每天主题骨架，再逐项填充地点；图片懒加载 |
@@ -594,14 +594,14 @@ flowchart TD
 | 批次 | 页面 | 必须包含的状态 / 验收要点 | 原型页面路径 | 截图 | 状态 |
 |---|---|---|---|---|---|
 | 1 | Foundations | 颜色、间距、圆角、字体 Tokens；Button、Chip、NavBar、TabBar、ItineraryItem、TransportSeg、POICard、Banner、AIBadge | `prototype/foundations.html`、`prototype/components.html`、`prototype/tokens.css` | `screenshots/foundations.png`、`screenshots/components.png` | 已修订（五 Tab、无下划线、删除用危险红） |
-| 2 | P01 启动 / 引导 / 偏好 | 启动、引导、偏好快速设置 | `prototype/pages/P01-a-splash.html`、`P01-b-onboarding.html`、`P01-c-preferences.html` | `screenshots/P01-a-splash.png`、`P01-b-onboarding.png`、`P01-c-preferences.png` | 已交付 |
-| 2 | P02 首页 | 空状态、行前（倒计时 + 行程摘要 +「查看行程」「继续问 AI」，不做成驾驶舱）、出行中今日视图、加载/离线 | `prototype/pages/P02-a-home-empty.html`、`P02-d-home-pretrip.html`、`P02-b-home-ongoing.html`、`P02-c-home-offline.html` | 同名 png | 已交付 |
-| 2 | P03 AI 对话 | 首次进入、追问（标 1/3 轮）、需求摘要卡、生成中、失败/断网 | `prototype/pages/P03-a-chat-welcome.html`、`P03-b-chat-clarify.html`、`P03-c-chat-summary.html`、`P03-d-chat-generating.html`、`P03-e-chat-error.html` | 同名 png | 已交付 |
-| 2 | P04 行程预览 | 完整预览；顶部或摘要旁固定「AI 生成·仅供参考」 | `prototype/pages/P04-a-preview.html` | `screenshots/P04-a-preview.png` | 已交付 |
-| 2 | P13 登录 | 保存前登录半屏；保存成功页再次出现「AI 生成·仅供参考」 | `prototype/pages/P13-a-login.html`、`P13-b-save-success.html` | `screenshots/P13-a-login.png`、`P13-b-save-success.png` | 已交付 |
-| 3 | P05 行程详情 | 按天时间轴、出行中、某天无条目、离线只读、冲突提示 | 待填 | 待填 | 待交付 |
-| 3 | P06 行程编辑 | 拖拽、待安排池、撤销 Toast、重算中、重算完成 Toast「时间与预算已更新」、失败可重试 | 待填 | 待填 | 待交付 |
-| 3 | P04-b 对话修改 | 差异预览（增绿 / 删红 / 移蓝 + 文字标签）；变更多时用半屏「应用确认」 | 待填 | 待填 | 待交付 |
+| 2 | P01 启动 / 引导 / 偏好 | 启动、引导、偏好快速设置 | `prototype/pages/P01-a-splash.html`、`P01-b-onboarding.html`、`P01-c-preferences.html` | `screenshots/P01-a-splash.png`、`P01-b-onboarding.png`、`P01-c-preferences.png` | 已修订：启动页无「继续」，1.5 秒内自动进入；偏好首行不再被导航挡住 |
+| 2 | P02 首页 | 空状态、行前（倒计时 + 行程摘要 +「查看行程」「继续问 AI」，不做成驾驶舱）、出行中今日视图、加载/离线 | `prototype/pages/P02-a-home-empty.html`、`P02-d-home-pretrip.html`、`P02-b-home-ongoing.html`、`P02-c-home-offline.html` | 同名 png | 已修订：行前与出行中保留主输入框、语音按钮和「预算友好」 |
+| 2 | P03 AI 对话 | 首次进入、追问（标 1/3 轮）、需求摘要卡、生成中、失败/断网 | `prototype/pages/P03-a-chat-welcome.html`、`P03-b-chat-clarify.html`、`P03-c-chat-summary.html`、`P03-d-chat-generating.html`、`P03-e-chat-error.html` | 同名 png | 已修订：摘要卡每行有右箭头，可点进修改 |
+| 2 | P04 行程预览 | 完整预览；顶部或摘要旁固定「AI 生成·仅供参考」；按天展开卡、迷你地图、预算分项、为什么这样安排、有用/没用 | `prototype/pages/P04-a-preview.html` | `screenshots/P04-a-preview.png`（首屏）、`P04-a-preview-full.png`（整页） | 已修订 |
+| 2 | P13 登录 | 保存前登录半屏；保存成功页再次出现「AI 生成·仅供参考」 | `prototype/pages/P13-a-login.html`、`P13-b-save-success.html` | `screenshots/P13-a-login.png`、`P13-b-save-success.png` | 已修订：主按钮「查看行程」，「回到首页」为文字按钮，并有开启提醒卡 |
+| 3 | P05 行程详情 | 按天时间轴、出行中、某天无条目、离线只读、冲突提示 | `prototype/pages/P05-a-detail-ongoing.html`、`P05-b-detail-empty.html`、`P05-c-detail-offline.html`、`P05-d-detail-conflict.html` | 同名 png | 已交付 |
+| 3 | P06 行程编辑 | 拖拽、待安排池、撤销 Toast、重算中、重算完成 Toast「时间与预算已更新」、失败可重试 | `prototype/pages/P06-a-edit-drag.html`、`P06-b-edit-pool.html`、`P06-c-edit-undo.html`、`P06-d-edit-recalc.html`、`P06-e-edit-recalc-done.html`、`P06-f-edit-recalc-fail.html` | 同名 png | 已交付 |
+| 3 | P04-b 对话修改 | 差异预览（新增 / 删除 / 调整 + 文字标签）；变更多时用半屏「应用确认」 | `prototype/pages/P04-b-diff.html`、`P04-c-apply-confirm.html` | `screenshots/P04-b-diff.png`、`P04-c-apply-confirm.png` | 已交付 |
 | 4 | P07 地图 | 按天点位连线、相邻段交通方式与耗时、跳转外部地图、失败降级为列表（原型里地图可用静态占位图） | 待填 | 待填 | 待交付 |
 | 4 | P08 地点详情 | 景点、餐饮（人均参考价）、酒店（参考价区间 +「仅供参考」）；底部只有收藏 / 替换 / 加入行程，**无预订按钮** | 待填 | 待填 | 待交付 |
 | 4 | P09 预算 | 分项区间 + 人均 +「仅供参考」、未知项、空状态；不做记账 | 待填 | 待填 | 待交付 |

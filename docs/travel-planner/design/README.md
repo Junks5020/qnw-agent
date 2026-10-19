@@ -1,7 +1,7 @@
 # 去哪玩 · 移动端设计说明 v0.1
 
 > 依据：[PRD v0.1](../prd/PRD-v0.1.md) 第 5–6 章，以及主分支 §11 设计交付约定（`3e9fd0d`）
-> 日期：2026-10-19 ｜ 设计：ui ｜ 状态：批次 1 已按验收修订，批次 2 已交付。评审以 HTML 原型和 `screenshots/` 为准。
+> 日期：2026-10-19 ｜ 设计：ui ｜ 状态：批次 1–2 已按验收修订，批次 3 已交付。评审以 HTML 原型和 `screenshots/` 为准。
 
 ## 1. 怎么打开
 
@@ -25,6 +25,7 @@ npm run shots
 ```
 
 - `npm run shots` 用 Playwright 把每个画板 / 页面渲成 `screenshots/<page-id>.png`。CSS 宽 390，`deviceScaleFactor` 为 2（物理像素宽 780）。短页至少 844 高；更高的规范页按内容整页截，不裁切。
+- 行程预览会高出一屏。`P04-a-preview.png` 只截 390×844 的首屏（含底部固定按钮）。整页另存 `screenshots/P04-a-preview-full.png`。
 - 文件名与 HTML 主文件名相同：`foundations.html` → `foundations.png`，`pages/P02-d-home-pretrip.html` → `P02-d-home-pretrip.png`。
 - 截图环境需要中文字体。本机用 Noto Sans CJK SC；没有该字体时字体会落到文泉驿或 Droid Sans Fallback。
 - `npm run check-colors` 扫描 `prototype/` 里除 `tokens.css` 以外的 HTML / CSS / JS。出现 `#` 十六进制或 `rgb()` / `rgba()` 即失败。唯一豁免：`foundations.html` 里 `class="token-hex"` 的色板文字标注。色块填充必须用变量。
@@ -98,33 +99,33 @@ npm run shots
 |---|---|---|---|---|
 | 1 | Foundations | `prototype/foundations.html` | `screenshots/foundations.png` | 已交付 |
 | 1 | Components | `prototype/components.html` | `screenshots/components.png` | 已交付 |
-| 2 | 启动 | `pages/P01-a-splash.html` | `screenshots/P01-a-splash.png` | 已交付 |
+| 2 | 启动 | `pages/P01-a-splash.html` | `screenshots/P01-a-splash.png` | 已修订：无继续按钮，1.5 秒内自动进入 |
 | 2 | 引导 | `pages/P01-b-onboarding.html` | `screenshots/P01-b-onboarding.png` | 已交付 |
-| 2 | 偏好 | `pages/P01-c-preferences.html` | `screenshots/P01-c-preferences.png` | 已交付 |
+| 2 | 偏好 | `pages/P01-c-preferences.html` | `screenshots/P01-c-preferences.png` | 已修订：首行与导航留出间距 |
 | 2 | 首页 · 空 | `pages/P02-a-home-empty.html` | `screenshots/P02-a-home-empty.png` | 已交付 |
-| 2 | 首页 · 行前 | `pages/P02-d-home-pretrip.html` | `screenshots/P02-d-home-pretrip.png` | 已交付 |
-| 2 | 首页 · 出行中 | `pages/P02-b-home-ongoing.html` | `screenshots/P02-b-home-ongoing.png` | 已交付 |
+| 2 | 首页 · 行前 | `pages/P02-d-home-pretrip.html` | `screenshots/P02-d-home-pretrip.png` | 已修订：底部输入框、语音、「预算友好」；查看行程进入详情 |
+| 2 | 首页 · 出行中 | `pages/P02-b-home-ongoing.html` | `screenshots/P02-b-home-ongoing.png` | 已修订：底部输入框、语音、「预算友好」 |
 | 2 | 首页 · 加载 / 离线 | `pages/P02-c-home-offline.html` | `screenshots/P02-c-home-offline.png` | 已交付 |
 | 2 | 对话 · 首次 | `pages/P03-a-chat-welcome.html` | `screenshots/P03-a-chat-welcome.png` | 已交付 |
 | 2 | 对话 · 追问（标 1/3） | `pages/P03-b-chat-clarify.html` | `screenshots/P03-b-chat-clarify.png` | 已交付 |
-| 2 | 对话 · 摘要卡 | `pages/P03-c-chat-summary.html` | `screenshots/P03-c-chat-summary.png` | 已交付 |
+| 2 | 对话 · 摘要卡 | `pages/P03-c-chat-summary.html` | `screenshots/P03-c-chat-summary.png` | 已修订：每行右侧箭头，可点进修改 |
 | 2 | 对话 · 生成中 | `pages/P03-d-chat-generating.html` | `screenshots/P03-d-chat-generating.png` | 已交付 |
 | 2 | 对话 · 失败 / 断网 | `pages/P03-e-chat-error.html` | `screenshots/P03-e-chat-error.png` | 已交付 |
-| 2 | 行程预览 | `pages/P04-a-preview.html` | `screenshots/P04-a-preview.png` | 已交付 |
+| 2 | 行程预览 | `pages/P04-a-preview.html` | `screenshots/P04-a-preview.png`、`P04-a-preview-full.png` | 已修订：按天卡、地图占位、预算分项、说明、反馈 |
 | 2 | 登录半屏 | `pages/P13-a-login.html` | `screenshots/P13-a-login.png` | 已交付 |
-| 2 | 保存成功 | `pages/P13-b-save-success.html` | `screenshots/P13-b-save-success.png` | 已交付 |
-| 3 | 详情 · 出行中 | `pages/P05-a-detail-ongoing.html` | 同名 png | 待交付 |
-| 3 | 详情 · 某天无条目 | `pages/P05-b-detail-empty.html` | 同名 png | 待交付 |
-| 3 | 详情 · 离线只读 | `pages/P05-c-detail-offline.html` | 同名 png | 待交付 |
-| 3 | 详情 · 冲突 | `pages/P05-d-detail-conflict.html` | 同名 png | 待交付 |
-| 3 | 编辑 · 拖拽 | `pages/P06-a-edit-drag.html` | 同名 png | 待交付 |
-| 3 | 编辑 · 待安排池 | `pages/P06-b-edit-pool.html` | 同名 png | 待交付 |
-| 3 | 编辑 · 撤销 Toast | `pages/P06-c-edit-undo.html` | 同名 png | 待交付 |
-| 3 | 编辑 · 重算中 | `pages/P06-d-edit-recalc.html` | 同名 png | 待交付 |
-| 3 | 编辑 · 重算完成 | `pages/P06-e-edit-recalc-done.html` | 同名 png | 待交付 |
-| 3 | 编辑 · 重算失败 | `pages/P06-f-edit-recalc-fail.html` | 同名 png | 待交付 |
-| 3 | 差异预览 | `pages/P04-b-diff.html` | 同名 png | 待交付 |
-| 3 | 应用确认半屏 | `pages/P04-c-apply-confirm.html` | 同名 png | 待交付 |
+| 2 | 保存成功 | `pages/P13-b-save-success.html` | `screenshots/P13-b-save-success.png` | 已修订：查看行程、回到首页、开启提醒 |
+| 3 | 详情 · 出行中 | `pages/P05-a-detail-ongoing.html` | 同名 png | 已交付 |
+| 3 | 详情 · 某天无条目 | `pages/P05-b-detail-empty.html` | 同名 png | 已交付 |
+| 3 | 详情 · 离线只读 | `pages/P05-c-detail-offline.html` | 同名 png | 已交付 |
+| 3 | 详情 · 冲突 | `pages/P05-d-detail-conflict.html` | 同名 png | 已交付 |
+| 3 | 编辑 · 拖拽 | `pages/P06-a-edit-drag.html` | 同名 png | 已交付 |
+| 3 | 编辑 · 待安排池 | `pages/P06-b-edit-pool.html` | 同名 png | 已交付 |
+| 3 | 编辑 · 撤销 Toast | `pages/P06-c-edit-undo.html` | 同名 png | 已交付 |
+| 3 | 编辑 · 重算中 | `pages/P06-d-edit-recalc.html` | 同名 png | 已交付 |
+| 3 | 编辑 · 重算完成 | `pages/P06-e-edit-recalc-done.html` | 同名 png | 已交付 |
+| 3 | 编辑 · 重算失败 | `pages/P06-f-edit-recalc-fail.html` | 同名 png | 已交付 |
+| 3 | 差异预览 | `pages/P04-b-diff.html` | 同名 png | 已交付 |
+| 3 | 应用确认半屏 | `pages/P04-c-apply-confirm.html` | 同名 png | 已交付 |
 | 4 | 地图 | `pages/P07-a-map.html` | 同名 png | 待交付 |
 | 4 | 地图降级 | `pages/P07-b-map-fallback.html` | 同名 png | 待交付 |
 | 4 | 景点 | `pages/P08-a-poi-sight.html` | 同名 png | 待交付 |
@@ -159,13 +160,13 @@ npm run shots
 3. **按天用灰度阶。** 日标是 1–4 的灰圆，数字区分。
 4. **可信度。** AI 内容旁放「AI 生成 · 仅供参考」。价格写区间并标「参考」。
 5. **不接预订。** 地点卡没有「去预订」。后续详情页底部只有收藏、替换、加入行程。
-6. **人工确认。** 删除一天用半屏：次按钮 + 危险红按钮，不用蓝。差异预览（批次 3）用语义色加文字标签，不用品牌蓝铺底。
+6. **人工确认。** 删除一天用半屏：次按钮 + 危险红按钮，不用蓝。差异预览里，删除用危险红并标「删除」，新增用成功绿并标「新增」，调整只用灰底和「调整」文字，不用品牌蓝铺底。
 7. **图片是灰色占位。** 地图页（批次 4）用静态灰阶占位，不引入彩色地图。
 
 ## 7. 待确认
 
-1. **Logo / Slogan。** 仍无正式 Logo。Slogan 暂不写进组件。
-2. **行程详情尚未交付。** 行前页的「查看行程」、出行中的「导航」要等批次 3、4，当前不是链接。
+1. **Logo / Slogan。** 仍无正式 Logo。启动页暂留「一句话，说走就走」，并注明 1.5 秒内自动进入引导。
+2. **导航尚未交付。** 出行中的「导航」、预览里的迷你地图要等批次 4 的地图页，当前不是链接。「查看行程」已进入行程详情。
 3. **地图服务商**（PRD Q4）。
 4. **登录方式**（PRD Q5）：本机号码、验证码、微信、Apple。
 5. **深色模式**（PRD Q16）：token 按浅色一套，MVP 可以不做。
