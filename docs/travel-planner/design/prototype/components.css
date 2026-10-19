@@ -878,6 +878,7 @@ button {
 .sheet-actions {
   display: flex;
   gap: var(--space-8);
+  margin-top: var(--space-16);
 }
 
 .sheet-actions .btn {
@@ -1129,6 +1130,23 @@ button {
   flex: none;
 }
 
+.avatar {
+  display: grid;
+  flex: none;
+  width: var(--space-40);
+  height: var(--space-40);
+  place-items: center;
+  border-radius: var(--radius-full);
+  background: var(--bg-muted);
+  color: var(--text-secondary);
+}
+
+.profile-head {
+  display: flex;
+  gap: var(--space-12);
+  align-items: center;
+}
+
 .count-num {
   margin: var(--space-4) 0;
   font-size: var(--font-display-size);
@@ -1163,6 +1181,13 @@ button {
 
 .dock .btn {
   flex: 1;
+  min-width: 0;
+  padding: 0 var(--space-8);
+  white-space: nowrap;
+}
+
+.dock .btn.is-status {
+  flex: 1.6;
 }
 
 .bubble {
@@ -1851,7 +1876,8 @@ button {
   margin: 0;
 }
 
-.screen-body.is-poi {
+.screen-body.is-poi,
+.screen-body.is-profile {
   gap: var(--space-8);
 }
 
@@ -1908,4 +1934,12 @@ button {
   border: var(--hairline) solid var(--border-strong);
   border-radius: var(--radius-8);
   background: var(--bg-muted);
+}
+
+.qr-block {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
 }

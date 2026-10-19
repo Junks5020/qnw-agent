@@ -129,13 +129,14 @@ npm run shots
 | 4 | 地图 | `pages/P07-a-map.html` | 同名 png | 已修订：酒店图标、定位与图层、横滑卡片 |
 | 4 | 地图降级 | `pages/P07-b-map-fallback.html` | 同名 png | 已修订：第 2 天逐条列出 |
 | 4 | 选择地图 | `pages/P07-c-nav-sheet.html` | 同名 png | 已交付：高德 / 百度 / Apple / 取消 |
-| 4 | 景点 | `pages/P08-a-poi-sight.html` | 同名 png | 已修订：地址、电话、小地图、已在第 1 天 |
+| 4 | 景点 | `pages/P08-a-poi-sight.html` | 同名 png | 已修订：地址、电话、小地图；「已在第 1 天」单行 |
 | 4 | 餐饮 | `pages/P08-b-poi-food.html` | 同名 png | 已修订：排队提示 |
 | 4 | 酒店（参考价，无预订） | `pages/P08-c-poi-hotel.html` | 同名 png | 已修订：平均距离、优缺点、已在第 1 天 |
-| 4 | 地点异常 | `pages/P08-d-poi-closed.html` | 同名 png | 已通过，未改 |
+| 4 | 地点异常 | `pages/P08-d-poi-closed.html` | 同名 png | 内容未改；底栏按钮内边距与其他地点页一致 |
 | 4 | 地点 · 未加入 | `pages/P08-e-poi-add.html` | 同名 png | 已交付：西溪湿地，加入行程 |
-| 4 | 加入行程 | `pages/P08-e2-add-to-trip-sheet.html` | 同名 png | 已交付：选天和插入位置 |
-| 4 | 地点 · 刚加入 | `pages/P08-e3-added.html` | 同名 png | 已交付：已在第 1 天 |
+| 4 | 加入行程 | `pages/P08-e2-add-to-trip-sheet.html` | 同名 png | 已修订：选项和「取消 / 确认加入」之间留出间距 |
+| 4 | 地点 · 刚加入 | `pages/P08-e3-added.html` | 同名 png | 已修订：「已在第 1 天」单行 |
+| 4 | 西湖 | `pages/P08-h-poi-westlake.html` | 同名 png | 已交付：时间轴里的西湖进这里 |
 | 4 | 预算 | `pages/P09-a-budget.html` | 同名 png | 已修订：其他 ¥50–100，合计 ¥1,780–2,450 |
 | 4 | 预算未知项 | `pages/P09-b-budget-unknown.html` | 同名 png | 已修订：未知项是当地向导 |
 | 4 | 预算空状态 | `pages/P09-c-budget-empty.html` | 同名 png | 已修订：行程级文案，占位是方块 |
@@ -143,19 +144,25 @@ npm run shots
 | 4 | 地点 · 加载失败 | `pages/P08-g-poi-error.html` | 同名 png | 已交付 |
 | 4 | 预算 · 加载 | `pages/P09-d-budget-loading.html` | 同名 png | 已交付 |
 | 4 | 预算 · 加载失败 | `pages/P09-e-budget-error.html` | 同名 png | 已交付 |
-| 5 | 即将出发 | `pages/P10-a-trips-upcoming.html` | 同名 png | 已修订：杭州两日游与厦门三日游 |
+| 5 | 出行中 | `pages/P10-f-trips-ongoing.html` | 同名 png | 已交付：厦门三日游单独一栏 |
+| 5 | 即将出发 | `pages/P10-a-trips-upcoming.html` | 同名 png | 已修订：只保留还没出发的杭州两日游 |
 | 5 | 草稿 | `pages/P10-b-trips-draft.html` | 同名 png | 已修订：成都美食，避免和杭州重复 |
 | 5 | 已完成 | `pages/P10-c-trips-done.html` | 同名 png | 已交付：更早的杭州周末 |
-| 5 | 行程空状态 | `pages/P10-d-trips-empty.html` | 同名 png | 已交付 |
+| 5 | 行程空状态 | `pages/P10-d-trips-empty.html` | 同名 png | 已修订：分段含出行中 |
 | 5 | 未登录本地草稿 | `pages/P10-e-trips-local.html` | 同名 png | 已交付 |
+| 5 | 行程 · 加载 | `pages/P10-g-trips-loading.html` | 同名 png | 已交付：卡片骨架 |
+| 5 | 行程 · 同步失败 | `pages/P10-h-trips-sync-fail.html` | 同名 png | 已交付：未同步 |
 | 5 | 通知列表 | `pages/P11-a-notifications.html` | 同名 png | 已交付：天气、闭馆、交通 |
 | 5 | 调整方案 | `pages/P11-b-adjust-sheet.html` | 同名 png | 已交付 |
-| 5 | 定位权限半屏 | `pages/P11-c-location-permission.html` | 同名 png | 已交付：仅使用期间，不后台追踪 |
+| 5 | 定位权限半屏 | `pages/P11-c-location-permission.html` | 同名 png | 已修订：说明和按钮之间留出间距；仅使用期间 |
 | 5 | 通知未开启 | `pages/P11-d-notify-off.html` | 同名 png | 已交付 |
-| 5 | 个人中心 | `pages/P12-a-profile.html` | 同名 png | 已交付 |
-| 5 | 个人中心未登录 | `pages/P12-b-profile-guest.html` | 同名 png | 已交付 |
-| 5 | 只读分享链接 | `pages/P14-a-share-link.html` | 同名 png | 已交付：无编辑，含仅供参考 |
-| 5 | 分享长图 | `pages/P14-b-share-image.html` | 同名 png | 已交付 |
+| 5 | 消息 · 空 | `pages/P11-e-notifications-empty.html` | 同名 png | 已交付 |
+| 5 | 消息 · 加载 | `pages/P11-f-notifications-loading.html` | 同名 png | 已交付 |
+| 5 | 个人中心 | `pages/P12-a-profile.html` | 同名 png | 已修订：头像、离线数据、同行人、意见反馈 |
+| 5 | 个人中心未登录 | `pages/P12-b-profile-guest.html` | 同名 png | 已修订：与已登录页同一组入口 |
+| 5 | 只读分享链接 | `pages/P14-a-share-link.html` | 同名 png | 已修订：总额带参考 |
+| 5 | 分享长图 | `pages/P14-b-share-image.html` | 同名 png | 已修订：二维码标示意 |
+| 5 | 分享面板 | `pages/P14-c-share-sheet.html` | 同名 png | 已交付：复制链接、微信、生成长图 |
 
 路径相对 `prototype/`。示例数据仍是上海出发、杭州两日游（10/24–10/25，2 人，舒适档）。
 

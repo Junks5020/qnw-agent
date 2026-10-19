@@ -13,20 +13,28 @@
 <main class="screen">
 
 <div class="sysbar"><span>9:41</span><span>去哪玩</span></div>
-<div class="screen-body">
-  <div class="bubble-head">
+    <div class="screen-body is-profile">
+  <div class="profile-head">
+    <span class="avatar" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></span>
     <div>
-      <h1 class="t-title">旅行者</h1>
+      <h1 class="t-title" data-qnw="profile.name">旅行者</h1>
       <p class="t-caption">已登录 · 上海出发</p>
     </div>
   </div>
   <section class="card">
+    <h2 class="t-headline">行程数据</h2>
     <p class="t-caption" data-qnw="profile.trips">已规划 3 趟 · 去过 1 座城市</p>
   </section>
   <section class="card">
     <h2 class="t-headline">旅行偏好</h2>
     <p class="t-caption">舒适 · 人文 · 2 人 · 从上海出发</p>
+    <p class="t-caption" data-qnw="profile.companion">同行人 · 和朋友</p>
     <p class="dim">改完会用于下次规划。</p>
+  </section>
+  <section class="card">
+    <h2 class="t-headline">离线数据</h2>
+    <p class="t-caption" data-qnw="profile.offline">已缓存 3 趟行程</p>
+    <span class="btn btn-danger-line">清除缓存</span>
   </section>
   <section class="card">
     <h2 class="t-headline">通知</h2>
@@ -36,8 +44,8 @@
   </section>
   <section class="card">
     <h2 class="t-headline">关于与隐私</h2>
-    <p class="t-caption">关于去哪玩 · 用户协议 · 隐私政策</p>
-    <p class="t-caption">导出我的数据 · 注销账号</p>
+    <p class="t-caption">意见反馈 · 关于去哪玩</p>
+    <p class="t-caption">用户协议 · 隐私政策</p>
     <p class="dim">语言：简体中文</p>
   </section>
   <span class="btn btn-text">退出登录</span>

@@ -100,7 +100,17 @@
     "local.title": "杭州两日游",
     "local.status": "本地草稿",
     "local.meta": "未登录 · 10/24–10/25 · 2 天",
-    "profile.trips": "已规划 3 趟 · 去过 1 座城市"
+    "profile.trips": "已规划 3 趟 · 去过 1 座城市",
+    "profile.name": "旅行者",
+    "profile.companion": "同行人 · 和朋友",
+    "profile.offline": "已缓存 3 趟行程",
+    "profile.offlineGuest": "已缓存 1 趟 · 只在这台手机",
+    "budget.share": "预估 ¥1,780–2,450 参考",
+    "lake.addr": "杭州市西湖区白堤",
+    "lake.phone": "0571-87179617",
+    "lake.ticket": "免门票",
+    "lake.hours": "全天开放 · 白堤",
+    "lake.reason": "从楼外楼沿白堤步行约 12 分钟、800 米。"
   };
   window.QNW = data;
   function fill() {
