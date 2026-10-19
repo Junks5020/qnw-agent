@@ -1,0 +1,100 @@
+/* 去哪玩 colour system v0.2
+   The only file allowed to contain hex or rgb() literals.
+   Everything else references these variables. */
+
+:root {
+  /* Brand. Primary is black; blue is the 10% accent. */
+  --brand-primary: #111111;
+  --brand-primary-pressed: #000000;
+  --brand-primary-soft: #F3F3F3;
+  --brand-accent: #2563EB;
+  --brand-accent-pressed: #1D4ED8;
+  --brand-accent-soft: #EFF6FF;
+
+  /* Text */
+  --text-primary: #111111;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --text-on-dark: #FFFFFF;
+
+  /* Background */
+  --bg-page: #F5F5F5;
+  --bg-surface: #FFFFFF;
+  --bg-muted: #F0F0F0;
+  --bg-muted-pressed: #E8E8E8;
+  --bg-skeleton: #EEEEEE;
+
+  /* Border */
+  --border-default: #E5E5E5;
+  --border-strong: #BDBDBD;
+
+  /* Overlay: black at 40% */
+  --overlay: rgb(0 0 0 / 40%);
+
+  /* Status. Not counted in the 6:3:1 brand ratio.
+     Soft surfaces are the light companions of the existing hues. */
+  --status-success: #1F9D63;
+  --status-warning: #B7791F;
+  --status-danger: #D9363E;
+  --status-info: #2F6FEB;
+  --status-success-soft: #E6F6EE;
+  --status-warning-soft: #FBF3E6;
+  --status-danger-soft: #FDECEC;
+  --status-info-soft: #EAF0FE;
+
+  /* Days are a gray scale. "Today" is a selected state, not a fifth hue. */
+  --day-1: #111111;
+  --day-2: #666666;
+  --day-3: #999999;
+  --day-4: #BDBDBD;
+
+  /* Type. PingFang on device; Noto Sans CJK SC in screenshots. */
+  --font-sans: "PingFang SC", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "WenQuanYi Micro Hei", "Droid Sans Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display-size: 28px;
+  --font-display-line: 36px;
+  --font-display-weight: 700;
+  --font-title-size: 20px;
+  --font-title-line: 28px;
+  --font-title-weight: 600;
+  --font-headline-size: 17px;
+  --font-headline-line: 24px;
+  --font-headline-weight: 600;
+  --font-body-size: 15px;
+  --font-body-line: 22px;
+  --font-body-weight: 400;
+  --font-caption-size: 13px;
+  --font-caption-line: 18px;
+  --font-caption-weight: 400;
+  --font-micro-size: 11px;
+  --font-micro-line: 16px;
+  --font-micro-weight: 500;
+
+  /* Spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+
+  /* Radius */
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-24: 24px;
+  --radius-full: 999px;
+
+  /* Elevation */
+  --shadow-card: 0 2px 12px rgb(0 0 0 / 8%);
+  --shadow-float: 0 8px 24px rgb(0 0 0 / 16%);
+
+  /* Frame and chrome */
+  --frame-w: 390px;
+  --frame-h: 844px;
+  --hairline: 1px;
+  --stroke-2: 2px;
+  --control-lg: 48px;
+  --nav-h: 44px;
+}

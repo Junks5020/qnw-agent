@@ -1,186 +1,177 @@
 # 去哪玩 · 移动端设计说明 v0.1
 
-> 依据：[PRD v0.1](../prd/PRD-v0.1.md) 第 5 章（信息架构）和第 6 章（页面清单）
-> 日期：2026-10-19 ｜ 设计：ui ｜ 状态：初稿；§2 色彩系统 v0.2 已定为黑白灰 6:3:1 + 点缀 #2563EB；Figma 画板换肤待额度恢复
+> 依据：[PRD v0.1](../prd/PRD-v0.1.md) 第 5–6 章，以及主分支 §11 设计交付约定（`3e9fd0d`）
+> 日期：2026-10-19 ｜ 设计：ui ｜ 状态：批次 1 已交付。评审以 HTML 原型和 `screenshots/` 为准。
 
-## 1. Figma 文件
+## 1. 怎么打开
 
-- **文件**：[去哪玩 - 移动端设计 v0.1](https://www.figma.com/design/uajCEb4MuRKA8rXWZf2QSM)
-- **页面结构**
-  - `00 封面 Cover`：占位，暂时为空
-  - `01 基础规范 Foundations`：颜色/间距/圆角变量、文字样式、阴影样式、55 个图标组件，以及基础组件和业务组件两块组件板
-  - `02 页面 Screens`：按 PRD 页面编号分组，每组包含主状态和空/加载/异常状态，共 38 个画板
-- **画板尺寸**：iPhone 393×852（iOS 和 Android 共用一套，Android 按 Material 习惯微调返回和系统栏）。长滚动页面另做了加高画板，这些页面是 P04-a、P08-a、P09-a 和 P12-a。
-- **快捷链接**
-  - [首页 · 出行中](https://www.figma.com/design/uajCEb4MuRKA8rXWZf2QSM?node-id=5-163)
-  - [AI 对话 · 追问](https://www.figma.com/design/uajCEb4MuRKA8rXWZf2QSM?node-id=5-735)
-  - [AI 对话 · 生成中](https://www.figma.com/design/uajCEb4MuRKA8rXWZf2QSM?node-id=5-947)
-  - [行程预览](https://www.figma.com/design/uajCEb4MuRKA8rXWZf2QSM?node-id=6-585)
-  - [行程详情 · 出行中](https://www.figma.com/design/uajCEb4MuRKA8rXWZf2QSM?node-id=6-893)
+原型在 `docs/travel-planner/design/prototype/`，纯 HTML + CSS，浏览器直接打开，不需要构建。
 
-## 2. 设计系统摘要
+1. 打开 [`prototype/index.html`](prototype/index.html)，这是全部画板和页面的目录。
+2. 批次 1：[`foundations.html`](prototype/foundations.html) 基础规范，[`components.html`](prototype/components.html) 组件和状态。
+3. 之后每个页面状态一个文件：`prototype/pages/<page-id>.html`。例如 `pages/P02-a-home-empty.html`、`pages/P02-d-home-pretrip.html`。不使用 `?state=`，也不在同一个页面文件里并排多个状态。
 
-### 2.1 视觉调性
-年轻、轻松、可信赖；整体偏克制、偏编辑感，少彩色。
-- **主色调（约 60%）**：黑、白、各级灰——页面底、卡片面、正文与图标默认态都落在这条轴上。
-- **辅助色调（约 30%）**：中灰系表面与分割（muted / border / skeleton / secondary text），用来分层和弱化，不抢主色。
-- **点缀色（约 10%）**：品牌蓝 `accent #2563EB`，按下 `accent-pressed #1D4ED8`，浅底 `accent-soft #EFF6FF`。仅用于「今天」、倒计时、主 CTA、关键角标等少量节点。Figma 变量名 `brand/accent*`。
-- **配色比例 6:3:1**：先保证黑白灰骨架正确，再点缀；禁止大面积品牌色铺底。旧版青绿 `#0D9488` 已废弃，不再作为主色。
+画板宽 390。手机页的视口是 390×844，高于 844 的规范页按内容整页展开。
 
-### 2.2 颜色变量（集合「去哪玩 Tokens」，模式 Light）
+## 2. 截图和色值检查
+
+在 `docs/travel-planner/design/` 下：
+
+```bash
+npm install
+npx playwright install chromium
+npm run check-colors
+npm run shots
+```
+
+- `npm run shots` 用 Playwright 把每个画板 / 页面渲成 `screenshots/<page-id>.png`。CSS 宽 390，`deviceScaleFactor` 为 2（物理像素宽 780）。短页至少 844 高；更高的规范页按内容整页截，不裁切。
+- 文件名与 HTML 主文件名相同：`foundations.html` → `foundations.png`，`pages/P02-d-home-pretrip.html` → `P02-d-home-pretrip.png`。
+- 截图环境需要中文字体。本机用 Noto Sans CJK SC；没有该字体时字体会落到文泉驿或 Droid Sans Fallback。
+- `npm run check-colors` 扫描 `prototype/` 里除 `tokens.css` 以外的 HTML / CSS / JS。出现 `#` 十六进制或 `rgb()` / `rgba()` 即失败。唯一豁免：`foundations.html` 里 `class="token-hex"` 的色板文字标注。色块填充必须用变量。
+
+颜色、字体、间距、圆角只定义在 [`prototype/tokens.css`](prototype/tokens.css)。
+
+## 3. 视觉规范（色彩系统 v0.2）
+
+年轻、轻松、可信赖；克制，少彩色。灰和白占页面的大部分。
+
+- **约 60%**：黑、白、各级灰。页面底、卡片、正文、图标默认态。
+- **约 30%**：中灰表面和分割（muted、border、skeleton、次级文字）。
+- **约 10%**：点缀蓝。只用在主按钮、选中态、关键标签。
+- 不使用青绿主色，也不按天使用彩虹色。第 1–4 天用灰度阶；「今天」是选中态，可以是蓝。
+
+### 3.1 颜色
+
 | 分组 | 变量 |
 |---|---|
 | brand | primary `#111111` · primary-pressed `#000000` · primary-soft `#F3F3F3` · accent `#2563EB` · accent-pressed `#1D4ED8` · accent-soft `#EFF6FF` |
-| text | primary `#111111` · secondary `#5C5C5C` · tertiary `#8A8A8A` · inverse `#FFFFFF` |
-| bg | page `#F5F5F5` · surface `#FFFFFF` · muted `#EBEBEB` · skeleton `#E0E0E0` |
-| border | default `#E0E0E0` · strong `#BDBDBD` |
-| status | success `#1F9D63` / warning `#B7791F` / danger `#D9363E` / info `#2F6FEB`，各带一个 -soft 浅色底（语义色不计入 6:3:1 品牌比例） |
-| day | 1 `#111111` · 2 `#5C5C5C` · 3 `#8A8A8A` · 4 `#BDBDBD`（按天区分改用灰度阶；「今天」叠加 accent） |
-| map | land / water / green / road（示意底图保持低饱和；路线描边跟 day 灰度） |
+| text | primary `#111111` · secondary `#666666` · tertiary `#999999` · on-dark `#FFFFFF` |
+| bg | page `#F5F5F5` · surface `#FFFFFF` · muted `#F0F0F0` · muted-pressed `#E8E8E8` · skeleton `#EEEEEE` |
+| border | default `#E5E5E5` · strong `#BDBDBD` |
+| overlay | 黑 40% |
+| status | success `#1F9D63` / warning `#B7791F` / danger `#D9363E` / info `#2F6FEB`。浅底 success-soft `#E6F6EE`、warning-soft `#FBF3E6`、danger-soft `#FDECEC`、info-soft `#EAF0FE`。语义色不计入 6:3:1 |
+| day | 1 `#111111` · 2 `#666666` · 3 `#999999` · 4 `#BDBDBD` |
 
-- **作用域**：每个变量都设置了 scopes（填充、文字、描边分开），属性面板里不会出现无关变量。
-- **深色模式**：变量命名已为深色模式预留，PRD Q16 说明 MVP 可以不做。
-- **Figma 换肤**：画板仍是旧青绿主题；额度恢复后先改 Tokens 再扫各屏绑定。
+### 3.2 字体
 
-### 2.3 间距与圆角
-- **间距**：`space/4 · 8 · 12 · 16 · 20 · 24 · 32`。页面左右边距 24；卡片内边距 12–16；卡片之间 12–16。
-- **圆角**：`radius/8 · 12 · 16 · 20 · full`。标签 8；输入框 12；卡片 16；底部抽屉 20；按钮和胶囊用全圆角。
-- **绑定方式**：auto layout 的 padding、gap 和圆角尽量都绑定到变量。
+苹方 PingFang SC，截图和 Android 回退到 Noto Sans CJK SC / 思源黑体 / 系统中文栈。
 
-### 2.4 文字样式（Noto Sans SC）
-开发时 iOS 映射为苹方 PingFang SC，Android 映射为思源黑体。
-
-| 样式 | 字号/行高 | 用途 |
-|---|---|---|
-| Display/28 粗 | 28/36 Bold | 品牌、启动页 |
-| Heading/22 粗 | 22/30 Bold | 页面标题、问候语 |
-| Heading/18 中粗 | 18/26 Bold | 区块标题 |
-| Title/16 中 | 16/24 Medium | 条目名称、导航标题 |
-| Body/15 常规 · Body/15 中 | 15/22 | 正文、对话气泡 |
-| Body/14 常规 · Label/14 中 | 14/20 | 次级正文、按钮 |
-| Caption/12 常规 · Caption/12 中 | 12/16 | 辅助信息、元数据 |
-| Micro/10 中 | 10/14 | Tab 文案、角标 |
-| Number/24 粗 | 24/30 Bold | 金额、统计数字 |
-
-**阴影**：`Shadow/卡片`（y2 blur12，8%）、`Shadow/浮层`（y8 blur24，16%）。
-
-### 2.5 组件清单
-所有组件都用 auto layout 搭建，文本通过组件属性（TEXT / BOOLEAN）暴露，状态用 Variant 区分。
-
-| 组件 | 变体 / 属性 | 用途 |
-|---|---|---|
-| StatusBar 状态栏 | Theme=Dark/Light | 所有页面；放在头图上时用 Light |
-| HomeIndicator | — | 全面屏底部横条 |
-| NavBar/返回 · NavBar/文字操作 · NavBar/编辑 | Title、Show Actions、Action | 导航栏，高 44 |
-| TabBar 底部标签栏 | Active=首页/行程/消息/我的 | 4 个 Tab，中间是悬浮「＋ 规划」 |
-| Button 按钮 | Type=Primary/Secondary/Tertiary × Size=L48/M40/S32；Label | 全局按钮 |
-| Chip 胶囊 | State=Default/Selected；Label | 快捷标签、推荐回复、偏好多选 |
-| DayTab 日期切换 | State=Default/Selected/Today；Day、Date | 详情、编辑页的日期条 |
-| Banner 横幅 | Type=Offline/Warning/Error/Info；Text、Action | 离线、权限、停业、登录提示 |
-| AIBadge | — | 「AI 生成·仅供参考」 |
-| Switch · Toast | State=On/Off；Text、Action | 设置项；删除后撤销 |
-| AgentAvatar · ChatBubble | Role=User/Agent；Text | 对话 |
-| Composer 对话输入区 | State=Default/Disabled；Placeholder | 对话页、对话微调抽屉 |
-| HomeInput 首页主输入框 | Placeholder | 首页第一入口 |
-| ItineraryItem 行程条目 | State=Default/Done/Conflict/Edit；Start、End、Kind、Title、Meta | 时间轴 |
-| TransportSeg 交通段 | Mode=Walk/Transit/Drive/Loading；Detail | 相邻条目之间的交通 |
-| POICard · TemplateCard | Title、Meta、Desc / Days、Title、Sub | 推荐、搜索、地图卡片；灵感模板 |
-| TripCard 行程卡片 | Status=Ongoing/Upcoming/Draft/Done；Title、Sub、Status Text、Offline | 行程列表 |
-| BudgetChip 预算标签 | Category=交通/住宿/餐饮/门票/其他；Label、Amount | 预算分项（固定配色） |
-| SectionHeader · SkeletonCard · EmptyState | Title、Action / — / Title、Desc、Show Button | 区块标题、骨架屏、空状态 |
-| ListRow · NotificationItem · MapPin | Type=Arrow/Switch · Type=出发/天气/闭馆/系统 · Day=1/2/Hotel | 设置项、通知、地图点位 |
-
-## 3. 页面清单与 PRD 对应
-| PRD | 页面 | Figma 画板 |
-|---|---|---|
-| 6.1 P01 | 启动页 / 引导页 / 偏好快速设置 | P01-a 启动页 · P01-b 引导页（1/3）· P01-c 偏好快速设置 |
-| 6.2 P02 | 首页 | P02-a 出行中（今日视图）· P02-b 新用户空状态 · P02-c 加载/异常（骨架屏、天气「--」、离线横幅） |
-| 6.3 P03 | AI 对话规划页 | P03-a 首次进入空状态 · P03-b 追问澄清（快捷选项卡）· P03-c 需求摘要卡 · P03-d 生成中（分步进度 + 流式）· P03-e 失败/超出能力/断网 |
-| 6.4 P04 | 行程生成结果 / 预览页 | P04-a 完整预览（长图）· P04-b 对话微调差异预览 |
-| 6.5 P05 | 行程详情页 | P05-a 出行中（今天、已完成、下一站）· P05-b 某天无条目 · P05-c 离线只读 + 冲突提示 |
-| 6.6 P06 | 行程编辑页 | P06-a 拖拽排序中（待安排池、占位线、重算 loading、撤销 Toast）· P06-b 添加地点 · P06-c 删除一天二次确认 |
-| 6.7 P07 | 地图视图 | P07-a 第 1 天路线 · P07-b 地图失败/离线降级 |
-| 6.8 P08 | 地点详情页 | P08-a 景点（灵隐寺，完整长图）· P08-b 可能已停业 / 无图 / 营业时间未知 |
-| 6.9 P09 | 预算页 | P09-a 分项估算（环形图 + 明细展开）· P09-b 未知项 + 超上限 · P09-c 空状态 |
-| 6.10 P10 | 我的行程列表 | P10-a 即将出发 · P10-b 空状态 · P10-c 未登录本地草稿 · P10-d 骨架屏 |
-| 6.11 P11 | 提醒 / 通知页 | P11-a 通知列表 · P11-b 调整方案抽屉 · P11-c 空状态 + 通知权限未开 |
-| 6.12 P12 | 个人中心 / 偏好设置 | P12-a 已登录（完整）· P12-b 未登录 |
-| 6.13 附 | 登录页（P13） | P13 登录底部半屏 |
-| 6.13 附 | 分享面板（P14） | P14-a 分享抽屉 · P14-b 长图预览 |
-
-**示例数据**：上海出发、杭州两日游（10/24–10/25，2 人，舒适档）。景点、价格和交通都按真实情况估计，并标注「参考」。
-
-## 4. 关键设计决策
-1. **保留中间悬浮「＋ 规划」（对应 PRD 5.1 的假设）**
-   - **入口**：首页主输入框是第一入口，悬浮按钮是全局第二入口，在行程、消息、我的页面也能一步开始规划。
-   - **样式**：按钮 56px，比 Tab 栏高出 18px，填充用 primary 黑，图标/字 inverse 白。
-2. **首页出行中切换为「今日驾驶舱」**
-   - **今日卡片**：黑白灰卡片 + 少量点缀色，置顶，放在输入框之前。
-   - **卡片内容**：只放一个下一站、一个倒计时（点缀色）和两个按钮（导航 / 帮我调整今天），目标是一眼看清。
-3. **对话页用结构化卡片减少打字**
-   - **卡片类型**：快捷选项卡、需求摘要卡、进度卡、失败卡都在对话流里。
-   - **追问轮次**：卡片右上角标出「1/3」轮次，让用户知道最多问 3 轮。
-   - **默认值**：摘要卡里的默认值用灰色「默认」标签标出，每一项都能点击修改。
-4. **人工确认点有统一样式（PRD 7.5）**
-   - **范围**：开始生成、对话微调、行中调整方案、删除一天。
-   - **样式**：都用「次要按钮 + 主按钮」的组合，Agent 不会自动执行。
-   - **差异预览**：新增标绿、删除标红（加删除线）、移动标蓝，每条都带文字标签，不只靠颜色区分（照顾色弱用户）。
-5. **时间轴分三层**
-   - **结构**：时间列、条目卡片、交通段。交通段和卡片左对齐留出缩进，像一条连续的路线。
-   - **状态**：已完成置灰并打勾，冲突用黄色描边加内嵌「一键修复」，编辑态显示拖拽手柄和删除。
-   - **组件化**：这些都是同一个组件的不同变体，开发容易对应。
-6. **按天区分贯穿全流程（灰度阶）**
-   - **颜色**：第 1–4 天用灰度阶区分；「今天」用点缀色高亮。
-   - **一致性**：地图路线、点位、日期胶囊、预览页的天标签都用同一套 day Tokens。
-7. **可信度表达**
-   - **AI 标识**：所有 AI 内容旁边放「AI 生成·仅供参考」。
-   - **数据标注**：价格一律写区间并标「参考」，营业时间和 POI 标数据来源和更新时间。
-   - **图片来源**：图片标注来源。
-8. **离线和异常不打断用户**
-   - **横幅**：离线统一用灰色横幅（PRD 6 通用约定）。
-   - **只读态**：离线时「编辑」「问 AI」置灰，并说明原因。
-   - **降级**：地图失败时降级为编号列表，仍然可以唤起导航。
-9. **不接预订（PRD Q3 默认）**：地点详情页的底部按钮只有收藏、替换、加入行程，没有「去预订」。
-10. **图片与地图都是示意**
-    - **头图和缩略图**：用渐变色占位，接入 POI 图片后替换。
-    - **地图**：底图是矢量示意（西湖轮廓 + 路线），开发时替换为高德 SDK。
-
-## 5. 待确认问题
-1. **品牌 Logo / Slogan**：现在用图标占位，Slogan 暂写「一句话，说走就走」（PRD Q10 还没定）。
-2. **悬浮「＋ 规划」去留**：需要和产品经理确认（PRD 5.1）。
-3. **地图服务商（PRD Q4）**：会影响地图样式、点位和导航面板的细节。
-4. **登录方式（PRD Q5）**：现在按「本机号码一键登录 + 其他手机号 + 微信 + Apple」设计。
-5. **深色模式（PRD Q16）**：变量已预留，是否在 MVP 里出深色稿？
-6. **语音输入（PRD Q14）**：输入框保留了麦克风入口；如果砍掉，需要去掉对应图标。
-7. **离线编辑（PRD Q13）**：现在按离线只读设计。
-8. **H5 分享查看页**：PRD 说明不在 App 范围内，需要单独排期设计。
-9. **字体授权**：设计稿用 Noto Sans SC，App 实现用系统字体（苹方 / 思源黑体），是否需要品牌字体？
-10. **图片素材**：真实目的地和 POI 图片的来源与授权（PRD Q4）。
-
-## 6. 截图与未完成项（v0.1）
-- **截图未导出**：Figma 连接达到了 Starter 计划的 MCP 调用上限，关键页面截图（首页、对话生成、行程详情）还没导出，`screenshots/` 目录暂时没有。额度恢复，或者在 Figma 里手动导出后再补交。
-- **Foundations 页说明板缺失**：颜色色板、字体样阶、间距的可视化说明板还没画出来（同样受调用上限影响）。变量、文字样式、阴影样式和全部组件都已经在文件里，第 2 节就是对应的规范摘要。
-
-## 7. 产品验收对照（v0.1 → 待修订）
-
-对照产品经理 2026-10-19 验收意见。**Figma MCP Starter 额度已用尽，画板修订暂无法通过 API 执行**；下列「已覆盖」以当前文件内容为准（构建时自检），「待补」等额度恢复或人工在 Figma 内改完后再标为完成。
-
-| # | 验收项 | v0.1 状态 | 说明 |
+| 样式 | 字号 / 行高 | 字重 | 用途 |
 |---|---|---|---|
-| 1 | 核心闭环：启动→首页→追问→生成中→结果→保存前登录墙；首页「无行程 / 行前 / 出行中」至少 3 态 | 部分完成 | P01–P04、P13 成套已有。首页现有：空态（P02-b）、出行中（P02-a）、加载异常（P02-c）。**缺「有行程·行前」独立画板**（出发前总览：倒计时到出发日、行程摘要、未进入今日驾驶舱）。 |
-| 2 | 行程编辑：时间轴、拖拽、待安排池、撤销、预算/交通重算反馈 | 已覆盖 | P06-a 含拖拽占位线、待安排池、重算 loading、撤销 Toast；待额度恢复后加强「重算完成」成功反馈态。 |
-| 3 | 对话修改差异预览（绿增/红删/蓝移）+「应用」确认 | 已覆盖 | P04-b；决策说明见 §4.4。待补独立「应用确认」半屏若与预览页拆开更清晰。 |
-| 4 | 地图：按天连线、交通耗时、跳转外链地图 | 已覆盖 | P07-a；失败降级 P07-b。 |
-| 5 | 地点详情：景点 P0；酒店仅参考价、无预订按钮 | 部分完成 | P08 现为景点（灵隐寺）+ 异常态。**缺餐饮/酒店详情画板**；P08 底部无「预订」主按钮（§4.9）。待补酒店态：参考价区间 +「仅供参考」+ 收藏/替换/加入行程。 |
-| 6 | 预算：分项区间 + 人均 +「仅供参考」；非记账 | 已覆盖 | P09-a/b/c；需再核对文案是否处处写「仅供参考」。 |
-| 7 | 分享只读，无协同编辑 | 已覆盖 | P14 为链接/长图；无协同入口。 |
-| 8 | 品牌全文「去哪玩」，无「行程搭子」 | 已覆盖 | 构建文案统一「去哪玩」；Logo 仍为占位（§5.1）。 |
-| 9 | 定位「使用期间」说明、免责与数据来源可见 | 部分完成 | AI 标识、价格「参考」、来源标签已有；**待补：定位权限说明页/弹层、生成内容免责在结果页更显眼位置**。 |
-| 10 | 设计说明含 Tokens、组件、页面索引、与 PRD 映射 | 本文档 | node-id 关键页见 §1；完整索引待截图恢复后补齐。 |
+| Display | 28 / 36 | Bold 700 | 品牌、启动页 |
+| Title | 20 / 28 | Semibold 600 | 页面标题、区块标题 |
+| Headline | 17 / 24 | Semibold 600 | 条目名、导航标题 |
+| Body | 15 / 22 | Regular 400 | 正文、按钮 |
+| Caption | 13 / 18 | Regular 400 | 次级说明、耗时 |
+| Micro | 11 / 16 | Medium 500 | Tab、角标、色板标注 |
 
-### 修订优先级（额度恢复后）
-0. **Tokens 换肤**：按 §2.2 色彩系统 v0.2（黑白灰 6:3:1，点缀 `brand/accent #2563EB`、`accent-pressed #1D4ED8`、`accent-soft #EFF6FF`）更新变量与绑定。
-1. 新增 **P02-d 首页·行前**（有行程、未出发）。
-2. 新增 **P08-c 酒店详情**、**P08-d 餐饮详情**（无预订 CTA）。
-3. 强化 **P04-b / 应用确认**、**P06 重算完成反馈**、定位权限与免责文案。
-4. 补封面、Foundations 色板示意、关键页 PNG 到 `screenshots/`。
+### 3.3 间距、圆角、海拔
+
+- 间距：4 · 8 · 12 · 16 · 20 · 24 · 32 · 40。页面左右边距 16；卡片内边距 12。
+- 圆角：8 标签 · 12 输入和横幅 · 16 卡片 · 24 半屏顶部 · full 按钮和胶囊。
+- 海拔：卡片 `y2 blur12 黑 8%`，浮层 `y8 blur24 黑 16%`。
+
+## 4. 组件（批次 1）
+
+见 [`components.html`](prototype/components.html)。图标是内联 SVG，打开页面时不请求外部图标库。
+
+| 组件 | 状态 |
+|---|---|
+| Button | 主按钮（蓝）、次按钮、文字、禁用、加载 |
+| Chip | 默认 / 选中 |
+| NavBar | 返回、标题、右侧操作 |
+| TabBar | 首页 / 行程 / AI / 我的，含选中态 |
+| ItineraryItem | 时间、地点、时长、灰度日标、拖拽手柄；另有拖拽态 |
+| TransportSeg | 方式图标、耗时、距离，夹在条目之间 |
+| POICard | 灰色图片占位、名称、评分、标签、参考价。无预订按钮 |
+| Banner | info / warning，例如「定位未开启」 |
+| AIBadge | 胶囊「AI 生成 · 仅供参考」 |
+| Toast | 删除后撤销 |
+| BottomSheet | 半屏，蒙层黑 40% |
+| Skeleton | 卡片骨架 |
+
+## 5. 页面索引
+
+一个状态一个文件。空 / 加载 / 异常排在该页主状态之后，仍是独立文件。地图页可以用静态占位图。
+
+| 批次 | 页面 | 文件 | 截图 | 状态 |
+|---|---|---|---|---|
+| 1 | Foundations | `prototype/foundations.html` | `screenshots/foundations.png` | 已交付 |
+| 1 | Components | `prototype/components.html` | `screenshots/components.png` | 已交付 |
+| 2 | 启动 | `pages/P01-a-splash.html` | 同名 png | 待交付 |
+| 2 | 引导 | `pages/P01-b-onboarding.html` | 同名 png | 待交付 |
+| 2 | 偏好 | `pages/P01-c-preferences.html` | 同名 png | 待交付 |
+| 2 | 首页 · 空 | `pages/P02-a-home-empty.html` | 同名 png | 待交付 |
+| 2 | 首页 · 出行中 | `pages/P02-b-home-ongoing.html` | 同名 png | 待交付 |
+| 2 | 首页 · 加载 / 离线 | `pages/P02-c-home-offline.html` | 同名 png | 待交付 |
+| 2 | 首页 · 行前 | `pages/P02-d-home-pretrip.html` | 同名 png | 待交付 |
+| 2 | 对话 · 首次 | `pages/P03-a-chat-welcome.html` | 同名 png | 待交付 |
+| 2 | 对话 · 追问（标 1/3） | `pages/P03-b-chat-clarify.html` | 同名 png | 待交付 |
+| 2 | 对话 · 摘要卡 | `pages/P03-c-chat-summary.html` | 同名 png | 待交付 |
+| 2 | 对话 · 生成中 | `pages/P03-d-chat-generating.html` | 同名 png | 待交付 |
+| 2 | 对话 · 失败 / 断网 | `pages/P03-e-chat-error.html` | 同名 png | 待交付 |
+| 2 | 行程预览 | `pages/P04-a-preview.html` | 同名 png | 待交付 |
+| 2 | 登录半屏 | `pages/P13-a-login.html` | 同名 png | 待交付 |
+| 3 | 详情 · 出行中 | `pages/P05-a-detail-ongoing.html` | 同名 png | 待交付 |
+| 3 | 详情 · 某天无条目 | `pages/P05-b-detail-empty.html` | 同名 png | 待交付 |
+| 3 | 详情 · 离线只读 | `pages/P05-c-detail-offline.html` | 同名 png | 待交付 |
+| 3 | 详情 · 冲突 | `pages/P05-d-detail-conflict.html` | 同名 png | 待交付 |
+| 3 | 编辑 · 拖拽 | `pages/P06-a-edit-drag.html` | 同名 png | 待交付 |
+| 3 | 编辑 · 待安排池 | `pages/P06-b-edit-pool.html` | 同名 png | 待交付 |
+| 3 | 编辑 · 撤销 Toast | `pages/P06-c-edit-undo.html` | 同名 png | 待交付 |
+| 3 | 编辑 · 重算中 | `pages/P06-d-edit-recalc.html` | 同名 png | 待交付 |
+| 3 | 编辑 · 重算完成 | `pages/P06-e-edit-recalc-done.html` | 同名 png | 待交付 |
+| 3 | 编辑 · 重算失败 | `pages/P06-f-edit-recalc-fail.html` | 同名 png | 待交付 |
+| 3 | 差异预览 | `pages/P04-b-diff.html` | 同名 png | 待交付 |
+| 3 | 应用确认半屏 | `pages/P04-c-apply-confirm.html` | 同名 png | 待交付 |
+| 4 | 地图 | `pages/P07-a-map.html` | 同名 png | 待交付 |
+| 4 | 地图降级 | `pages/P07-b-map-fallback.html` | 同名 png | 待交付 |
+| 4 | 景点 | `pages/P08-a-poi-sight.html` | 同名 png | 待交付 |
+| 4 | 餐饮 | `pages/P08-b-poi-food.html` | 同名 png | 待交付 |
+| 4 | 酒店（参考价，无预订） | `pages/P08-c-poi-hotel.html` | 同名 png | 待交付 |
+| 4 | 地点异常 | `pages/P08-d-poi-closed.html` | 同名 png | 待交付 |
+| 4 | 预算 | `pages/P09-a-budget.html` | 同名 png | 待交付 |
+| 4 | 预算未知项 | `pages/P09-b-budget-unknown.html` | 同名 png | 待交付 |
+| 4 | 预算空状态 | `pages/P09-c-budget-empty.html` | 同名 png | 待交付 |
+| 5 | 即将出发 | `pages/P10-a-trips-upcoming.html` | 同名 png | 待交付 |
+| 5 | 草稿 | `pages/P10-b-trips-draft.html` | 同名 png | 待交付 |
+| 5 | 已完成 | `pages/P10-c-trips-done.html` | 同名 png | 待交付 |
+| 5 | 行程空状态 | `pages/P10-d-trips-empty.html` | 同名 png | 待交付 |
+| 5 | 未登录本地草稿 | `pages/P10-e-trips-local.html` | 同名 png | 待交付 |
+| 5 | 通知列表 | `pages/P11-a-notifications.html` | 同名 png | 待交付 |
+| 5 | 调整方案 | `pages/P11-b-adjust-sheet.html` | 同名 png | 待交付 |
+| 5 | 定位权限半屏 | `pages/P11-c-location-permission.html` | 同名 png | 待交付 |
+| 5 | 通知未开启 | `pages/P11-d-notify-off.html` | 同名 png | 待交付 |
+| 5 | 个人中心 | `pages/P12-a-profile.html` | 同名 png | 待交付 |
+| 5 | 个人中心未登录 | `pages/P12-b-profile-guest.html` | 同名 png | 待交付 |
+| 5 | 只读分享链接 | `pages/P14-a-share-link.html` | 同名 png | 待交付 |
+| 5 | 分享长图 | `pages/P14-b-share-image.html` | 同名 png | 待交付 |
+
+路径相对 `prototype/`。示例数据仍是上海出发、杭州两日游（10/24–10/25，2 人，舒适档）。
+
+行前首页不是今日驾驶舱：倒计时、行程摘要、「查看行程」「继续问 AI」。出行中才进入今日视图。
+
+## 6. 关键设计决策
+
+1. **Tab 为首页 / 行程 / AI / 我的。** 选中项用点缀蓝。PRD 5.1 的「消息」Tab 和中间悬浮「＋ 规划」这次没有做进组件；悬浮按钮是否保留仍待产品确认。
+2. **蓝色的用量。** 主按钮、选中芯片、选中 Tab、关键标签（如「建议上午」）。倒计时和日标不用蓝。
+3. **按天用灰度阶。** 日标是 1–4 的灰圆，数字区分。
+4. **可信度。** AI 内容旁放「AI 生成 · 仅供参考」。价格写区间并标「参考」。
+5. **不接预订。** 地点卡没有「去预订」。后续详情页底部只有收藏、替换、加入行程。
+6. **人工确认。** 删除一天用半屏：次按钮 + 主按钮。差异预览（批次 3）用语义色加文字标签，不用品牌蓝铺底。
+7. **图片是灰色占位。** 地图页（批次 4）用静态灰阶占位，不引入彩色地图。
+
+## 7. 待确认
+
+1. **Logo / Slogan。** 仍无正式 Logo。Slogan 暂不写进组件。
+2. **悬浮「＋ 规划」是否还要**（PRD 5.1）。当前 Tab 已有 AI。
+3. **地图服务商**（PRD Q4）。
+4. **登录方式**（PRD Q5）：本机号码、验证码、微信、Apple。
+5. **深色模式**（PRD Q16）：token 按浅色一套，MVP 可以不做。
+6. **语音输入**（PRD Q14）。
+7. **离线编辑**（PRD Q13）：按离线只读。
+8. **字体。** 设计指定苹方；截图用 Noto Sans CJK SC。是否再引入品牌字体未定。
+
+## 8. Figma 归档
+
+[去哪玩 - 移动端设计 v0.1](https://www.figma.com/design/uajCEb4MuRKA8rXWZf2QSM)（文件 `uajCEb4MuRKA8rXWZf2QSM`）已归档，只读。那一版仍是旧青绿主题，只能当布局参考，不能当颜色或组件的依据。颜色和组件以本目录的 HTML 原型为准。

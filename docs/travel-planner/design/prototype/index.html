@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=390">
+  <title>去哪玩 · 设计原型</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+  <main class="board">
+    <header class="board-header">
+      <p class="eyebrow">去哪玩 · HTML 原型</p>
+      <h1>设计目录</h1>
+      <p class="lede">每个页面状态一个文件，截图与文件同名。空状态、加载和异常在主状态之后补。</p>
+    </header>
+
+    <section class="batch">
+      <h2>批次 1 · 已交付</h2>
+      <p class="batch-note">基础规范与核心组件。</p>
+      <div class="page-row">
+        <a href="foundations.html">基础规范</a>
+        <code>foundations</code>
+      </div>
+      <div class="page-row">
+        <a href="components.html">核心组件</a>
+        <code>components</code>
+      </div>
+    </section>
+
+    <section class="batch">
+      <h2>批次 2</h2>
+      <p class="batch-note">启动、首页三态、对话到预览、登录半屏。</p>
+      <div class="page-row"><span>启动页</span><code>pages/P01-a-splash.html</code></div>
+      <div class="page-row"><span>引导</span><code>pages/P01-b-onboarding.html</code></div>
+      <div class="page-row"><span>偏好快速设置</span><code>pages/P01-c-preferences.html</code></div>
+      <div class="page-row"><span>首页 · 空</span><code>pages/P02-a-home-empty.html</code></div>
+      <div class="page-row"><span>首页 · 出行中</span><code>pages/P02-b-home-ongoing.html</code></div>
+      <div class="page-row"><span>首页 · 加载 / 离线</span><code>pages/P02-c-home-offline.html</code></div>
+      <div class="page-row"><span>首页 · 行前</span><code>pages/P02-d-home-pretrip.html</code></div>
+      <div class="page-row"><span>对话 · 首次进入</span><code>pages/P03-a-chat-welcome.html</code></div>
+      <div class="page-row"><span>对话 · 追问</span><code>pages/P03-b-chat-clarify.html</code></div>
+      <div class="page-row"><span>对话 · 需求摘要</span><code>pages/P03-c-chat-summary.html</code></div>
+      <div class="page-row"><span>对话 · 生成中</span><code>pages/P03-d-chat-generating.html</code></div>
+      <div class="page-row"><span>对话 · 失败 / 断网</span><code>pages/P03-e-chat-error.html</code></div>
+      <div class="page-row"><span>行程预览</span><code>pages/P04-a-preview.html</code></div>
+      <div class="page-row"><span>登录半屏</span><code>pages/P13-a-login.html</code></div>
+    </section>
+
+    <section class="batch">
+      <h2>批次 3</h2>
+      <p class="batch-note">行程详情、编辑，以及对话修改的差异预览和应用确认。</p>
+      <div class="page-row"><span>详情 · 出行中</span><code>pages/P05-a-detail-ongoing.html</code></div>
+      <div class="page-row"><span>详情 · 某天无条目</span><code>pages/P05-b-detail-empty.html</code></div>
+      <div class="page-row"><span>详情 · 离线只读</span><code>pages/P05-c-detail-offline.html</code></div>
+      <div class="page-row"><span>详情 · 冲突</span><code>pages/P05-d-detail-conflict.html</code></div>
+      <div class="page-row"><span>编辑 · 拖拽</span><code>pages/P06-a-edit-drag.html</code></div>
+      <div class="page-row"><span>编辑 · 待安排池</span><code>pages/P06-b-edit-pool.html</code></div>
+      <div class="page-row"><span>编辑 · 撤销</span><code>pages/P06-c-edit-undo.html</code></div>
+      <div class="page-row"><span>编辑 · 重算中</span><code>pages/P06-d-edit-recalc.html</code></div>
+      <div class="page-row"><span>编辑 · 重算完成</span><code>pages/P06-e-edit-recalc-done.html</code></div>
+      <div class="page-row"><span>编辑 · 重算失败</span><code>pages/P06-f-edit-recalc-fail.html</code></div>
+      <div class="page-row"><span>差异预览</span><code>pages/P04-b-diff.html</code></div>
+      <div class="page-row"><span>应用确认半屏</span><code>pages/P04-c-apply-confirm.html</code></div>
+    </section>
+
+    <section class="batch">
+      <h2>批次 4</h2>
+      <p class="batch-note">地图可用静态占位图。地点详情无预订。</p>
+      <div class="page-row"><span>地图</span><code>pages/P07-a-map.html</code></div>
+      <div class="page-row"><span>地图 · 降级列表</span><code>pages/P07-b-map-fallback.html</code></div>
+      <div class="page-row"><span>景点详情</span><code>pages/P08-a-poi-sight.html</code></div>
+      <div class="page-row"><span>餐饮详情</span><code>pages/P08-b-poi-food.html</code></div>
+      <div class="page-row"><span>酒店详情</span><code>pages/P08-c-poi-hotel.html</code></div>
+      <div class="page-row"><span>地点 · 可能停业</span><code>pages/P08-d-poi-closed.html</code></div>
+      <div class="page-row"><span>预算</span><code>pages/P09-a-budget.html</code></div>
+      <div class="page-row"><span>预算 · 未知项</span><code>pages/P09-b-budget-unknown.html</code></div>
+      <div class="page-row"><span>预算 · 空</span><code>pages/P09-c-budget-empty.html</code></div>
+    </section>
+
+    <section class="batch">
+      <h2>批次 5</h2>
+      <p class="batch-note">我的行程、提醒、个人中心、只读分享。</p>
+      <div class="page-row"><span>即将出发</span><code>pages/P10-a-trips-upcoming.html</code></div>
+      <div class="page-row"><span>草稿</span><code>pages/P10-b-trips-draft.html</code></div>
+      <div class="page-row"><span>已完成</span><code>pages/P10-c-trips-done.html</code></div>
+      <div class="page-row"><span>行程 · 空</span><code>pages/P10-d-trips-empty.html</code></div>
+      <div class="page-row"><span>未登录本地草稿</span><code>pages/P10-e-trips-local.html</code></div>
+      <div class="page-row"><span>通知列表</span><code>pages/P11-a-notifications.html</code></div>
+      <div class="page-row"><span>调整方案</span><code>pages/P11-b-adjust-sheet.html</code></div>
+      <div class="page-row"><span>定位权限半屏</span><code>pages/P11-c-location-permission.html</code></div>
+      <div class="page-row"><span>通知未开启</span><code>pages/P11-d-notify-off.html</code></div>
+      <div class="page-row"><span>个人中心</span><code>pages/P12-a-profile.html</code></div>
+      <div class="page-row"><span>个人中心 · 未登录</span><code>pages/P12-b-profile-guest.html</code></div>
+      <div class="page-row"><span>分享 · 只读链接</span><code>pages/P14-a-share-link.html</code></div>
+      <div class="page-row"><span>分享 · 长图</span><code>pages/P14-b-share-image.html</code></div>
+    </section>
+  </main>
+</body>
+</html>
