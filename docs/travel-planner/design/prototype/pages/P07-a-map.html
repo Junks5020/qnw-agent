@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=390">
+  <title>地图 · 去哪玩</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../components.css">
+</head>
+<body>
+<script src="../icons.js"></script>
+<script src="../sample-data.js"></script>
+<main class="screen">
+
+<div class="sysbar"><span>9:41</span><span>去哪玩</span></div>
+<header class="navbar"><a class="navbar-back" href="P05-a-detail-ongoing.html" aria-label="返回"><svg class="icon" aria-hidden="true"><use href="#i-back"/></svg></a><div class="navbar-title">杭州两日游</div><span class="navbar-action"></span></header>
+<div class="chip-bar">
+  <div class="demo-row">
+    <span class="chip is-selected">全部</span>
+    <span class="chip">第 1 天</span>
+    <span class="chip">第 2 天</span>
+  </div>
+</div>
+<div class="map-canvas" role="img" aria-label="路线占位，灰阶连线">
+  <svg class="map-routes" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <polyline class="route-d1" points="18,14 46,42 38,62 36,78"/>
+    <polyline class="route-d2" points="62,80 66,54 78,22"/>
+  </svg>
+  <span class="pin is-selected" style="left:18%;top:14%">1</span>
+  <span class="pin" style="left:46%;top:42%">2</span>
+  <span class="pin" style="left:38%;top:62%">3</span>
+  <span class="pin pin-hotel" style="left:36%;top:78%" aria-label="酒店"><svg class="icon" aria-hidden="true"><use href="#i-stay"/></svg></span>
+  <span class="pin" style="left:62%;top:80%">5</span>
+  <span class="pin" style="left:66%;top:54%">6</span>
+  <span class="pin" style="left:78%;top:22%">7</span>
+  <div class="map-tools">
+    <button class="map-tool" type="button"><svg class="icon" aria-hidden="true"><use href="#i-locate"/></svg>定位</button>
+    <button class="map-tool" type="button"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>图层</button>
+  </div>
+</div>
+<div class="stop-scroll">
+  <article class="stop-card is-selected">
+    <time data-qnw="d1.lingyin">09:00</time>
+    <a class="t-headline" href="P08-a-poi-sight.html">1 · 灵隐寺</a>
+    <p class="t-caption" data-qnw="d1.toLou">打车 20 分钟 · 5 公里</p>
+    <a class="btn btn-secondary" href="P07-c-nav-sheet.html">导航</a>
+  </article>
+  <article class="stop-card">
+    <time data-qnw="d1.lou">11:30</time>
+    <a class="t-headline" href="P08-b-poi-food.html">2 · 楼外楼</a>
+    <p class="t-caption" data-qnw="d1.toLake">步行 12 分钟 · 800 米</p>
+    <a class="btn btn-secondary" href="P07-c-nav-sheet.html">导航</a>
+  </article>
+  <article class="stop-card">
+    <time data-qnw="d1.lake">13:15</time>
+    <strong class="t-headline">3 · 西湖</strong>
+    <p class="t-caption" data-qnw="d1.toHotel">打车 12 分钟 · 3 公里</p>
+    <a class="btn btn-secondary" href="P07-c-nav-sheet.html">导航</a>
+  </article>
+  <article class="stop-card">
+    <time data-qnw="d1.hotel">15:30</time>
+    <a class="t-headline" href="P08-c-poi-hotel.html">酒店 · 西湖边</a>
+    <p class="t-caption" data-qnw="d2.morning">第二天从酒店步行 22 分钟 · 1.6 公里</p>
+    <a class="btn btn-secondary" href="P07-c-nav-sheet.html">导航</a>
+  </article>
+  <article class="stop-card">
+    <time data-qnw="d2.hefang">10:00</time>
+    <strong class="t-headline">5 · 河坊街</strong>
+    <p class="t-caption" data-qnw="d2.toMeiyuan">步行 20 分钟 · 1.5 公里</p>
+    <a class="btn btn-secondary" href="P07-c-nav-sheet.html">导航</a>
+  </article>
+  <article class="stop-card">
+    <time data-qnw="d2.meiyuan">13:00</time>
+    <strong class="t-headline">6 · 中国美术学院</strong>
+    <p class="t-caption" data-qnw="d2.toBoat">打车 12 分钟 · 2.5 公里</p>
+    <a class="btn btn-secondary" href="P07-c-nav-sheet.html">导航</a>
+  </article>
+  <article class="stop-card">
+    <time data-qnw="d2.boat">16:00</time>
+    <strong class="t-headline">7 · 西湖游船</strong>
+    <p class="t-caption">当天最后一站</p>
+    <a class="btn btn-secondary" href="P07-c-nav-sheet.html">导航</a>
+  </article>
+</div>
+
+</main>
+</body>
+</html>

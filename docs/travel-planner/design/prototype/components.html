@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=390">
+  <title>Components · 去哪玩</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+  <svg hidden width="0" height="0">
+    <symbol id="i-back" viewBox="0 0 24 24">
+      <path d="M15 18 9 12l6-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-home" viewBox="0 0 24 24">
+      <path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-trip" viewBox="0 0 24 24">
+      <path d="M8 4h11v14l-4-2-4 2-4-2-4 2V8l5-2" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+      <path d="M8 4v12" fill="none" stroke="currentColor" stroke-width="1.75"/>
+    </symbol>
+    <symbol id="i-ai" viewBox="0 0 24 24">
+      <path d="M12 3.5 13.4 8 18 9.2 13.4 10.6 12 15l-1.4-4.4L6 9.2 10.6 8 12 3.5Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+      <path d="M18 14.5 18.7 16.6 20.8 17.3 18.7 18 18 20.1 17.3 18 15.2 17.3 17.3 16.6 18 14.5Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-user" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="3.25" fill="none" stroke="currentColor" stroke-width="1.75"/>
+      <path d="M5.5 19.5a6.5 6.5 0 0 1 13 0" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24">
+      <path d="M6 9a6 6 0 0 1 12 0c0 7 2.5 7 2.5 9h-17C3.5 16 6 16 6 9Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+      <path d="M10 20.5h4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-grip" viewBox="0 0 24 24">
+      <circle cx="9" cy="7" r="1.15" fill="currentColor"/>
+      <circle cx="15" cy="7" r="1.15" fill="currentColor"/>
+      <circle cx="9" cy="12" r="1.15" fill="currentColor"/>
+      <circle cx="15" cy="12" r="1.15" fill="currentColor"/>
+      <circle cx="9" cy="17" r="1.15" fill="currentColor"/>
+      <circle cx="15" cy="17" r="1.15" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-walk" viewBox="0 0 24 24">
+      <circle cx="14" cy="5" r="1.6" fill="none" stroke="currentColor" stroke-width="1.75"/>
+      <path d="M8 21.5 11 14l2.2 2.2L16 21" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M10.2 14.2 13 10l2.4 2" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24">
+      <path d="m12 3.8 2.1 4.4 4.8.7-3.5 3.4.8 4.8L12 15.2 7.8 17.1l.8-4.8L5.1 8.9l4.8-.7L12 3.8Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-image" viewBox="0 0 24 24">
+      <rect x="4" y="5" width="16" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.75"/>
+      <path d="m4 16 4.2-3.2L12 16l3.2-3.6L20 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+      <circle cx="9" cy="9" r="1.1" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-info" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.75"/>
+      <path d="M12 11v5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <circle cx="12" cy="8.2" r="0.9" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24">
+      <path d="M12 4 21 19H3L12 4Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+      <path d="M12 10v4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <circle cx="12" cy="16.5" r="0.9" fill="currentColor"/>
+    </symbol>
+  </svg>
+
+  <main class="board catalog">
+    <header class="board-header">
+      <p class="eyebrow">去哪玩 · 组件</p>
+      <h1>核心组件</h1>
+      <p class="lede">每个状态单独摆出。蓝色只出现在主按钮、选中态和关键标签。地点卡没有预订按钮。</p>
+    </header>
+
+    <section class="spec" id="button">
+      <h2>Button</h2>
+      <p class="spec-note">主按钮用点缀蓝。次按钮和文字按钮留在灰阶里。</p>
+      <p class="state-label">Primary</p>
+      <button class="btn btn-primary" type="button">开始规划</button>
+      <p class="state-label">Secondary</p>
+      <button class="btn btn-secondary" type="button">先看看</button>
+      <p class="state-label">Text</p>
+      <button class="btn btn-text" type="button">取消</button>
+      <p class="state-label">Disabled</p>
+      <button class="btn btn-primary" type="button" disabled>不可用</button>
+      <p class="state-label">Loading</p>
+      <button class="btn btn-primary is-loading" type="button" aria-busy="true">
+        <span class="spinner" aria-hidden="true"></span>
+        生成中
+      </button>
+      <p class="state-label">Danger · filled</p>
+      <button class="btn btn-danger" type="button">删除</button>
+      <p class="state-label">Danger · line</p>
+      <button class="btn btn-danger-line" type="button">删除</button>
+    </section>
+
+    <section class="spec" id="chip">
+      <h2>Chip</h2>
+      <p class="spec-note">Default 为灰底。Selected 为蓝底白字。</p>
+      <div class="demo-row">
+        <span class="chip is-selected">周末短途</span>
+        <span class="chip">亲子</span>
+        <span class="chip">美食</span>
+        <span class="chip">预算友好</span>
+      </div>
+    </section>
+
+    <section class="spec" id="navbar">
+      <h2>NavBar</h2>
+      <p class="spec-note">返回、标题、右侧操作。高 44。</p>
+      <div class="chrome">
+        <header class="navbar">
+          <button class="navbar-back" type="button" aria-label="返回">
+            <svg class="icon" aria-hidden="true"><use href="#i-back"/></svg>
+          </button>
+          <div class="navbar-title">规划新行程</div>
+          <button class="navbar-action" type="button">新对话</button>
+        </header>
+      </div>
+    </section>
+
+    <section class="spec" id="tabbar">
+      <h2>TabBar</h2>
+      <p class="spec-note">五个普通标签：首页、行程、AI、消息、我的。AI 居中，不是悬浮按钮。选中为蓝。消息未读角标为危险红。</p>
+      <p class="state-label">首页 selected · 消息未读</p>
+      <div class="chrome">
+        <nav class="tabbar" aria-label="首页选中">
+          <a class="tab is-selected" href="#tabbar">
+            <svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>
+            首页
+          </a>
+          <a class="tab" href="#tabbar">
+            <svg class="icon" aria-hidden="true"><use href="#i-trip"/></svg>
+            行程
+          </a>
+          <a class="tab" href="#tabbar">
+            <svg class="icon" aria-hidden="true"><use href="#i-ai"/></svg>
+            AI
+          </a>
+          <a class="tab" href="#tabbar">
+            <span class="tab-ico">
+              <svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg>
+              <span class="tab-badge">2</span>
+            </span>
+            消息
+          </a>
+          <a class="tab" href="#tabbar">
+            <svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>
+            我的
+          </a>
+        </nav>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </div>
+      <p class="state-label">AI selected · 消息未读</p>
+      <div class="chrome">
+        <nav class="tabbar" aria-label="AI 选中">
+          <a class="tab" href="#tabbar">
+            <svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>
+            首页
+          </a>
+          <a class="tab" href="#tabbar">
+            <svg class="icon" aria-hidden="true"><use href="#i-trip"/></svg>
+            行程
+          </a>
+          <a class="tab is-selected" href="#tabbar">
+            <svg class="icon" aria-hidden="true"><use href="#i-ai"/></svg>
+            AI
+          </a>
+          <a class="tab" href="#tabbar">
+            <span class="tab-ico">
+              <svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg>
+              <span class="tab-badge">2</span>
+            </span>
+            消息
+          </a>
+          <a class="tab" href="#tabbar">
+            <svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>
+            我的
+          </a>
+        </nav>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="spec" id="itinerary">
+      <h2>ItineraryItem</h2>
+      <p class="spec-note">时间、地点、时长、灰度日标、拖拽手柄。拖拽态抬起并带占位线。</p>
+      <p class="state-label">Default</p>
+      <article class="itinerary">
+        <span class="day-mark" data-day="1">1</span>
+        <time class="itinerary-time">09:00</time>
+        <div>
+          <div class="itinerary-title">灵隐寺</div>
+          <div class="itinerary-meta">建议 2 小时</div>
+        </div>
+        <span class="handle" aria-hidden="true">
+          <svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg>
+        </span>
+      </article>
+      <div class="transport">
+        <svg class="icon" aria-hidden="true"><use href="#i-car"/></svg>
+        <span>打车 20 分钟 · 5 公里</span>
+      </div>
+      <p class="state-label">Dragging</p>
+      <div class="drop-line" aria-hidden="true"></div>
+      <article class="itinerary is-dragging">
+        <span class="day-mark" data-day="1">1</span>
+        <time class="itinerary-time">10:30</time>
+        <div>
+          <div class="itinerary-title">西湖</div>
+          <div class="itinerary-meta">建议 1.5 小时</div>
+        </div>
+        <span class="handle" aria-hidden="true">
+          <svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg>
+        </span>
+      </article>
+    </section>
+
+    <section class="spec" id="transport">
+      <h2>TransportSeg</h2>
+      <p class="spec-note">放在两个行程条目之间：方式图标、耗时、距离。</p>
+      <article class="itinerary">
+        <span class="day-mark" data-day="2">2</span>
+        <time class="itinerary-time">11:00</time>
+        <div>
+          <div class="itinerary-title">河坊街</div>
+          <div class="itinerary-meta">建议 1 小时</div>
+        </div>
+        <span class="handle" aria-hidden="true">
+          <svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg>
+        </span>
+      </article>
+      <div class="transport">
+        <svg class="icon" aria-hidden="true"><use href="#i-walk"/></svg>
+        <span>步行 12 分钟 · 800 米</span>
+      </div>
+      <article class="itinerary">
+        <span class="day-mark" data-day="2">2</span>
+        <time class="itinerary-time">12:00</time>
+        <div>
+          <div class="itinerary-title">楼外楼</div>
+          <div class="itinerary-meta">午餐 · 1 小时</div>
+        </div>
+        <span class="handle" aria-hidden="true">
+          <svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg>
+        </span>
+      </article>
+    </section>
+
+    <section class="spec" id="poicard">
+      <h2>POICard</h2>
+      <p class="spec-note">灰色图片占位、名称、评分、标签、参考价。没有预订按钮。</p>
+      <article class="poi-card">
+        <div class="poi-media" aria-hidden="true">
+          <svg class="icon icon-lg"><use href="#i-image"/></svg>
+        </div>
+        <div class="poi-body">
+          <h3 class="t-headline">灵隐寺</h3>
+          <p class="poi-rating">
+            <svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>
+            4.8 · 人文
+          </p>
+          <div class="poi-tags">
+            <span class="tag is-key">建议上午</span>
+            <span class="tag">门票</span>
+          </div>
+          <p class="poi-price">¥45–75 <span>参考</span></p>
+        </div>
+      </article>
+    </section>
+
+    <section class="spec" id="banner">
+      <h2>Banner</h2>
+      <p class="spec-note">Info 与 Warning。语义色不计入 6:3:1。</p>
+      <div class="banner banner-info">
+        <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
+        <div>
+          <strong>定位未开启</strong>
+          <p>开启后可显示当前城市。仅在使用期间定位。</p>
+        </div>
+      </div>
+      <div class="banner banner-warning">
+        <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+        <div>
+          <strong>网络不可用</strong>
+          <p>正在显示离线内容。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="spec" id="aibadge">
+      <h2>AIBadge</h2>
+      <p class="spec-note">所有 AI 内容旁边都放这枚胶囊。</p>
+      <span class="ai-badge">AI 生成 · 仅供参考</span>
+    </section>
+
+    <section class="spec" id="toast">
+      <h2>Toast</h2>
+      <p class="spec-note">删除后的撤销提示。</p>
+      <div class="toast" role="status">
+        <span>已删除 · 灵隐寺</span>
+        <button type="button">撤销</button>
+      </div>
+    </section>
+
+    <section class="spec" id="skeleton">
+      <h2>Skeleton</h2>
+      <p class="spec-note">列表和卡片加载时使用。</p>
+      <div class="skeleton-card" aria-hidden="true">
+        <div class="skel skel-lg"></div>
+        <div class="skel"></div>
+        <div class="skel skel-md"></div>
+        <div class="skel skel-sm"></div>
+      </div>
+    </section>
+
+    <section class="spec" id="sheet">
+      <h2>BottomSheet</h2>
+      <p class="spec-note">半屏。蒙层为黑 40%。删除用危险红，不用蓝。</p>
+      <div class="stage">
+        <div class="stage-page">
+          <div class="statusbar">
+            <span>9:41</span>
+            <span>去哪玩</span>
+          </div>
+          <div class="skel skel-lg"></div>
+        </div>
+        <div class="stage-dim"></div>
+        <div class="sheet" role="dialog" aria-label="删除这一天">
+          <div class="sheet-handle" aria-hidden="true"></div>
+          <h3>删除这一天？</h3>
+          <p>这一天的地点会回到待安排池，可以再拖回去。</p>
+          <div class="sheet-actions">
+            <button class="btn btn-secondary" type="button">取消</button>
+            <button class="btn btn-danger" type="button">删除</button>
+          </div>
+          <div class="home-indicator" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

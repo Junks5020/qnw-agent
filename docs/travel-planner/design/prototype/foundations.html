@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=390">
+  <title>Foundations · 去哪玩</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+  <main class="board">
+    <header class="board-header">
+      <p class="eyebrow">去哪玩 · 色彩系统 v0.2</p>
+      <h1>基础规范</h1>
+      <p class="lede">灰和白铺满页面，黑白灰约 6:3:1。蓝色只用于主按钮、选中态和关键标签。色值只写在 tokens.css。</p>
+      <div class="ratio ratio-block" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <p class="ratio-legend"><span>6 黑白灰主色</span><span>3 灰阶辅助</span><span>1 蓝点缀</span></p>
+    </header>
+
+    <section class="section">
+      <h2>颜色</h2>
+      <p class="group-label">Brand</p>
+      <div class="swatch-grid">
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="brand-primary"></div>
+          <figcaption>
+            <span class="swatch-name">brand.primary</span>
+            <span class="token-hex">#111111</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="brand-primary-pressed"></div>
+          <figcaption>
+            <span class="swatch-name">brand.primary-pressed</span>
+            <span class="token-hex">#000000</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="brand-primary-soft"></div>
+          <figcaption>
+            <span class="swatch-name">brand.primary-soft</span>
+            <span class="token-hex">#F3F3F3</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="brand-accent"></div>
+          <figcaption>
+            <span class="swatch-name">brand.accent</span>
+            <span class="token-hex">#2563EB</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="brand-accent-pressed"></div>
+          <figcaption>
+            <span class="swatch-name">brand.accent-pressed</span>
+            <span class="token-hex">#1D4ED8</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="brand-accent-soft"></div>
+          <figcaption>
+            <span class="swatch-name">brand.accent-soft</span>
+            <span class="token-hex">#EFF6FF</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="group-label">Text</p>
+      <div class="swatch-grid">
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="text-primary"></div>
+          <figcaption>
+            <span class="swatch-name">text.primary</span>
+            <span class="token-hex">#111111</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="text-secondary"></div>
+          <figcaption>
+            <span class="swatch-name">text.secondary</span>
+            <span class="token-hex">#666666</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="text-tertiary"></div>
+          <figcaption>
+            <span class="swatch-name">text.tertiary</span>
+            <span class="token-hex">#999999</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="text-on-dark"></div>
+          <figcaption>
+            <span class="swatch-name">text.on-dark</span>
+            <span class="token-hex">#FFFFFF</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="group-label">Background</p>
+      <div class="swatch-grid">
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="bg-page"></div>
+          <figcaption>
+            <span class="swatch-name">bg.page</span>
+            <span class="token-hex">#F5F5F5</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="bg-surface"></div>
+          <figcaption>
+            <span class="swatch-name">bg.surface</span>
+            <span class="token-hex">#FFFFFF</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="bg-muted"></div>
+          <figcaption>
+            <span class="swatch-name">bg.muted</span>
+            <span class="token-hex">#F0F0F0</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="bg-muted-pressed"></div>
+          <figcaption>
+            <span class="swatch-name">bg.muted-pressed</span>
+            <span class="token-hex">#E8E8E8</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="bg-skeleton"></div>
+          <figcaption>
+            <span class="swatch-name">bg.skeleton</span>
+            <span class="token-hex">#EEEEEE</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="group-label">Border · Overlay</p>
+      <div class="swatch-grid">
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="border-default"></div>
+          <figcaption>
+            <span class="swatch-name">border.default</span>
+            <span class="token-hex">#E5E5E5</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="border-strong"></div>
+          <figcaption>
+            <span class="swatch-name">border.strong</span>
+            <span class="token-hex">#BDBDBD</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="overlay"></div>
+          <figcaption>
+            <span class="swatch-name">overlay</span>
+            <span class="token-hex">#000000 · 40%</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="group-label">Status · 不计入 6:3:1</p>
+      <div class="swatch-grid">
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="status-success"></div>
+          <figcaption>
+            <span class="swatch-name">status.success</span>
+            <span class="token-hex">#1F9D63</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="status-success-soft"></div>
+          <figcaption>
+            <span class="swatch-name">status.success-soft</span>
+            <span class="token-hex">#E6F6EE</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="status-warning"></div>
+          <figcaption>
+            <span class="swatch-name">status.warning</span>
+            <span class="token-hex">#B7791F</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="status-warning-soft"></div>
+          <figcaption>
+            <span class="swatch-name">status.warning-soft</span>
+            <span class="token-hex">#FBF3E6</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="status-danger"></div>
+          <figcaption>
+            <span class="swatch-name">status.danger</span>
+            <span class="token-hex">#D9363E</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="status-danger-soft"></div>
+          <figcaption>
+            <span class="swatch-name">status.danger-soft</span>
+            <span class="token-hex">#FDECEC</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="status-info"></div>
+          <figcaption>
+            <span class="swatch-name">status.info · 同 accent</span>
+            <span class="token-hex">#2563EB</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="status-info-soft"></div>
+          <figcaption>
+            <span class="swatch-name">status.info-soft · 同 accent-soft</span>
+            <span class="token-hex">#EFF6FF</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="group-label">Day · 灰度阶，不用彩虹色</p>
+      <div class="swatch-grid">
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="day-1"></div>
+          <figcaption>
+            <span class="swatch-name">day.1</span>
+            <span class="token-hex">#111111</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="day-2"></div>
+          <figcaption>
+            <span class="swatch-name">day.2</span>
+            <span class="token-hex">#666666</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="day-3"></div>
+          <figcaption>
+            <span class="swatch-name">day.3</span>
+            <span class="token-hex">#999999</span>
+          </figcaption>
+        </figure>
+        <figure class="swatch">
+          <div class="swatch-fill" data-swatch="day-4"></div>
+          <figcaption>
+            <span class="swatch-name">day.4</span>
+            <span class="token-hex">#BDBDBD</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>字体</h2>
+      <p class="group-label">PingFang SC / Noto Sans CJK SC / 系统中文栈</p>
+      <div class="type-list">
+        <div class="type-sample">
+          <p class="meta">Display · 28 / 36 · Bold</p>
+          <p class="t-display">去哪玩</p>
+        </div>
+        <div class="type-sample">
+          <p class="meta">Title · 20 / 28 · Semibold</p>
+          <p class="t-title">杭州两日游</p>
+        </div>
+        <div class="type-sample">
+          <p class="meta">Headline · 17 / 24 · Semibold</p>
+          <p class="t-headline">灵隐寺</p>
+        </div>
+        <div class="type-sample">
+          <p class="meta">Body · 15 / 22</p>
+          <p class="t-body">想去哪儿？比如：下周末上海去杭州玩两天</p>
+        </div>
+        <div class="type-sample">
+          <p class="meta">Caption · 13 / 18</p>
+          <p class="t-caption">10/24–10/25 · 2 人 · 舒适档</p>
+        </div>
+        <div class="type-sample">
+          <p class="meta">Micro · 11 / 16</p>
+          <p class="t-micro">AI 生成 · 仅供参考</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>间距</h2>
+      <div class="space-list">
+        <div class="space-row"><i class="space-bar" data-space="4"></i><span>4</span></div>
+        <div class="space-row"><i class="space-bar" data-space="8"></i><span>8</span></div>
+        <div class="space-row"><i class="space-bar" data-space="12"></i><span>12</span></div>
+        <div class="space-row"><i class="space-bar" data-space="16"></i><span>16</span></div>
+        <div class="space-row"><i class="space-bar" data-space="20"></i><span>20</span></div>
+        <div class="space-row"><i class="space-bar" data-space="24"></i><span>24</span></div>
+        <div class="space-row"><i class="space-bar" data-space="32"></i><span>32</span></div>
+        <div class="space-row"><i class="space-bar" data-space="40"></i><span>40</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>圆角</h2>
+      <div class="radius-row">
+        <div class="radius-box" data-radius="8">8</div>
+        <div class="radius-box" data-radius="12">12</div>
+        <div class="radius-box" data-radius="16">16</div>
+        <div class="radius-box" data-radius="24">24</div>
+        <div class="radius-box" data-radius="full">full</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>海拔</h2>
+      <div class="elev-row">
+        <div class="elev-card" data-elev="card">
+          <strong class="t-headline">卡片</strong>
+          <p>y 2 · blur 12 · 黑 8%</p>
+        </div>
+        <div class="elev-card" data-elev="float">
+          <strong class="t-headline">浮层</strong>
+          <p>y 8 · blur 24 · 黑 16%</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

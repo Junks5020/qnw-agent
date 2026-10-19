@@ -593,18 +593,18 @@ flowchart TD
 
 | 批次 | 页面 | 必须包含的状态 / 验收要点 | 原型页面路径 | 截图 | 状态 |
 |---|---|---|---|---|---|
-| 1 | Foundations | 颜色、间距、圆角、字体 Tokens；Button、Chip、NavBar、TabBar、ItineraryItem、TransportSeg、POICard、Banner、AIBadge | `prototype/tokens.css`、`prototype/components.html` | `screenshots/foundations.png`、`screenshots/components.png` | 有条件通过（2ce6450，待修 TabBar 下划线、删除按钮用红色、TabBar 加「消息」） |
-| 2 | P01 启动 / 引导 / 偏好 | 启动、引导、偏好快速设置 | `prototype/pages/P01-*.html` | `screenshots/P01-*.png` | 通过（bff942f）；说明文字已移出手机画面；Slogan 待用户定稿 |
-| 2 | P02 首页 | 空状态、行前（倒计时 + 行程摘要 +「查看行程」「继续问 AI」，不做成驾驶舱）、出行中今日视图、加载/离线 | `prototype/pages/P02-*.html` | `screenshots/P02-*.png` | 有条件通过（bff942f）：P02-b、P02-d 第 4 个快捷标签「预算友好」仍被截断，需四个完整显示（P02-a 也只有 3 个）；示例数据已改真实 |
-| 2 | P03 AI 对话 | 首次进入、追问（标 1/3 轮）、需求摘要卡、生成中、失败/断网 | `prototype/pages/P03-*.html` | `screenshots/P03-*.png` | 通过（445d86a） |
-| 2 | P04 行程预览 | 完整预览；顶部或摘要旁固定「AI 生成·仅供参考」 | `prototype/pages/P04-*.html` | `screenshots/P04-*.png` | 通过（bff942f）；示例距离已改真实量级 |
-| 2 | P13 登录 | 保存前登录半屏；保存成功页再次出现「AI 生成·仅供参考」 | `prototype/pages/P13-*.html` | `screenshots/P13-*.png` | 通过（445d86a） |
-| 3 | P05 行程详情 | 按天时间轴、出行中、某天无条目、离线只读、冲突提示 | `prototype/pages/P05-*.html` | `screenshots/P05-*.png` | 通过（bff942f）；示例距离已改真实量级 |
-| 3 | P06 行程编辑 | 拖拽、待安排池、撤销 Toast、重算中、重算完成 Toast「时间与预算已更新」、失败可重试 | `prototype/pages/P06-*.html` | `screenshots/P06-*.png` | 通过（bff942f）：删除已改灰色图标，P06-e 重复「完成」已去掉；小修：P06-e 前移西湖后楼外楼不见了，当天小结仍是「约 15 公里 · ¥980–1,400」，与「时间与预算已更新」对不上 |
-| 3 | P04-b 对话修改 | 差异预览（新增绿 / 删除红 + 删除线 / 调整灰底，均带文字标签）；变更多时用半屏「应用确认」 | `prototype/pages/P04-b-*.html` | `screenshots/P04-b-*.png` | 通过（bff942f）：「调整后」已按时间排序；小修：P04-b 底部「修改较多时，先看应用确认」是设计说明，移出手机画面；P04-c 删除项「21:00 灵隐寺夜游」不在原行程里，灵隐寺也没有夜游，换成可信条目 |
-| 4 | P07 地图 | 按天点位连线、相邻段交通方式与耗时、跳转外部地图、失败降级为列表（原型里地图可用静态占位图） | `prototype/pages/P07-*.html` | `screenshots/P07-*.png` | 有条件通过（bff942f）：点位没压在路线上（ui 修复中）；补「导航」第三方地图选择面板状态（高德 / 百度 / Apple 地图 + 取消）；P07-a 第 2 天只有 5、6 两个点，P07-b 列表里第 2 天有 3 站，要对齐；酒店点位用特殊图标；缺右侧悬浮「定位」「图层」；底部应为与点位一一对应的横滑卡片，每张卡带「导航」（现为竖排 2 条 + 1 个公共「导航」）；P07-b 第 2 天改成与第 1 天相同的逐行格式 |
-| 4 | P08 地点详情 | 景点、餐饮（人均参考价）、酒店（参考价区间 +「仅供参考」）；底部只有收藏 / 替换 / 加入行程，**无预订按钮** | `prototype/pages/P08-*.html` | `screenshots/P08-*.png` | 有条件通过（bff942f）：无预订按钮，通过；「已在行程」改为「已在第 N 天」，并补 1 个未在行程的状态（蓝色主按钮「加入行程」→ 选择天和位置 → 变「已在第 N 天」）；导航栏与底栏「收藏」重复，去掉一个；推荐理由（如「建议上午到…」）旁缺「AI 生成·仅供参考」；「导航」现在跳 P07-a，改为弹第三方地图面板，且不用蓝色主按钮（蓝色留给「加入行程」）；P08-c 酒店区域写「湖滨」，又写「距西湖游船码头约 3 公里」，看起来对不上（湖滨本身就有游船码头），改为 PRD 要求的「距行程点平均距离」并核实；缺地址（可复制）、电话、小地图 |
-| 4 | P09 预算 | 分项区间 + 人均 +「仅供参考」、未知项、空状态；不做记账 | `prototype/pages/P09-*.html` | `screenshots/P09-*.png` | 有条件通过（bff942f）：P09-a 总价、按天合计与 P04 不一致，以及「参考」换行（ui 修复中）；缺「设置预算上限」「让 AI 帮我省钱」；P09-b 把「游船」列为价格未知不可信（西湖游船有公开票价），换成真正查不到价格的条目；P09-b 分项口径与 P09-a 不一致（餐饮、门票没了，游船、晚餐成了分项），未知项的条形图不应有填充；P09-c 文案「这一天还没有条目」改为行程级（如「行程里还没有地点」），插图占位是一根窄竖条，需修 |
+| 1 | Foundations | 颜色、间距、圆角、字体 Tokens；Button、Chip、NavBar、TabBar、ItineraryItem、TransportSeg、POICard、Banner、AIBadge | `prototype/foundations.html`、`prototype/components.html`、`prototype/tokens.css` | `screenshots/foundations.png`、`screenshots/components.png` | 已修订（五 Tab、无下划线、删除用危险红） |
+| 2 | P01 启动 / 引导 / 偏好 | 启动、引导、偏好快速设置 | `prototype/pages/P01-a-splash.html`、`P01-b-onboarding.html`、`P01-c-preferences.html` | `screenshots/P01-a-splash.png`、`P01-b-onboarding.png`、`P01-c-preferences.png` | 通过（bff942f）；说明文字已移出手机画面；Slogan 待用户定稿 |
+| 2 | P02 首页 | 空状态、行前（倒计时 + 行程摘要 +「查看行程」「继续问 AI」，不做成驾驶舱）、出行中今日视图、加载/离线 | `prototype/pages/P02-a-home-empty.html`、`P02-d-home-pretrip.html`、`P02-b-home-ongoing.html`、`P02-c-home-offline.html` | 同名 png | 有条件通过（bff942f）：四个快捷标签需完整显示 |
+| 2 | P03 AI 对话 | 首次进入、追问（标 1/3 轮）、需求摘要卡、生成中、失败/断网 | `prototype/pages/P03-a-chat-welcome.html`、`P03-b-chat-clarify.html`、`P03-c-chat-summary.html`、`P03-d-chat-generating.html`、`P03-e-chat-error.html` | 同名 png | 通过（445d86a） |
+| 2 | P04 行程预览 | 完整预览；顶部或摘要旁固定「AI 生成·仅供参考」；按天展开卡、迷你地图、预算分项、为什么这样安排、有用/没用 | `prototype/pages/P04-a-preview.html` | `screenshots/P04-a-preview.png`（首屏）、`P04-a-preview-full.png`（整页） | 通过（bff942f）；示例距离已改真实量级 |
+| 2 | P13 登录 | 保存前登录半屏；保存成功页再次出现「AI 生成·仅供参考」 | `prototype/pages/P13-a-login.html`、`P13-b-save-success.html` | `screenshots/P13-a-login.png`、`P13-b-save-success.png` | 通过（445d86a） |
+| 3 | P05 行程详情 | 按天时间轴、出行中、某天无条目、离线只读、冲突提示 | `prototype/pages/P05-a-detail-ongoing.html`、`P05-b-detail-empty.html`、`P05-c-detail-offline.html`、`P05-d-detail-conflict.html` | 同名 png | 通过（bff942f）；示例距离已改真实量级 |
+| 3 | P06 行程编辑 | 拖拽、待安排池、撤销 Toast、重算中、重算完成 Toast「时间与预算已更新」、失败可重试 | `prototype/pages/P06-a-edit-drag.html`、`P06-b-edit-pool.html`、`P06-c-edit-undo.html`、`P06-d-edit-recalc.html`、`P06-e-edit-recalc-done.html`、`P06-f-edit-recalc-fail.html` | 同名 png | 通过（bff942f）；小修：前移西湖后当天小结要重算 |
+| 3 | P04-b 对话修改 | 差异预览（新增绿 / 删除红 + 删除线 / 调整灰底，均带文字标签）；变更多时用半屏「应用确认」 | `prototype/pages/P04-b-diff.html`、`P04-c-apply-confirm.html` | `screenshots/P04-b-diff.png`、`P04-c-apply-confirm.png` | 通过（bff942f）；小修：说明移出画面，删除项换成原行程里的地点 |
+| 4 | P07 地图 | 按天点位连线、相邻段交通方式与耗时、跳转外部地图、失败降级为列表（原型里地图可用静态占位图） | `prototype/pages/P07-a-map.html`、`P07-b-map-fallback.html` | 同名 png | 有条件通过（bff942f）：补导航面板、酒店图标、定位与图层、横滑卡片 |
+| 4 | P08 地点详情 | 景点、餐饮（人均参考价）、酒店（参考价区间 +「仅供参考」）；底部只有收藏 / 替换 / 加入行程，**无预订按钮** | `prototype/pages/P08-a-poi-sight.html`、`P08-b-poi-food.html`、`P08-c-poi-hotel.html`、`P08-d-poi-closed.html` | 同名 png | 有条件通过（bff942f）：已在第 N 天、加入行程、导航面板、地址电话小地图 |
+| 4 | P09 预算 | 分项区间 + 人均 +「仅供参考」、未知项、空状态；不做记账 | `prototype/pages/P09-a-budget.html`、`P09-b-budget-unknown.html`、`P09-c-budget-empty.html` | 同名 png | 有条件通过（bff942f）：补操作、其他分项，未知项换成查不到价格的条目 |
 | 5 | P10 我的行程 | 即将出发 / 草稿 / 已完成、空状态、未登录本地草稿 | 待填 | 待填 | 待交付 |
 | 5 | P11 提醒 / 通知 | 通知列表、调整方案抽屉、定位权限半屏（仅使用期间、不后台追踪）、通知权限未开 | 待填 | 待填 | 待交付 |
 | 5 | P12 个人中心 | 已登录、未登录 | 待填 | 待填 | 待交付 |

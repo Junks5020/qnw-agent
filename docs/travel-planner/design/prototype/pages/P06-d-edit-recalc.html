@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=390">
+  <title>编辑 · 重算中 · 去哪玩</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../components.css">
+</head>
+<body>
+<script src="../icons.js"></script>
+<script src="../sample-data.js"></script>
+
+<main class="screen">
+
+<div class="sysbar"><span>9:41</span><span>去哪玩</span></div>
+<header class="navbar"><a class="navbar-back" href="P06-a-edit-drag.html">取消</a><div class="navbar-title">编辑行程</div><a class="navbar-action" href="P05-a-detail-ongoing.html">完成</a></header>
+<div class="screen-body">
+  <p class="t-caption">放下西湖之后，正在重算这一天。</p>
+  <article class="itinerary is-edit">
+    <span class="handle" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></span>
+    <time class="itinerary-time">09:00</time>
+    <div>
+      <div class="itinerary-title">灵隐寺</div>
+      <div class="itinerary-meta">建议 2 小时</div>
+    </div>
+    <button class="icon-btn" type="button" aria-label="删除"><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg></button>
+  </article>
+  <div class="transport"><svg class="icon" aria-hidden="true"><use href="#i-car"/></svg><span>正在重算时间…</span></div>
+  <div class="skel"></div>
+  <article class="itinerary is-edit">
+    <span class="handle" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></span>
+    <time class="itinerary-time">--</time>
+    <div>
+      <div class="itinerary-title">西湖</div>
+      <div class="itinerary-meta">时间待更新</div>
+    </div>
+    <button class="icon-btn" type="button" aria-label="删除"><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg></button>
+  </article>
+</div>
+<div class="dock">
+  <span class="btn btn-text is-off">撤销</span>
+  <span class="btn btn-text is-off">重做</span>
+  <a class="btn btn-secondary" href="P06-e-edit-recalc-done.html">查看结果</a>
+</div>
+
+</main>
+</body>
+</html>

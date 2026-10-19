@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=390">
+  <title>应用确认 · 去哪玩</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../components.css">
+</head>
+<body>
+<script src="../icons.js"></script>
+<script src="../sample-data.js"></script>
+
+<main class="screen">
+
+<div class="sysbar"><span>9:41</span><span>去哪玩</span></div>
+<div class="login-stage">
+  <div class="screen-body">
+    <p class="dim">差异较多</p>
+    <div class="diff-row diff-del"><s>11:30 楼外楼</s><b>删除</b></div>
+    <div class="diff-row diff-add"><span>11:30 河坊街午餐</span><b>新增</b></div>
+    <div class="diff-row diff-del"><s>13:00 中国美术学院</s><b>删除</b></div>
+    <div class="diff-row diff-chg"><span>15:00 西湖游船 · 从 16:00 提前</span><b>调整</b></div>
+    <div class="diff-row diff-chg"><span>18:00 酒店入住</span><b>调整</b></div>
+    <div class="diff-row diff-add"><span>19:30 清河坊夜市</span><b>新增</b></div>
+  </div>
+  <div class="stage-dim"></div>
+  <div class="login-sheet" role="dialog" aria-label="应用确认">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <h2 class="t-headline">应用这些修改？</h2>
+    <p class="t-caption">共 6 处：新增 2、删除 2、调整 2。确认后才写进行程。</p>
+    <div class="sheet-actions">
+      <a class="btn btn-secondary" href="P04-b-diff.html">取消</a>
+      <a class="btn btn-primary" href="P05-a-detail-ongoing.html">应用</a>
+    </div>
+    <div class="home-indicator" aria-hidden="true"></div>
+  </div>
+</div>
+
+</main>
+</body>
+</html>

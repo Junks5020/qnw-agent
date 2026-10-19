@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=390">
+  <title>去哪玩 · 设计原型</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+  <main class="board">
+    <header class="board-header">
+      <p class="eyebrow">去哪玩 · HTML 原型</p>
+      <h1>设计目录</h1>
+      <p class="lede">每个页面状态一个文件，截图与文件同名。空状态、加载和异常在主状态之后补。</p>
+    </header>
+
+    <section class="batch">
+      <h2>批次 1 · 已交付</h2>
+      <p class="batch-note">基础规范与核心组件。</p>
+      <div class="page-row">
+        <a href="foundations.html">基础规范</a>
+        <code>foundations</code>
+      </div>
+      <div class="page-row">
+        <a href="components.html">核心组件</a>
+        <code>components</code>
+      </div>
+    </section>
+
+    <section class="batch">
+      <h2>批次 2 · 已交付</h2>
+      <p class="batch-note">启动到保存。每个状态一个文件。</p>
+      <div class="page-row"><a href="pages/P01-a-splash.html">启动页</a><code>P01-a-splash</code></div>
+      <div class="page-row"><a href="pages/P01-b-onboarding.html">引导</a><code>P01-b-onboarding</code></div>
+      <div class="page-row"><a href="pages/P01-c-preferences.html">偏好快速设置</a><code>P01-c-preferences</code></div>
+      <div class="page-row"><a href="pages/P02-a-home-empty.html">首页 · 空</a><code>P02-a-home-empty</code></div>
+      <div class="page-row"><a href="pages/P02-d-home-pretrip.html">首页 · 行前</a><code>P02-d-home-pretrip</code></div>
+      <div class="page-row"><a href="pages/P02-b-home-ongoing.html">首页 · 出行中</a><code>P02-b-home-ongoing</code></div>
+      <div class="page-row"><a href="pages/P02-c-home-offline.html">首页 · 加载 / 离线</a><code>P02-c-home-offline</code></div>
+      <div class="page-row"><a href="pages/P03-a-chat-welcome.html">对话 · 首次进入</a><code>P03-a-chat-welcome</code></div>
+      <div class="page-row"><a href="pages/P03-b-chat-clarify.html">对话 · 追问</a><code>P03-b-chat-clarify</code></div>
+      <div class="page-row"><a href="pages/P03-c-chat-summary.html">对话 · 需求摘要</a><code>P03-c-chat-summary</code></div>
+      <div class="page-row"><a href="pages/P03-d-chat-generating.html">对话 · 生成中</a><code>P03-d-chat-generating</code></div>
+      <div class="page-row"><a href="pages/P03-e-chat-error.html">对话 · 失败 / 断网</a><code>P03-e-chat-error</code></div>
+      <div class="page-row"><a href="pages/P04-a-preview.html">行程预览</a><code>P04-a-preview</code></div>
+      <div class="page-row"><a href="pages/P13-a-login.html">登录半屏</a><code>P13-a-login</code></div>
+      <div class="page-row"><a href="pages/P13-b-save-success.html">保存成功</a><code>P13-b-save-success</code></div>
+    </section>
+
+    <section class="batch">
+      <h2>批次 3 · 已交付</h2>
+      <p class="batch-note">行程详情、编辑，以及对话修改的差异预览和应用确认。</p>
+      <div class="page-row"><a href="pages/P05-a-detail-ongoing.html">详情 · 出行中</a><code>P05-a-detail-ongoing</code></div>
+      <div class="page-row"><a href="pages/P05-b-detail-empty.html">详情 · 某天无条目</a><code>P05-b-detail-empty</code></div>
+      <div class="page-row"><a href="pages/P05-c-detail-offline.html">详情 · 离线只读</a><code>P05-c-detail-offline</code></div>
+      <div class="page-row"><a href="pages/P05-d-detail-conflict.html">详情 · 冲突</a><code>P05-d-detail-conflict</code></div>
+      <div class="page-row"><a href="pages/P06-a-edit-drag.html">编辑 · 拖拽</a><code>P06-a-edit-drag</code></div>
+      <div class="page-row"><a href="pages/P06-b-edit-pool.html">编辑 · 待安排池</a><code>P06-b-edit-pool</code></div>
+      <div class="page-row"><a href="pages/P06-c-edit-undo.html">编辑 · 撤销</a><code>P06-c-edit-undo</code></div>
+      <div class="page-row"><a href="pages/P06-d-edit-recalc.html">编辑 · 重算中</a><code>P06-d-edit-recalc</code></div>
+      <div class="page-row"><a href="pages/P06-e-edit-recalc-done.html">编辑 · 重算完成</a><code>P06-e-edit-recalc-done</code></div>
+      <div class="page-row"><a href="pages/P06-f-edit-recalc-fail.html">编辑 · 重算失败</a><code>P06-f-edit-recalc-fail</code></div>
+      <div class="page-row"><a href="pages/P04-b-diff.html">差异预览</a><code>P04-b-diff</code></div>
+      <div class="page-row"><a href="pages/P04-c-apply-confirm.html">应用确认半屏</a><code>P04-c-apply-confirm</code></div>
+    </section>
+
+    <section class="batch">
+      <h2>批次 4 · 已交付</h2>
+      <p class="batch-note">地图是灰阶占位。地点详情无预订。</p>
+      <div class="page-row"><a href="pages/P07-a-map.html">地图</a><code>P07-a-map</code></div>
+      <div class="page-row"><a href="pages/P07-b-map-fallback.html">地图 · 降级列表</a><code>P07-b-map-fallback</code></div>
+      <div class="page-row"><a href="pages/P07-c-nav-sheet.html">导航 · 选择地图</a><code>P07-c-nav-sheet</code></div>
+      <div class="page-row"><a href="pages/P08-a-poi-sight.html">景点详情</a><code>P08-a-poi-sight</code></div>
+      <div class="page-row"><a href="pages/P08-b-poi-food.html">餐饮详情</a><code>P08-b-poi-food</code></div>
+      <div class="page-row"><a href="pages/P08-c-poi-hotel.html">酒店详情</a><code>P08-c-poi-hotel</code></div>
+      <div class="page-row"><a href="pages/P08-d-poi-closed.html">地点 · 可能停业</a><code>P08-d-poi-closed</code></div>
+      <div class="page-row"><a href="pages/P08-e-poi-add.html">地点 · 未加入</a><code>P08-e-poi-add</code></div>
+      <div class="page-row"><a href="pages/P08-e2-add-to-trip-sheet.html">加入行程</a><code>P08-e2-add-to-trip-sheet</code></div>
+      <div class="page-row"><a href="pages/P08-e3-added.html">地点 · 刚加入</a><code>P08-e3-added</code></div>
+      <div class="page-row"><a href="pages/P09-a-budget.html">预算</a><code>P09-a-budget</code></div>
+      <div class="page-row"><a href="pages/P09-b-budget-unknown.html">预算 · 未知项</a><code>P09-b-budget-unknown</code></div>
+      <div class="page-row"><a href="pages/P09-c-budget-empty.html">预算 · 空</a><code>P09-c-budget-empty</code></div>
+    </section>
+
+    <section class="batch">
+      <h2>批次 5 · 已交付</h2>
+      <p class="batch-note">我的行程、提醒、个人中心、只读分享。地点和预算补了加载与失败。</p>
+      <div class="page-row"><a href="pages/P10-a-trips-upcoming.html">即将出发</a><code>P10-a-trips-upcoming</code></div>
+      <div class="page-row"><a href="pages/P10-b-trips-draft.html">草稿</a><code>P10-b-trips-draft</code></div>
+      <div class="page-row"><a href="pages/P10-c-trips-done.html">已完成</a><code>P10-c-trips-done</code></div>
+      <div class="page-row"><a href="pages/P10-d-trips-empty.html">行程 · 空</a><code>P10-d-trips-empty</code></div>
+      <div class="page-row"><a href="pages/P10-e-trips-local.html">未登录本地草稿</a><code>P10-e-trips-local</code></div>
+      <div class="page-row"><a href="pages/P11-a-notifications.html">通知列表</a><code>P11-a-notifications</code></div>
+      <div class="page-row"><a href="pages/P11-b-adjust-sheet.html">调整方案</a><code>P11-b-adjust-sheet</code></div>
+      <div class="page-row"><a href="pages/P11-c-location-permission.html">定位权限半屏</a><code>P11-c-location-permission</code></div>
+      <div class="page-row"><a href="pages/P11-d-notify-off.html">通知未开启</a><code>P11-d-notify-off</code></div>
+      <div class="page-row"><a href="pages/P12-a-profile.html">个人中心</a><code>P12-a-profile</code></div>
+      <div class="page-row"><a href="pages/P12-b-profile-guest.html">个人中心 · 未登录</a><code>P12-b-profile-guest</code></div>
+      <div class="page-row"><a href="pages/P14-a-share-link.html">分享 · 只读链接</a><code>P14-a-share-link</code></div>
+      <div class="page-row"><a href="pages/P14-b-share-image.html">分享 · 长图</a><code>P14-b-share-image</code></div>
+      <div class="page-row"><a href="pages/P08-f-poi-loading.html">地点 · 加载</a><code>P08-f-poi-loading</code></div>
+      <div class="page-row"><a href="pages/P08-g-poi-error.html">地点 · 加载失败</a><code>P08-g-poi-error</code></div>
+      <div class="page-row"><a href="pages/P09-d-budget-loading.html">预算 · 加载</a><code>P09-d-budget-loading</code></div>
+      <div class="page-row"><a href="pages/P09-e-budget-error.html">预算 · 加载失败</a><code>P09-e-budget-error</code></div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=390">
+  <title>编辑 · 撤销 · 去哪玩</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../components.css">
+</head>
+<body>
+<script src="../icons.js"></script>
+<script src="../sample-data.js"></script>
+
+<main class="screen">
+
+<div class="sysbar"><span>9:41</span><span>去哪玩</span></div>
+<header class="navbar"><a class="navbar-back" href="P06-a-edit-drag.html">取消</a><div class="navbar-title">编辑行程</div><a class="navbar-action" href="P05-a-detail-ongoing.html">完成</a></header>
+<div class="screen-body">
+  <p class="t-caption">第 1 天 · 10/24 · 已删掉灵隐寺</p>
+  <article class="itinerary is-edit">
+    <span class="handle" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></span>
+    <time class="itinerary-time">11:30</time>
+    <div>
+      <div class="itinerary-title">楼外楼</div>
+      <div class="itinerary-meta">餐饮 · 人均 ¥120–180 参考</div>
+    </div>
+    <button class="icon-btn" type="button" aria-label="删除"><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg></button>
+  </article>
+  <div class="transport"><svg class="icon" aria-hidden="true"><use href="#i-walk"/></svg><span data-qnw="d1.toLake">步行 12 分钟 · 800 米</span></div>
+  <article class="itinerary is-edit">
+    <span class="handle" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-grip"/></svg></span>
+    <time class="itinerary-time" data-qnw="d1.lake">13:15</time>
+    <div>
+      <div class="itinerary-title">西湖</div>
+      <div class="itinerary-meta">建议 2 小时</div>
+    </div>
+    <button class="icon-btn" type="button" aria-label="删除"><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg></button>
+  </article>
+  <div class="toast" role="status">
+    <span>已删除 · 灵隐寺</span>
+    <button type="button">撤销</button>
+  </div>
+</div>
+<div class="dock">
+  <a class="btn btn-text" href="P06-a-edit-drag.html">撤销</a>
+  <span class="btn btn-text is-off">重做</span>
+  <a class="btn btn-secondary" href="P04-b-diff.html">对话修改</a>
+</div>
+
+</main>
+</body>
+</html>

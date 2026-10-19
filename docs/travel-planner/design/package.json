@@ -1,0 +1,12 @@
+{
+  "name": "qnw-design-prototype",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "shots": "node scripts/shots.mjs",
+    "check-colors": "node scripts/check-colors.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  }
+}
