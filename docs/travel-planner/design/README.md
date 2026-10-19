@@ -139,19 +139,23 @@ npm run shots
 | 4 | 预算 | `pages/P09-a-budget.html` | 同名 png | 已修订：其他 ¥50–100，合计 ¥1,780–2,450 |
 | 4 | 预算未知项 | `pages/P09-b-budget-unknown.html` | 同名 png | 已修订：未知项是当地向导 |
 | 4 | 预算空状态 | `pages/P09-c-budget-empty.html` | 同名 png | 已修订：行程级文案，占位是方块 |
-| 5 | 即将出发 | `pages/P10-a-trips-upcoming.html` | 同名 png | 待交付 |
-| 5 | 草稿 | `pages/P10-b-trips-draft.html` | 同名 png | 待交付 |
-| 5 | 已完成 | `pages/P10-c-trips-done.html` | 同名 png | 待交付 |
-| 5 | 行程空状态 | `pages/P10-d-trips-empty.html` | 同名 png | 待交付 |
-| 5 | 未登录本地草稿 | `pages/P10-e-trips-local.html` | 同名 png | 待交付 |
-| 5 | 通知列表 | `pages/P11-a-notifications.html` | 同名 png | 待交付 |
-| 5 | 调整方案 | `pages/P11-b-adjust-sheet.html` | 同名 png | 待交付 |
-| 5 | 定位权限半屏 | `pages/P11-c-location-permission.html` | 同名 png | 待交付 |
-| 5 | 通知未开启 | `pages/P11-d-notify-off.html` | 同名 png | 待交付 |
-| 5 | 个人中心 | `pages/P12-a-profile.html` | 同名 png | 待交付 |
-| 5 | 个人中心未登录 | `pages/P12-b-profile-guest.html` | 同名 png | 待交付 |
-| 5 | 只读分享链接 | `pages/P14-a-share-link.html` | 同名 png | 待交付 |
-| 5 | 分享长图 | `pages/P14-b-share-image.html` | 同名 png | 待交付 |
+| 4 | 地点 · 加载 | `pages/P08-f-poi-loading.html` | 同名 png | 已交付 |
+| 4 | 地点 · 加载失败 | `pages/P08-g-poi-error.html` | 同名 png | 已交付 |
+| 4 | 预算 · 加载 | `pages/P09-d-budget-loading.html` | 同名 png | 已交付 |
+| 4 | 预算 · 加载失败 | `pages/P09-e-budget-error.html` | 同名 png | 已交付 |
+| 5 | 即将出发 | `pages/P10-a-trips-upcoming.html` | 同名 png | 已交付：3 天后出发，以及出行中 |
+| 5 | 草稿 | `pages/P10-b-trips-draft.html` | 同名 png | 已交付 |
+| 5 | 已完成 | `pages/P10-c-trips-done.html` | 同名 png | 已交付：更早的杭州周末 |
+| 5 | 行程空状态 | `pages/P10-d-trips-empty.html` | 同名 png | 已交付 |
+| 5 | 未登录本地草稿 | `pages/P10-e-trips-local.html` | 同名 png | 已交付 |
+| 5 | 通知列表 | `pages/P11-a-notifications.html` | 同名 png | 已交付：天气、闭馆、交通 |
+| 5 | 调整方案 | `pages/P11-b-adjust-sheet.html` | 同名 png | 已交付 |
+| 5 | 定位权限半屏 | `pages/P11-c-location-permission.html` | 同名 png | 已交付：仅使用期间，不后台追踪 |
+| 5 | 通知未开启 | `pages/P11-d-notify-off.html` | 同名 png | 已交付 |
+| 5 | 个人中心 | `pages/P12-a-profile.html` | 同名 png | 已交付 |
+| 5 | 个人中心未登录 | `pages/P12-b-profile-guest.html` | 同名 png | 已交付 |
+| 5 | 只读分享链接 | `pages/P14-a-share-link.html` | 同名 png | 已交付：无编辑，含仅供参考 |
+| 5 | 分享长图 | `pages/P14-b-share-image.html` | 同名 png | 已交付 |
 
 路径相对 `prototype/`。示例数据仍是上海出发、杭州两日游（10/24–10/25，2 人，舒适档）。
 
@@ -159,7 +163,7 @@ npm run shots
 
 ## 6. 关键设计决策
 
-1. **Tab 为首页 / 行程 / AI / 消息 / 我的。** AI 在正中，是普通标签，不是悬浮「＋」。选中项用点缀蓝。消息有未读时用危险红角标。悬浮按钮已取消（PRD 5.1，2026-10-19）。
+1. **Tab 为首页 / 行程 / AI / 消息 / 我的。** AI 在正中，是普通标签，不是悬浮「＋」。选中项用点缀蓝。消息有未读时用危险红角标。行程进 P10，消息进 P11，我的进 P12。悬浮按钮已取消（PRD 5.1，2026-10-19）。
 2. **蓝色的用量。** 主按钮、选中芯片、选中 Tab、关键标签（如「建议上午」）。倒计时和日标不用蓝。
 3. **按天用灰度阶。** 日标是 1–4 的灰圆，数字区分。
 4. **可信度。** AI 内容旁放「AI 生成 · 仅供参考」。价格写区间并标「参考」。

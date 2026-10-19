@@ -1864,3 +1864,29 @@ button {
   width: var(--space-16);
   height: var(--space-16);
 }
+
+.notice {
+  display: flex;
+  gap: var(--space-8);
+  align-items: flex-start;
+  padding-top: var(--space-12);
+  border-top: var(--hairline) solid var(--border-default);
+}
+
+.dot {
+  flex: none;
+  width: var(--space-8);
+  height: var(--space-8);
+  margin-top: var(--space-8);
+  background: var(--status-danger);
+  border-radius: var(--radius-full);
+}
+
+.qr {
+  flex: none;
+  width: calc(var(--space-40) * 2);
+  height: calc(var(--space-40) * 2);
+  border: var(--hairline) solid var(--border-strong);
+  border-radius: var(--radius-8);
+  background: var(--bg-muted);
+}
